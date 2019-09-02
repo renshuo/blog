@@ -1,0 +1,15 @@
+# gentoo下编译libgpod失败：
+gpod.i:301: Error: Unknown SWIG preprocessor directive: be (if this is a block of target language code, delimit it with %{ and %})
+gpod.i:302: Error: Unknown SWIG preprocessor directive: layer (if this is a block of target language code, delimit it with %{ and %})
+gpod.i:303: Error: Unknown SWIG preprocessor directive: them (if this is a block of target language code, delimit it with %{ and %})
+
+
+## 原因
+gentoo下的swig有2个slot: 1:1.3.40, 0:3.0.5
+libgpod编译需要使用slot1的swig
+
+## 解决
+安装swig:1
+在/usr/bin下，将swig1.3 改名为swig，（原swig需备份）
+重新安装libgpod
+结束后再替换回来

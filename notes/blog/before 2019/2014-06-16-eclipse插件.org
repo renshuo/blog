@@ -1,0 +1,23 @@
+---
+layout:default
+title: eclipse插件
+---
+# smart save
+这个插件可以没隔n秒，将未保存的文件存盘。
+
+update site: https://raw.github.com/mystilleef/eclipse4-smartsave-updatesite/master/com.laboki.eclipse.updatesite.smartsave
+
+# FileSync
+这个插件可以将外部的文件或文件夹和proejct的做同步，当有别的编辑器修改了某个文件时，这个插件可以自动刷新project里的文件。
+
+update site: http://andrei.gmxhome.de/eclipse/
+
+# Jeeeyul's Themes
+这个插件可定制eclpse的外观，在linux下边很有用，可以自己定义css外观。
+
+update site: http://eclipse.jeeeyul.net/update/
+
+# More Unit
+这个插件是junit的功能增强插件，比如，可以从代码直接Navigate到对应的测试类里。
+
+update site: http://moreunit.sourceforge.net/update-site/

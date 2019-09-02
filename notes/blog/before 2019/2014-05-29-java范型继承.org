@@ -1,0 +1,74 @@
+# java接口的范型定义
+	public interface A<T extends String>{
+		public void test(T data);
+	}
+
+这里定义了一个接口，test方法可以接受String类型以及String的所有子类型。
+# 范型的继承
+	public class C1 implements A<String1>{
+		public void test(String1 data){
+		}
+	}
+
+类C1实现了接口A，并指定了可处理的类型为String1（String1是String的子类）。
+
+# 如果我希望C1能够处理的不仅仅是String1,而是String1的所有子类型：
+	public class C1<T1 extends String1> implements A<T1> {
+		public void test(T1 data){
+		}
+	}
+	
+这里定义C1实现了A接口，可以处理的类型T1是String1的子类型，所以在test方法内，data可以直接当作String1使用，可以直接调用String1的方法。
+C1指定T1类型的目的是，C1的子类也可以继承T1类型，可以决定是处理String1还是String1的某个子类型
+
+	public class C2<String2> implements A<String2>{
+		public void test(String2 data){
+		};
+	}
+	这个类只能处理String2类型。
+	
+	public class C3<T2 extends String2> impments A<T2>{
+	}
+	这个则和C1类似，可以处理String2的所有子类型
+	
+
+# 如果不用范型会怎么样？
+	public interface A{
+		public void test(String data);
+	}
+	
+	public class C1 implements A{
+		public void test(String data);
+		}
+	}
+
+C1只能处理String类型，如果要处理String的子 类型，则需要做类型检查和强制转换：
+
+	public void test(String data){
+		if (data instanceof String1){
+			((String1)data).funInString1();
+		}else{
+			data.funInString();
+		}
+	}
+			
+
+	或者，当子类覆盖父类的方法时，子类知道自己要处理的类型是String1类型，则要强制转换。但是“子类知道自己要处理的类型是String1”这件事情在代码中根本不能体现出来，如果没有写强制转换时，子类根本不知道自己处理的类型到底是String的那个子类型。
+	
+	@Override
+	public void test(String data){
+		//假设这里知道data的具体子类型是String1
+		((String1)data).funInString1();	
+	}
+	
+	使用的时候，不清楚到底传String1类型，还是String2类型？因为接口能看到的只是String类型。
+		
+	{
+		String1 data = new String1();
+		new C1().test(data); // 这里看到test方法要求传入String类型，但是C1实际上只能处理String1类型。
+	}
+	
+	{
+		String2 data = new String2();
+		new C1().test(data); // 这里编译能过，但是执行时会抛ClassCastException
+	}

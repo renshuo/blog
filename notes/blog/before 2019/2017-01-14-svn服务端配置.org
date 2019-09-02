@@ -1,0 +1,29 @@
+# svn server配置
+## 创建版本库
+svn可以在一个服务进程下支持一个或多个多个版本库。
+
+创建版本库：
+
+	svnadmin create /home/backup/.svn/main 
+
+这个命令用来创建一个位于main目录的版本库
+
+
+## 启动svn服务
+
+* 一个服务支持多个版本库
+
+	例如：.svn目录下有多个类似于main的版本库，则可以这样启动svn服务：
+
+	`svnserve -d -r /home/backup/.svn` 
+		
+	则 svn://localhost/main 用来访问.svn/main 库，svn://localhost/test 访问.svn/test 库，其他类推
+	
+* 一个服务对应一个版本库
+
+	`svnserve -d -r /home/backup/.svn/main` 则只启动main这一个版本库
+
+	`svn://localhost 访问的是main库`
+
+	 这种情况下可以用不同的端口号启动不同的svn服务对应不同的库。
+

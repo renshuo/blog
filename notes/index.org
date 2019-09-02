@@ -1,0 +1,17 @@
+** 工作相关
+** Java 技术
+* 日志
+** 2014
+*** [2018-08-23] [[file:blog/before%202019/2018-08-23-spacemacs%E6%96%87%E6%A1%A3%E7%BF%BB%E8%AF%91-%E7%AE%A1%E7%90%86%E7%A7%81%E6%9C%89%E9%85%8D%E7%BD%AElayer.org][spacemacs 文档翻译-管理私有配置]]
+*** [2018-07-23] [[file:blog/before%202019/2018-07-23-mongodb%E5%9C%A8web%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E7%BB%8F%E9%AA%8C.org][mongodb 在 web 开发中的数据管理经验]]
+*** [2017-01-14] [[file:blog/before%202019/2017-01-14-svn%E6%9C%8D%E5%8A%A1%E7%AB%AF%E9%85%8D%E7%BD%AE.org][svn 服务端配置]]
+*** [2015-11-11] [[file:blog/before%202019/2015-11-11-netcat%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E.org][netcat 使用说明]]
+*** [2015-11-09] [[file:blog/before%202019/2015-11-09-gentoo%E7%BC%96%E8%AF%91libgpod%E5%A4%B1%E8%B4%A5.org][gentoo 编译 libgpod 失败]]
+*** [2014-08-10] [[file:blog/before%202019/2014-08-10-how-to-select-language.org][how to select language]]
+*** [2014-06-26] [[file:blog/before%202019/2014-06-26-elisp%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0.org][elisp 笔记]]
+*** [2014-06-16] [[file:blog/before%202019/2014-06-16-eclipse%E6%8F%92%E4%BB%B6.org][eclipse 插件]]
+*** [2014-05-29] [[file:blog/before%202019/2014-05-29-java%E8%8C%83%E5%9E%8B%E7%BB%A7%E6%89%BF.org][Java 范型继承]]
+*** [2014-05-28] [[file:blog/before%202019/2014-05-28-santi.org][santi]]
+*** [2014-05-20] [[file:blog/before%202019/2014-05-20-pidgin-lwqq.org][pidgin-lwqq]]
+
+

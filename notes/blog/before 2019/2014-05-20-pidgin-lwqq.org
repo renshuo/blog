@@ -1,0 +1,11 @@
+# 关于pidgin-lwqq
+	pidgin-lwqq是linux下的pidgin的webqq插件，基于lwqq开发。pidgin-lwqq已经实现了基本的通信功能，还有图片，文件等相关功能。
+
+# pidgin的github主页
+	https://github.com/xiehuc/pidgin-lwqq
+
+# pidgin-lwqq和kde的telepathy比较
+	功能上，telepathy不支持qq群和讨论组，pidgin支持
+	
+# pidgin-lwqq维护者github页
+	https://github.com/xiehuc/pidgin-lwqq

@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2019-09-02 一 20:06 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title></title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="renshuo" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orge5ef577">文件操作</a></li>
+<li><a href="#org74a466d">字符串定义和操作</a></li>
+<li><a href="#org9f7d29b">统计功能，或者可代替的简单做法</a></li>
+<li><a href="#orgcad1b28">运行简单方便，速度快</a></li>
+<li><a href="#org0b1b7e1">支持正则表达式</a></li>
+<li><a href="#orga68229b">shell+awk+sed 等</a></li>
+<li><a href="#org9f43ce4">python</a></li>
+<li><a href="#orge24c70d">perl</a></li>
+<li><a href="#org77d94a8">php 不清楚如何在没有WebServer的情况下运行，而且linux默认没有这个</a></li>
+<li><a href="#org186e310">ruby</a></li>
+<li><a href="#orgecfc06e">VBscript等office自带的脚本语言</a></li>
+<li><a href="#org66ca44d">你熟悉的任何语言</a></li>
+<li><a href="#orga5db535">运行方便简单，速度快</a></li>
+<li><a href="#org39b0ce9">可以方便调用命令行或者其他程序（用于调用外部工具）</a></li>
+<li><a href="#orga5ae985">可扩展</a></li>
+<li><a href="#org283531d">代码简单</a></li>
+<li><a href="#org3f5a0d8">shell</a></li>
+<li><a href="#org1011e09">xml(ant, maven&#x2026;)</a></li>
+<li><a href="#org77db3eb">python</a></li>
+<li><a href="#orgba673e0">groovy 因为gradle而入选</a></li>
+<li><a href="#org4f8b368">ruby 因为buildr而入选</a></li>
+<li><a href="#org8e60e01">你用什么写代码，就用他们管理他们自己</a></li>
+<li><a href="#org64be396">运行方便简单，速度快</a></li>
+<li><a href="#org1c8e848">可以方便调用命令行或者其他程序</a></li>
+<li><a href="#org444857a">代码简单</a></li>
+<li><a href="#orgd9a4be6">shell</a></li>
+<li><a href="#org7dfdd3d">python</a></li>
+<li><a href="#org1bb2b6b">groovy</a></li>
+<li><a href="#orgcec7dec">ruby</a></li>
+</ul>
+</div>
+</div>
+<p>
+## 在不同的场景下需要使用不同的语言
+	Unix编程艺术中的 无根的根中的一段：
+	   无名师与万行码 
+	   无名师曾对来访的程序员说：“Unix传统上认为，一行 shell脚本胜过万行C程序." 
+	   这个程序员自以为对C极其精通，说：“这不可能。Unix内核正是用C实现的。” 
+	   无名师回道：“确实如此。不过，Unix传统上认为，一行shell脚本胜过万行C程序." 
+	   程序员颇为沮丧：“但是在C中我们可领会到尊者Ritchie的智慧。我们与操作系统和机器合而为一，可以获取无与伦比的性能。“ 
+	   无名师回道：“诚如你言。不过，Unix传统上认为，一行shell脚本胜过万行C程序。” 
+	   程序员冷笑着想悲愤离去。无名师向学生Nabi颌首示意，Nubi在黑板上写下一行shell脚本，问道：“尊敬的程序员，看看这行管道。用纯C实现，是 不是要一万行C代码？“ 
+	   程序员沉吟念诵。最终他承认如此。 
+	   “你需要多长时间来实现和调试那个C程序?"Nubi问道。 
+	   “很长”，来访程序员承认。“但傻子才会干这个而不去完成更有价值的任务。” 
+	   “那么谁更了解Unix传统？”无名师问道。“是写一万行代码的，还是看到任务的无谓而不去编码的？” 
+	   听到此，程序员眼中一亮。
+</p>
+
+
+<p>
+## 文本处理场景
+</p>
+
+<p>
+用来处理文本，或者文本文件内容，比如给多个文件增加注释。
+</p>
+
+<div id="outline-container-orge5ef577" class="outline-2">
+<h2 id="orge5ef577">文件操作</h2>
+</div>
+<div id="outline-container-org74a466d" class="outline-2">
+<h2 id="org74a466d">字符串定义和操作</h2>
+</div>
+<div id="outline-container-org9f7d29b" class="outline-2">
+<h2 id="org9f7d29b">统计功能，或者可代替的简单做法</h2>
+</div>
+<div id="outline-container-orgcad1b28" class="outline-2">
+<h2 id="orgcad1b28">运行简单方便，速度快</h2>
+</div>
+<div id="outline-container-org0b1b7e1" class="outline-2">
+<h2 id="org0b1b7e1">支持正则表达式</h2>
+<div class="outline-text-2" id="text-org0b1b7e1">
+<p>
+候选语言：
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga68229b" class="outline-2">
+<h2 id="orga68229b">shell+awk+sed 等</h2>
+</div>
+<div id="outline-container-org9f43ce4" class="outline-2">
+<h2 id="org9f43ce4">python</h2>
+</div>
+<div id="outline-container-orge24c70d" class="outline-2">
+<h2 id="orge24c70d">perl</h2>
+</div>
+<div id="outline-container-org77d94a8" class="outline-2">
+<h2 id="org77d94a8">php 不清楚如何在没有WebServer的情况下运行，而且linux默认没有这个</h2>
+</div>
+<div id="outline-container-org186e310" class="outline-2">
+<h2 id="org186e310">ruby</h2>
+</div>
+<div id="outline-container-orgecfc06e" class="outline-2">
+<h2 id="orgecfc06e">VBscript等office自带的脚本语言</h2>
+</div>
+<div id="outline-container-org66ca44d" class="outline-2">
+<h2 id="org66ca44d">你熟悉的任何语言</h2>
+<div class="outline-text-2" id="text-org66ca44d">
+<p>
+## 代码，工程管理场景
+</p>
+
+<p>
+用来管理各种工程的更新，编译，打包等
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga5db535" class="outline-2">
+<h2 id="orga5db535">运行方便简单，速度快</h2>
+</div>
+<div id="outline-container-org39b0ce9" class="outline-2">
+<h2 id="org39b0ce9">可以方便调用命令行或者其他程序（用于调用外部工具）</h2>
+</div>
+<div id="outline-container-orga5ae985" class="outline-2">
+<h2 id="orga5ae985">可扩展</h2>
+</div>
+<div id="outline-container-org283531d" class="outline-2">
+<h2 id="org283531d">代码简单</h2>
+<div class="outline-text-2" id="text-org283531d">
+<p>
+候选语言：
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3f5a0d8" class="outline-2">
+<h2 id="org3f5a0d8">shell</h2>
+</div>
+<div id="outline-container-org1011e09" class="outline-2">
+<h2 id="org1011e09">xml(ant, maven&#x2026;)</h2>
+</div>
+<div id="outline-container-org77db3eb" class="outline-2">
+<h2 id="org77db3eb">python</h2>
+</div>
+<div id="outline-container-orgba673e0" class="outline-2">
+<h2 id="orgba673e0">groovy 因为gradle而入选</h2>
+</div>
+<div id="outline-container-org4f8b368" class="outline-2">
+<h2 id="org4f8b368">ruby 因为buildr而入选</h2>
+</div>
+<div id="outline-container-org8e60e01" class="outline-2">
+<h2 id="org8e60e01">你用什么写代码，就用他们管理他们自己</h2>
+<div class="outline-text-2" id="text-org8e60e01">
+<p>
+## 自动化
+</p>
+
+<p>
+用来自动化测试，自动化工作等
+</p>
+</div>
+</div>
+
+<div id="outline-container-org64be396" class="outline-2">
+<h2 id="org64be396">运行方便简单，速度快</h2>
+</div>
+<div id="outline-container-org1c8e848" class="outline-2">
+<h2 id="org1c8e848">可以方便调用命令行或者其他程序</h2>
+</div>
+<div id="outline-container-org444857a" class="outline-2">
+<h2 id="org444857a">代码简单</h2>
+<div class="outline-text-2" id="text-org444857a">
+<p>
+候选语言：
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd9a4be6" class="outline-2">
+<h2 id="orgd9a4be6">shell</h2>
+</div>
+<div id="outline-container-org7dfdd3d" class="outline-2">
+<h2 id="org7dfdd3d">python</h2>
+</div>
+<div id="outline-container-org1bb2b6b" class="outline-2">
+<h2 id="org1bb2b6b">groovy</h2>
+</div>
+<div id="outline-container-orgcec7dec" class="outline-2">
+<h2 id="orgcec7dec">ruby</h2>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: renshuo</p>
+<p class="date">Created: 2019-09-02 一 20:06</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

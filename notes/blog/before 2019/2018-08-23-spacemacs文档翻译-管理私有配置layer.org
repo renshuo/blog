@@ -1,0 +1,20 @@
+** 管理私有配置 layers
+spacemacs 的配置系统足够平滑到可以让你通过不同的方式管理自己的私有 layers。
+
+  1. 使用 space 的 private 目录
+  spacemacs 的 private 目录下的所有文件都会被 git 忽略，可以用来存放你的私有配置 layer。但是这种方式有很大的缺陷：你无法版本管理你的配置文件。
+
+  2. 使用外部 git 仓库
+    
+    这是推荐做法。
+    1. 将.spacemacs 文件放在你的仓库中，layers 目录也放在仓库中，然后在~/下链接 .spacemacs，
+    2. 在.spacemacs 中配置中 dotspacemacs-configuration-layer-path，将路径指向你的 layers 目录所在的目录。
+  
+    还有另外一种使用外部仓库的方式是：
+  
+    1. 在你的仓库中，将.spacemacs 文件重命名为 init.el，或者链接为 init.el 都可以。
+    2. 将你的仓库改名为 .spacemacs.d 并放在~/下。
+    3. 删除~/.spacemacs 文件
+
+  3. 使用自己的 spacemacs 分支
+    clone 一个 spacemacs 的仓库分支，并保存到自己的远端 git 服务中，自己修改配置文件。
