@@ -1,0 +1,20 @@
+** gradle 的多模块配置
+1. gradle 顶层项目，包括 build.gradle 和 settings.gradle 两个文件，build.gradle 中配置 Allprojects，subProjects，在 setttings.gradle 中配置 include，用来包含子项目。
+2. 模块项目中，只有 build.gradle 文件，用来配置剩余内容
+3. kotlin 插件配置，在顶层中配置：
+#+BEGIN_SRC groovy
+plugins {
+  id 'org.jetbrains.kotlin.jvm' version "1.3.41" apply false
+  id 'org.springframework.boot' version '2.1.6.RELEASE' apply false
+  id("io.spring.dependency-management") version "1.0.8.RELEASE" apply false
+  // 这里 apply false 表示引入但不应用在顶层项目中
+}
+#+END_SRC
+在子模块中引入：
+#+BEGIN_SRC gradle
+plugins {
+    id 'application'
+    id 'war'
+    id 'org.jetbrains.kotlin.jvm'
+}
+#+END_SRC

@@ -1,0 +1,98 @@
+*** [2019-08-27 二] [[file:blog/2019/org-mode-notes.org][org-mode 笔记]]                                    :orgmode:
+  1. 运行代码
+  #+BEGIN_SRC emacs-lisp
+  (+ 1 2) ;; C-c C-c
+  #+END_SRC
+  2. 导出
+  #+BEGIN_VERSE
+  C-c C-e 然后选择格式
+  #+END_VERSE
+
+  3. 日期
+  #+BEGIN_EXAMPLE
+  C-c ! 然后输入时间，即可插入非活动时间，非活动时间不在 agenda 上显示 [2019-08-27 二 12:12]
+  C-c . 插入活动时间  <2019-08-27 二 12:00>
+  C-u C-c ./! 直接插入带有时间的日期，其他同上两条 <2019-08-27 二 10:15> [2019-08-27 二 10:15]
+  C-c < 插入当前时间戳 <2019-08-26 一>
+  C-c > 打开 agenda
+  S-<left>/<right> 减少/增加 1 天
+  S-<up>/<down> 减少/增加光标所在位置时间字符串的数字
+  #+END_EXAMPLE
+
+  4. calendar 中的命令
+  #+BEGIN_EXAMPLE
+  . 回到今天
+  C-f/b 向前/向后 一天
+  C-n/p 向前/向后 一周
+  M-{/} 向前/向后 一月
+  C-x [/] 向前/向后 一年
+  >/< 滚动一个月
+  M-v/C-v 滚动 3 个月
+  C-a/e 到一周的开始/结束
+  M-a/e 到一月的开始/结束
+  M-</> 到一年的开始/结束
+  #+END_EXAMPLE
+
+  5. 快捷段落
+  #+BEGIN_EXAMPLE
+  s	#+BEGIN_SRC ... #+END_SRC
+  e	#+BEGIN_EXAMPLE ... #+END_EXAMPLE
+  q	#+BEGIN_QUOTE ... #+END_QUOTE
+  v	#+BEGIN_VERSE ... #+END_VERSE
+  c	#+BEGIN_CENTER ... #+END_CENTER
+  l	#+BEGIN_LaTeX ... #+END_LaTeX
+  L	#+LaTeX:
+  h	#+BEGIN_HTML ... #+END_HTML
+  H	#+HTML:
+  a	#+BEGIN_ASCII ... #+END_ASCII
+  A	#+ASCII:
+  i	#+INDEX: line
+  I	#+INCLUDE: linee
+  #+END_EXAMPLE
+
+  用法如下，输入
+  #+BEGIN_EXAMPLE
+  <e
+  #+END_EXAMPLE
+  然后按 tab 键，即可补全为
+  #+BEGIN_SRC 
+  #+BEGIN_EXAMPLE
+
+  #+END_EXAMPLE
+  #+END_SRC
+
+  6. 列表
+  有序的用 
+  #+BEGIN_EXAMPLE
+  1.  2. 3. ...
+  #+END_EXAMPLE
+  无序的用
+  #+BEGIN_EXAMPLE
+  + - *
+  #+END_EXAMPLE
+  "*"会冲突
+  + a
+  - b
+    - c
+  + d
+
+  7. 字体相关
+  #+BEGIN_EXAMPLE
+  *bold*
+  /italic/
+  _underlined_
+  =verbatim=
+  ~code~
+  ----- 5 个以上相当于水平线
+  #+END_EXAMPLE
+
+  8. 表格
+  #+CAPTION: 例子表格
+  | name |        电话 | 年龄 |
+  |------+-------------+------|
+  | /    |           < |   >  |
+  | 任硕 | 18092099708 |   36 |
+  | 刘薇 | 18991844917 |   39 |
+  |      |             |      |
+  |------+-------------+------|
+

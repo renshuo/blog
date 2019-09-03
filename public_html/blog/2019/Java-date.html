@@ -6,7 +6,7 @@
 <!-- 2019-09-03 二 11:06 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Sitemap</title>
+<title></title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="renshuo" />
 <style type="text/css">
@@ -230,39 +230,29 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">Sitemap</h1>
-<ul class="org-ul">
-<li>emacs
-<ul class="org-ul">
-<li><a href="emacs/orgmode.html">2019-09-03 orgmode</a></li>
-</ul></li>
-<li>blog
-<ul class="org-ul">
-<li>2019
-<ul class="org-ul">
-<li><a href="blog/2019/slf4j-readme.html">2019-09-03 slf4j-readme</a></li>
-<li><a href="blog/2019/gradle-scala.html">2019-09-03 gradle-scala</a></li>
-<li><a href="blog/2019/org-mode-notes.html">2019-09-03 org-mode-notes</a></li>
-<li><a href="blog/2019/gradle-module.html">2019-09-03 gradle-module</a></li>
-<li><a href="blog/2019/Java-date.html">2019-09-03 Java-date</a></li>
-</ul></li>
-<li>before 2019
-<ul class="org-ul">
-<li><a href="blog/before 2019/2018-08-23-spacemacs 文档翻译-管理私有配置 layer.html">2019-09-02 2018-08-23-spacemacs 文档翻译-管理私有配置 layer</a></li>
-<li><a href="blog/before 2019/2018-07-23-mongodb 在 web 开发中的数据管理经验.html">2018-07-23 2018-07-23-mongodb 在 web 开发中的数据管理经验</a></li>
-<li><a href="blog/before 2019/2015-11-11-netcat 使用说明.html">2015-11-11 2015-11-11-netcat 使用说明</a></li>
-<li><a href="blog/before 2019/2015-11-09-gentoo 编译 libgpod 失败.html">2015-11-09 2015-11-09-gentoo 编译 libgpod 失败</a></li>
-<li><a href="blog/before 2019/2014-08-10-how-to-select-language.html">2015-11-05 2014-08-10-how-to-select-language</a></li>
-<li><a href="blog/before 2019/2014-06-26-elisp 开发笔记.html">2015-11-05 2014-06-26-elisp 开发笔记</a></li>
-<li><a href="blog/before 2019/2014-06-16-eclipse 插件.html">2015-11-05 2014-06-16-eclipse 插件</a></li>
-<li><a href="blog/before 2019/2014-05-29-java 范型继承.html">2015-11-05 2014-05-29-java 范型继承</a></li>
-<li><a href="blog/before 2019/2014-05-28-santi.html">2015-11-05 2014-05-28-santi</a></li>
-<li><a href="blog/before 2019/2014-05-20-pidgin-lwqq.html">2015-11-05 2014-05-20-pidgin-lwqq</a></li>
-<li><a href="blog/before 2019/2017-01-14-svn 服务端配置.html">2014-12-02 2017-01-14-svn 服务端配置</a></li>
-</ul></li>
-</ul></li>
-<li><a href="index.html">2019-09-03 index</a></li>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orga9aaa1e">java8 之后的日期问题</a></li>
 </ul>
+</div>
+</div>
+<div id="outline-container-orga9aaa1e" class="outline-2">
+<h2 id="orga9aaa1e">java8 之后的日期问题</h2>
+<div class="outline-text-2" id="text-orga9aaa1e">
+<blockquote>
+<p>
+java8 之后的日期有这些：<br />
+LocalDate 本地日期，LocalTime 本地时间，LocalDateTime 本地日期时间，Instant 时间戳，Zone* 时区<br />
+正常获取当前时间用 LocalDateTime, 包含毫秒等数据。<br />
+代码测试可以用 Instant，包含有 nano second 信息。<br />
+LocalDateTime 和 Instance 的区别是，前者适用于人类查看。
+<span class="timestamp-wrapper"><span class="timestamp">[2019-08-22 四] </span></span> 但是发现 jodatime 还是比 java 的好用
+</p>
+</blockquote>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: renshuo</p>

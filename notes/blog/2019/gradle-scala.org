@@ -1,0 +1,8 @@
+*** [2019-08-29 四] gradle 中配置 scala
+1. plugins 中引用 scala 插件
+2. dependencies 中引用：
+#+BEGIN_SRC groovy
+    compile "org.scala-lang:scala-library:2.12.8"
+    compile "org.scala-lang:scala-compiler:2.12.8"
+    compile "org.scala-lang:scala-reflect:2.12.8"
+#+END_SRC

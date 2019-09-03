@@ -1,0 +1,66 @@
+*** [2019-08-30 五] [[file:blog/2019/slf4j-readme.org][slf4j 完整使用说明]] 的完整使用说明
+slf4j 是一个代理，后端可以使用 slf4jSimple, log4j, log4j2, logback 等。
+#+BEGIN_SRC groovy
+implementation "org.slf4j:slf4j-api:1.7.28" //slf4j 的 api 接口，即代理接口
+// implementation "org.slf4j:slf4j-simple:1.7.28"
+// implementation "ch.qos.logback:logback-classic:1.2.3"
+// implementation "org.slf4j:slf4j-log4j12:1.7.28"
+// implementation "org.slf4j:slf4j-jdk14:1.7.28"
+// implementation "org.apache.logging.log4j:log4j-slf4j-impl:2.12.1"
+#+END_SRC
+
+经查证，slf4j+log4j2 应该是最优组合。
+log4j2 配置如下：
+yaml 配置需要依赖以下包：
+#+BEGIN_SRC groovy
+    implementation "com.fasterxml.jackson.core:jackson-databind:2.9.9.3"
+    implementation "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.9.9"
+#+END_SRC
+yaml 配置如下：
+#+BEGIN_SRC yaml
+Configuration:
+  status: INFO
+  name: YAMLConfigTest
+  properties:
+    property:
+      name: filename
+      value: log/caiji2.log
+  thresholdFilter:
+    level: debug
+
+  appenders:
+    Console:
+      name: STDOUT
+      PatternLayout:
+        Pattern: "%d %p %C{1.} [%t] %m%n"
+    File:
+      name: File
+      fileName: ${filename}
+      PatternLayout:
+        Pattern: "%d %p %C{1.} [%t] %m%n"
+      Filters:
+        ThresholdFilter:
+          level: DEBUG
+
+  Loggers:
+    logger:
+      -
+        name: org.apache.logging.log4j.test1
+        level: debug
+        additivity: false
+        AppenderRef:
+          ref: STDOUT
+      -
+        name: org.apache.logging.log4j.test2
+        level: debug
+        additivity: false
+        AppenderRef:
+          ref: File
+      -
+        name: io.netty.handler.codec.http.websocketx
+        level: info
+    Root:
+      level: DEBUG
+      AppenderRef:
+        ref: STDOUT
+#+END_SRC

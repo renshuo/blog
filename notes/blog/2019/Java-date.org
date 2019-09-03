@@ -1,0 +1,9 @@
+** java8 之后的日期问题
+   #+BEGIN_QUOTE
+      java8 之后的日期有这些：\\
+      LocalDate 本地日期，LocalTime 本地时间，LocalDateTime 本地日期时间，Instant 时间戳，Zone* 时区\\
+      正常获取当前时间用 LocalDateTime, 包含毫秒等数据。\\
+      代码测试可以用 Instant，包含有 nano second 信息。\\
+      LocalDateTime 和 Instance 的区别是，前者适用于人类查看。
+      [2019-08-22 四] 但是发现 jodatime 还是比 java 的好用
+   #+END_QUOTE
