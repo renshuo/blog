@@ -4,6 +4,7 @@
      + [[file:emacs/orgmode.org][2019-09-03 orgmode]]
    + blog
      + 2019
+       + [[file:blog/2019/git-store-password.org][2019-09-03 git-store-password]]
        + [[file:blog/2019/slf4j-readme.org][2019-09-03 slf4j-readme]]
        + [[file:blog/2019/gradle-scala.org][2019-09-03 gradle-scala]]
        + [[file:blog/2019/org-mode-notes.org][2019-09-03 org-mode-notes]]
