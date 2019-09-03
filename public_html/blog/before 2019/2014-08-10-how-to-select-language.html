@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-09-02 一 20:06 -->
+<!-- 2019-09-03 二 10:46 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -179,6 +179,8 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
+<link rel="stylesheet" type="text/css" href="/public_html/theme/css/worg.css"/>
+                       <link rel="stylesheet" type="text/css" href="theme/css/worg.css"/>
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -232,35 +234,35 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orge5ef577">文件操作</a></li>
-<li><a href="#org74a466d">字符串定义和操作</a></li>
-<li><a href="#org9f7d29b">统计功能，或者可代替的简单做法</a></li>
-<li><a href="#orgcad1b28">运行简单方便，速度快</a></li>
-<li><a href="#org0b1b7e1">支持正则表达式</a></li>
-<li><a href="#orga68229b">shell+awk+sed 等</a></li>
-<li><a href="#org9f43ce4">python</a></li>
-<li><a href="#orge24c70d">perl</a></li>
-<li><a href="#org77d94a8">php 不清楚如何在没有WebServer的情况下运行，而且linux默认没有这个</a></li>
-<li><a href="#org186e310">ruby</a></li>
-<li><a href="#orgecfc06e">VBscript等office自带的脚本语言</a></li>
-<li><a href="#org66ca44d">你熟悉的任何语言</a></li>
-<li><a href="#orga5db535">运行方便简单，速度快</a></li>
-<li><a href="#org39b0ce9">可以方便调用命令行或者其他程序（用于调用外部工具）</a></li>
-<li><a href="#orga5ae985">可扩展</a></li>
-<li><a href="#org283531d">代码简单</a></li>
-<li><a href="#org3f5a0d8">shell</a></li>
-<li><a href="#org1011e09">xml(ant, maven&#x2026;)</a></li>
-<li><a href="#org77db3eb">python</a></li>
-<li><a href="#orgba673e0">groovy 因为gradle而入选</a></li>
-<li><a href="#org4f8b368">ruby 因为buildr而入选</a></li>
-<li><a href="#org8e60e01">你用什么写代码，就用他们管理他们自己</a></li>
-<li><a href="#org64be396">运行方便简单，速度快</a></li>
-<li><a href="#org1c8e848">可以方便调用命令行或者其他程序</a></li>
-<li><a href="#org444857a">代码简单</a></li>
-<li><a href="#orgd9a4be6">shell</a></li>
-<li><a href="#org7dfdd3d">python</a></li>
-<li><a href="#org1bb2b6b">groovy</a></li>
-<li><a href="#orgcec7dec">ruby</a></li>
+<li><a href="#orgeb95fc3">文件操作</a></li>
+<li><a href="#orged4d44c">字符串定义和操作</a></li>
+<li><a href="#orga11b94c">统计功能，或者可代替的简单做法</a></li>
+<li><a href="#orgaf2a5a3">运行简单方便，速度快</a></li>
+<li><a href="#org25034d4">支持正则表达式</a></li>
+<li><a href="#org1749674">shell+awk+sed 等</a></li>
+<li><a href="#orgba53ad7">python</a></li>
+<li><a href="#orgb7abb0f">perl</a></li>
+<li><a href="#org7663730">php 不清楚如何在没有WebServer的情况下运行，而且linux默认没有这个</a></li>
+<li><a href="#orgac0b714">ruby</a></li>
+<li><a href="#org06d5b0d">VBscript等office自带的脚本语言</a></li>
+<li><a href="#org24270ba">你熟悉的任何语言</a></li>
+<li><a href="#org19c1e01">运行方便简单，速度快</a></li>
+<li><a href="#org9f0e118">可以方便调用命令行或者其他程序（用于调用外部工具）</a></li>
+<li><a href="#orgbbb456d">可扩展</a></li>
+<li><a href="#orgd45bb41">代码简单</a></li>
+<li><a href="#org7c9ad45">shell</a></li>
+<li><a href="#org8ade41e">xml(ant, maven&#x2026;)</a></li>
+<li><a href="#orgef84d83">python</a></li>
+<li><a href="#org011e2bf">groovy 因为gradle而入选</a></li>
+<li><a href="#org697d9ec">ruby 因为buildr而入选</a></li>
+<li><a href="#org633692f">你用什么写代码，就用他们管理他们自己</a></li>
+<li><a href="#org0398a8c">运行方便简单，速度快</a></li>
+<li><a href="#orga7b077d">可以方便调用命令行或者其他程序</a></li>
+<li><a href="#orgdbb5aec">代码简单</a></li>
+<li><a href="#orgc4c238c">shell</a></li>
+<li><a href="#org3231e31">python</a></li>
+<li><a href="#org99d061c">groovy</a></li>
+<li><a href="#orgd09e7ac">ruby</a></li>
 </ul>
 </div>
 </div>
@@ -290,48 +292,48 @@ for the JavaScript code in this tag.
 用来处理文本，或者文本文件内容，比如给多个文件增加注释。
 </p>
 
-<div id="outline-container-orge5ef577" class="outline-2">
-<h2 id="orge5ef577">文件操作</h2>
+<div id="outline-container-orgeb95fc3" class="outline-2">
+<h2 id="orgeb95fc3">文件操作</h2>
 </div>
-<div id="outline-container-org74a466d" class="outline-2">
-<h2 id="org74a466d">字符串定义和操作</h2>
+<div id="outline-container-orged4d44c" class="outline-2">
+<h2 id="orged4d44c">字符串定义和操作</h2>
 </div>
-<div id="outline-container-org9f7d29b" class="outline-2">
-<h2 id="org9f7d29b">统计功能，或者可代替的简单做法</h2>
+<div id="outline-container-orga11b94c" class="outline-2">
+<h2 id="orga11b94c">统计功能，或者可代替的简单做法</h2>
 </div>
-<div id="outline-container-orgcad1b28" class="outline-2">
-<h2 id="orgcad1b28">运行简单方便，速度快</h2>
+<div id="outline-container-orgaf2a5a3" class="outline-2">
+<h2 id="orgaf2a5a3">运行简单方便，速度快</h2>
 </div>
-<div id="outline-container-org0b1b7e1" class="outline-2">
-<h2 id="org0b1b7e1">支持正则表达式</h2>
-<div class="outline-text-2" id="text-org0b1b7e1">
+<div id="outline-container-org25034d4" class="outline-2">
+<h2 id="org25034d4">支持正则表达式</h2>
+<div class="outline-text-2" id="text-org25034d4">
 <p>
 候选语言：
 </p>
 </div>
 </div>
 
-<div id="outline-container-orga68229b" class="outline-2">
-<h2 id="orga68229b">shell+awk+sed 等</h2>
+<div id="outline-container-org1749674" class="outline-2">
+<h2 id="org1749674">shell+awk+sed 等</h2>
 </div>
-<div id="outline-container-org9f43ce4" class="outline-2">
-<h2 id="org9f43ce4">python</h2>
+<div id="outline-container-orgba53ad7" class="outline-2">
+<h2 id="orgba53ad7">python</h2>
 </div>
-<div id="outline-container-orge24c70d" class="outline-2">
-<h2 id="orge24c70d">perl</h2>
+<div id="outline-container-orgb7abb0f" class="outline-2">
+<h2 id="orgb7abb0f">perl</h2>
 </div>
-<div id="outline-container-org77d94a8" class="outline-2">
-<h2 id="org77d94a8">php 不清楚如何在没有WebServer的情况下运行，而且linux默认没有这个</h2>
+<div id="outline-container-org7663730" class="outline-2">
+<h2 id="org7663730">php 不清楚如何在没有WebServer的情况下运行，而且linux默认没有这个</h2>
 </div>
-<div id="outline-container-org186e310" class="outline-2">
-<h2 id="org186e310">ruby</h2>
+<div id="outline-container-orgac0b714" class="outline-2">
+<h2 id="orgac0b714">ruby</h2>
 </div>
-<div id="outline-container-orgecfc06e" class="outline-2">
-<h2 id="orgecfc06e">VBscript等office自带的脚本语言</h2>
+<div id="outline-container-org06d5b0d" class="outline-2">
+<h2 id="org06d5b0d">VBscript等office自带的脚本语言</h2>
 </div>
-<div id="outline-container-org66ca44d" class="outline-2">
-<h2 id="org66ca44d">你熟悉的任何语言</h2>
-<div class="outline-text-2" id="text-org66ca44d">
+<div id="outline-container-org24270ba" class="outline-2">
+<h2 id="org24270ba">你熟悉的任何语言</h2>
+<div class="outline-text-2" id="text-org24270ba">
 <p>
 ## 代码，工程管理场景
 </p>
@@ -342,42 +344,42 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orga5db535" class="outline-2">
-<h2 id="orga5db535">运行方便简单，速度快</h2>
+<div id="outline-container-org19c1e01" class="outline-2">
+<h2 id="org19c1e01">运行方便简单，速度快</h2>
 </div>
-<div id="outline-container-org39b0ce9" class="outline-2">
-<h2 id="org39b0ce9">可以方便调用命令行或者其他程序（用于调用外部工具）</h2>
+<div id="outline-container-org9f0e118" class="outline-2">
+<h2 id="org9f0e118">可以方便调用命令行或者其他程序（用于调用外部工具）</h2>
 </div>
-<div id="outline-container-orga5ae985" class="outline-2">
-<h2 id="orga5ae985">可扩展</h2>
+<div id="outline-container-orgbbb456d" class="outline-2">
+<h2 id="orgbbb456d">可扩展</h2>
 </div>
-<div id="outline-container-org283531d" class="outline-2">
-<h2 id="org283531d">代码简单</h2>
-<div class="outline-text-2" id="text-org283531d">
+<div id="outline-container-orgd45bb41" class="outline-2">
+<h2 id="orgd45bb41">代码简单</h2>
+<div class="outline-text-2" id="text-orgd45bb41">
 <p>
 候选语言：
 </p>
 </div>
 </div>
 
-<div id="outline-container-org3f5a0d8" class="outline-2">
-<h2 id="org3f5a0d8">shell</h2>
+<div id="outline-container-org7c9ad45" class="outline-2">
+<h2 id="org7c9ad45">shell</h2>
 </div>
-<div id="outline-container-org1011e09" class="outline-2">
-<h2 id="org1011e09">xml(ant, maven&#x2026;)</h2>
+<div id="outline-container-org8ade41e" class="outline-2">
+<h2 id="org8ade41e">xml(ant, maven&#x2026;)</h2>
 </div>
-<div id="outline-container-org77db3eb" class="outline-2">
-<h2 id="org77db3eb">python</h2>
+<div id="outline-container-orgef84d83" class="outline-2">
+<h2 id="orgef84d83">python</h2>
 </div>
-<div id="outline-container-orgba673e0" class="outline-2">
-<h2 id="orgba673e0">groovy 因为gradle而入选</h2>
+<div id="outline-container-org011e2bf" class="outline-2">
+<h2 id="org011e2bf">groovy 因为gradle而入选</h2>
 </div>
-<div id="outline-container-org4f8b368" class="outline-2">
-<h2 id="org4f8b368">ruby 因为buildr而入选</h2>
+<div id="outline-container-org697d9ec" class="outline-2">
+<h2 id="org697d9ec">ruby 因为buildr而入选</h2>
 </div>
-<div id="outline-container-org8e60e01" class="outline-2">
-<h2 id="org8e60e01">你用什么写代码，就用他们管理他们自己</h2>
-<div class="outline-text-2" id="text-org8e60e01">
+<div id="outline-container-org633692f" class="outline-2">
+<h2 id="org633692f">你用什么写代码，就用他们管理他们自己</h2>
+<div class="outline-text-2" id="text-org633692f">
 <p>
 ## 自动化
 </p>
@@ -388,37 +390,37 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org64be396" class="outline-2">
-<h2 id="org64be396">运行方便简单，速度快</h2>
+<div id="outline-container-org0398a8c" class="outline-2">
+<h2 id="org0398a8c">运行方便简单，速度快</h2>
 </div>
-<div id="outline-container-org1c8e848" class="outline-2">
-<h2 id="org1c8e848">可以方便调用命令行或者其他程序</h2>
+<div id="outline-container-orga7b077d" class="outline-2">
+<h2 id="orga7b077d">可以方便调用命令行或者其他程序</h2>
 </div>
-<div id="outline-container-org444857a" class="outline-2">
-<h2 id="org444857a">代码简单</h2>
-<div class="outline-text-2" id="text-org444857a">
+<div id="outline-container-orgdbb5aec" class="outline-2">
+<h2 id="orgdbb5aec">代码简单</h2>
+<div class="outline-text-2" id="text-orgdbb5aec">
 <p>
 候选语言：
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgd9a4be6" class="outline-2">
-<h2 id="orgd9a4be6">shell</h2>
+<div id="outline-container-orgc4c238c" class="outline-2">
+<h2 id="orgc4c238c">shell</h2>
 </div>
-<div id="outline-container-org7dfdd3d" class="outline-2">
-<h2 id="org7dfdd3d">python</h2>
+<div id="outline-container-org3231e31" class="outline-2">
+<h2 id="org3231e31">python</h2>
 </div>
-<div id="outline-container-org1bb2b6b" class="outline-2">
-<h2 id="org1bb2b6b">groovy</h2>
+<div id="outline-container-org99d061c" class="outline-2">
+<h2 id="org99d061c">groovy</h2>
 </div>
-<div id="outline-container-orgcec7dec" class="outline-2">
-<h2 id="orgcec7dec">ruby</h2>
+<div id="outline-container-orgd09e7ac" class="outline-2">
+<h2 id="orgd09e7ac">ruby</h2>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: renshuo</p>
-<p class="date">Created: 2019-09-02 一 20:06</p>
+<p class="date">Created: 2019-09-03 二 10:46</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

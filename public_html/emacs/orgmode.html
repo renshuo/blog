@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-09-02 一 19:54 -->
+<!-- 2019-09-03 二 10:46 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -179,6 +179,8 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
+<link rel="stylesheet" type="text/css" href="/public_html/theme/css/worg.css"/>
+                       <link rel="stylesheet" type="text/css" href="theme/css/worg.css"/>
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -228,115 +230,34 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<p>
-public interface A&lt;T extends String&gt;{
-  public void test(T data);
-}
-</p>
-
-<p>
-这里定义了一个接口，test方法可以接受String类型以及String的所有子类型。
-</p>
-
-<p>
-public class C1 implements A&lt;String1&gt;{
-  public void test(String1 data){
-  }
-}
-</p>
-
-<p>
-类C1实现了接口A，并指定了可处理的类型为String1（String1是String的子类）。
-</p>
-
-<p>
-public class C1&lt;T1 extends String1&gt; implements A&lt;T1&gt; {
-  public void test(T1 data){
-  }
-}
-</p>
-
-<p>
-这里定义C1实现了A接口，可以处理的类型T1是String1的子类型，所以在test方法内，data可以直接当作String1使用，可以直接调用String1的方法。
-C1指定T1类型的目的是，C1的子类也可以继承T1类型，可以决定是处理String1还是String1的某个子类型
-</p>
-
-<p>
-public class C2&lt;String2&gt; implements A&lt;String2&gt;{
-  public void test(String2 data){
-  };
-}
-这个类只能处理String2类型。
-</p>
-
-<p>
-public class C3&lt;T2 extends String2&gt; impments A&lt;T2&gt;{
-}
-这个则和C1类似，可以处理String2的所有子类型
-</p>
-
-
-<p>
-public interface A{
-  public void test(String data);
-}
-</p>
-
-<p>
-public class C1 implements A{
-  public void test(String data);
-  }
-}
-</p>
-
-<p>
-C1只能处理String类型，如果要处理String的子 类型，则需要做类型检查和强制转换：
-</p>
-
-<p>
-public void test(String data){
-  if (data instanceof String1){
-    ((String1)data).funInString1();
-  }else{
-    data.funInString();
-  }
-}
-</p>
-
-
-<p>
-或者，当子类覆盖父类的方法时，子类知道自己要处理的类型是String1类型，则要强制转换。但是“子类知道自己要处理的类型是String1”这件事情在代码中根本不能体现出来，如果没有写强制转换时，子类根本不知道自己处理的类型到底是String的那个子类型。
-</p>
-
-<p>
-@Override
-public void test(String data){
-  //假设这里知道data的具体子类型是String1
-  ((String1)data).funInString1();	
-}
-</p>
-
-<p>
-使用的时候，不清楚到底传String1类型，还是String2类型？因为接口能看到的只是String类型。
-</p>
-
-<p>
-{
-  String1 data = new String1();
-  new C1().test(data); // 这里看到test方法要求传入String类型，但是C1实际上只能处理String1类型。
-}
-</p>
-
-<p>
-{
-  String2 data = new String2();
-  new C1().test(data); // 这里编译能过，但是执行时会抛ClassCastException
-}
-</p>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org17e2b07">org-mode 笔记</a>
+<ul>
+<li><a href="#org65e9768">link 快捷键</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org17e2b07" class="outline-2">
+<h2 id="org17e2b07">org-mode 笔记</h2>
+<div class="outline-text-2" id="text-org17e2b07">
+</div><div id="outline-container-org65e9768" class="outline-3">
+<h3 id="org65e9768">link 快捷键</h3>
+<div class="outline-text-3" id="text-org65e9768">
+<ol class="org-ol">
+<li>C-c C-l 创建链接，或者修改链接</li>
+</ol>
+</div>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: renshuo</p>
-<p class="date">Created: 2019-09-02 一 19:54</p>
+<p class="date">Created: 2019-09-03 二 10:46</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

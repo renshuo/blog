@@ -1,5 +1,7 @@
 #+TITLE: Sitemap
 
+   + emacs
+     + [[file:emacs/orgmode.org][2019-09-03 orgmode]]
    + blog
      + before 2019
        + [[file:blog/before 2019/2018-08-23-spacemacs 文档翻译-管理私有配置 layer.org][2019-09-02 2018-08-23-spacemacs 文档翻译-管理私有配置 layer]]
@@ -13,4 +15,4 @@
        + [[file:blog/before 2019/2014-05-28-santi.org][2015-11-05 2014-05-28-santi]]
        + [[file:blog/before 2019/2014-05-20-pidgin-lwqq.org][2015-11-05 2014-05-20-pidgin-lwqq]]
        + [[file:blog/before 2019/2017-01-14-svn 服务端配置.org][2014-12-02 2017-01-14-svn 服务端配置]]
-   + [[file:index.org][2019-09-02 index]]
+   + [[file:index.org][2019-09-03 index]]

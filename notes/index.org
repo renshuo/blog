@@ -1,5 +1,7 @@
 ** 工作相关
 ** Java 技术
+** emacs
+*** [[file:emacs/orgmode.org][orgmode 笔记]]
 * 日志
 ** 2014
 *** [2018-08-23] [[file:blog/before%202019/2018-08-23-spacemacs%E6%96%87%E6%A1%A3%E7%BF%BB%E8%AF%91-%E7%AE%A1%E7%90%86%E7%A7%81%E6%9C%89%E9%85%8D%E7%BD%AElayer.org][spacemacs 文档翻译-管理私有配置]]
