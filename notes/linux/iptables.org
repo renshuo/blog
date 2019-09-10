@@ -1,0 +1,7 @@
+* 配置 iptables，将 Linux 作为路由器
+** 方法 1，直接配置 nat 转发
+#+BEGIN_SRC 
+*nat
+-A POSTROUTING -s 192.168.1.2/24 -o enp0s20f0u7u2 -j MASQUERADE
+#+END_SRC
+将 192.168.1.2 来源的请求，转发到 enp0s20f0u7u2 接口中，并做地址转换
