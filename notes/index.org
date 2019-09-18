@@ -2,6 +2,7 @@
 ** Java 技术
 ** emacs
 *** [[file:emacs/orgmode.org][orgmode 笔记]]
+*** [[file:emacs/spacemacs_isync_mu4e.org][spacemacs 中配置 mu4e + isync]]
 ** Linux 相关
 *** [[file:linux/iptables.org][iptables 配置转发，将 Linux 变成路由器]]
 * 日记

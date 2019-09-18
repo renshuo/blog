@@ -1,0 +1,110 @@
+* 在 spacemacs 中管理邮件
+** 邮件同步：isync
+1. 安装 isync
+2. 配置 ~/.mbsyncrc
+#+BEGIN_SRC shell
+IMAPAccount renshuoo
+Host imap.qq.com
+User renshuoo@qq.com
+Pass ******
+# To store the password in an encrypted file use PassCmd instead of Pass
+# PassCmd "gpg2 -q --for-your-eyes-only --no-tty -d ~/.mailpass.gpg"
+#
+# Use SSL
+SSLType IMAPS
+# The following line should work. If get certificate errors, uncomment the two following lines and read the "Troubleshooting" section.
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+#CertificateFile ~/.cert/imap.gmail.com.pem
+#CertificateFile ~/.cert/Equifax_Secure_CA.pem
+
+IMAPStore qqmail-remote
+Account renshuoo
+
+MaildirStore qqmail-local
+Subfolders Verbatim
+# The trailing "/" is important
+Path /home/bin/emacs/.mail/qqmail/
+Inbox /home/bin/emacs/.mail/qqmail/Inbox
+
+Channel qqmail
+Master :qqmail-remote:
+Slave :qqmail-local:
+# Exclude everything under the internal [Gmail] folder, except the interesting folders
+Patterns * ![Gmail]* "[Gmail]/Sent Mail" "[Gmail]/Starred" "[Gmail]/All Mail"
+# Or include everything
+#Patterns *
+# Automatically create missing mailboxes, both locally and on the server
+Create Both
+# Save the synchronization state files in the relevant directory
+SyncState *
+#+END_SRC
+
+3. 自动同步脚本:
+#+BEGIN_SRC shell
+#!/bin/sh
+export HOME=/home/bin/emacs
+
+/usr/bin/mbsync -Va 
+/usr/bin/mu index -m ~/.mail/qqmail
+# mu 是用来给邮件做 index 的
+#+END_SRC
+
+4. systemd 定时启动配置:
+#+BEGIN_SRC shell
+#~/.config/systemd/user/mbsync.service
+[Unit]
+Description=Mailbox synchronization service
+
+[Service]
+Type=oneshot
+ExecStart=/home/bin/emacs/isync.sh
+#+END_SRC
+
+#+BEGIN_SRC shell
+#~/.config/systemd/user/mbsync.timer
+[Unit]
+Description= Mailbox sync timer
+
+[Timer]
+OnBootSec=2s
+OnUnitActiveSec=5m
+Unit=mbsync.service
+
+[Install]
+WantedBy=timers.target
+#+END_SRC
+
+** 配置 mu4e
+1. 在 layer 配置中添加 mu4e
+2. 在 init.el 的 user 配置段中配置 mu4e
+#+BEGIN_SRC elisp
+;; user-config 
+  (setq mu4e-maildir "~/.mail/qqmail/"
+        mu4e-sent-folder "/Sent Messages"
+        mu4e-drafts-folder "/Drafts"
+        mu4e-trash-folder "/Deleted Messages"
+        mu4e-refile-folder "/Archive"
+        mu4e-get-mail-command "mbsync -a"
+        mu4e-update-interval nil
+        mu4e-compose-signature-auto-include nil
+        mu4e-view-show-images t
+        mu4e-view-show-addresses t
+        mu4e-change-filenames-when-moving t ;; for fix UID is 3 beyond highest assigned UID 1,
+        ;; see https://stackoverflow.com/questions/39513469/mbsync-error-uid-is-beyond-highest-assigned-uid
+
+        user-mail-address "renshuoo@qq.com"
+        user-full-name "Ren Shuo"
+
+        message-send-mail-function 'smtpmail-send-it
+        smtpmail-stream-type 'starttls
+        smtpmail-default-smtp-server "smtp.qq.com"
+        smtpmail-smtp-server "smtp.qq.com"
+        smtpmail-smtp-service 587
+        )
+  (setq mu4e-enable-notifications t)
+#+END_SRC
+
+
+** 使用 mu4e
+1. 打开 mu4e 界面：M-m a M
+
