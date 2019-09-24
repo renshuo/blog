@@ -1,4 +1,6 @@
 ** 工作相关
+*** [[file:work/influxdb-base.org][influxdb 基础操作]]
+*** [[file:work/postgreSql-base.org][postgreSql 基础操作]]
 ** Java 技术
 *** [[file:java/java-new-feature.org][java 新特性]]
 ** emacs

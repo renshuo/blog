@@ -1,0 +1,28 @@
+* 安装
+1. linux 系统本地安装
+2. docker
+
+* 启动
+根据不同的安装方式，使用对应的启动过程。
+
+* 创建数据库
+创建 mydb1 数据库，postgre 的默认用户是 postgres, 没有密码
+`createdb -U postgres mydb1`
+
+* 访问数据库
+** psql 命令
+类似 mysql 的 mysql 命令，或者 oracle 的 plsql 命令。
+
+1. 创建新用户/角色
+`create role sren with superuser createdb createrole login`
+2. 创建数据库
+`create databse sren`
+
+* json 格式的使用方法
+** 创建 json 字段表：
+`create table test1(jdoc jsonb);`
+
+** 存储 json 数据
+`insert into test1  values('{"a" : 1, "b": 2}');`
+
+** 查询 json 数据

@@ -1,0 +1,20 @@
+* 安装
+1. linux 系统本地安装
+2. docker
+
+* 启动
+根据不同的安装方式，使用对应的启动过程。
+
+* 创建数据库
+`create database test1`
+
+
+* 数据操作
+1. 插入数据： `insert test1,server=170,node=dv1,channel=c1 cpu=1,mem=2`
+2. 查询数据： `select * from test1 where channel='c1'`
+
+* series
+insert语句后，test1是数据库名，server=170,node=dv1,channel=c1是series信息，是用来区分数据类的信息，类似传统的表名。 cpu=1,mem=2是具体数据。
+
+1. 查看序列 `show series`
+
