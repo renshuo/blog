@@ -1,5 +1,6 @@
 ** 工作相关
 ** Java 技术
+*** [[file:java/java-new-feature.org][java 新特性]]
 ** emacs
 *** [[file:emacs/orgmode.org][orgmode 笔记]]
 *** [[file:emacs/spacemacs_isync_mu4e.org][spacemacs 中配置 mu4e + isync]]

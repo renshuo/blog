@@ -6,7 +6,7 @@
 <!-- 2019-09-24 二 11:20 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Sitemap</title>
+<title></title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="renshuo" />
 <style type="text/css">
@@ -231,49 +231,143 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">Sitemap</h1>
-<ul class="org-ul">
-<li>java
-<ul class="org-ul">
-<li><a href="java/java-new-feature.html">2019-09-24 java-new-feature</a></li>
-</ul></li>
-<li>linux
-<ul class="org-ul">
-<li><a href="linux/iptables.html">2019-09-10 iptables</a></li>
-</ul></li>
-<li>emacs
-<ul class="org-ul">
-<li><a href="emacs/spacemacs_isync_mu4e.html">2019-09-18 spacemacs<sub>isync</sub><sub>mu4e</sub></a></li>
-<li><a href="emacs/orgmode.html">2019-09-03 orgmode</a></li>
-</ul></li>
-<li>blog
-<ul class="org-ul">
-<li>2019
-<ul class="org-ul">
-<li><a href="blog/2019/git-store-password.html">2019-09-03 git-store-password</a></li>
-<li><a href="blog/2019/slf4j-readme.html">2019-09-03 slf4j-readme</a></li>
-<li><a href="blog/2019/gradle-scala.html">2019-09-03 gradle-scala</a></li>
-<li><a href="blog/2019/org-mode-notes.html">2019-09-03 org-mode-notes</a></li>
-<li><a href="blog/2019/gradle-module.html">2019-09-03 gradle-module</a></li>
-<li><a href="blog/2019/Java-date.html">2019-09-03 Java-date</a></li>
-</ul></li>
-<li>before 2019
-<ul class="org-ul">
-<li><a href="blog/before 2019/2018-08-23-spacemacs 文档翻译-管理私有配置 layer.html">2019-09-02 2018-08-23-spacemacs 文档翻译-管理私有配置 layer</a></li>
-<li><a href="blog/before 2019/2018-07-23-mongodb 在 web 开发中的数据管理经验.html">2018-07-23 2018-07-23-mongodb 在 web 开发中的数据管理经验</a></li>
-<li><a href="blog/before 2019/2015-11-11-netcat 使用说明.html">2015-11-11 2015-11-11-netcat 使用说明</a></li>
-<li><a href="blog/before 2019/2015-11-09-gentoo 编译 libgpod 失败.html">2015-11-09 2015-11-09-gentoo 编译 libgpod 失败</a></li>
-<li><a href="blog/before 2019/2014-08-10-how-to-select-language.html">2015-11-05 2014-08-10-how-to-select-language</a></li>
-<li><a href="blog/before 2019/2014-06-26-elisp 开发笔记.html">2015-11-05 2014-06-26-elisp 开发笔记</a></li>
-<li><a href="blog/before 2019/2014-06-16-eclipse 插件.html">2015-11-05 2014-06-16-eclipse 插件</a></li>
-<li><a href="blog/before 2019/2014-05-29-java 范型继承.html">2015-11-05 2014-05-29-java 范型继承</a></li>
-<li><a href="blog/before 2019/2014-05-28-santi.html">2015-11-05 2014-05-28-santi</a></li>
-<li><a href="blog/before 2019/2014-05-20-pidgin-lwqq.html">2015-11-05 2014-05-20-pidgin-lwqq</a></li>
-<li><a href="blog/before 2019/2017-01-14-svn 服务端配置.html">2014-12-02 2017-01-14-svn 服务端配置</a></li>
-</ul></li>
-</ul></li>
-<li><a href="index.html">2019-09-24 index</a></li>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org5657c70">JDK 新特性</a>
+<ul>
+<li><a href="#org704d17a">JDK8</a></li>
+<li><a href="#orgafc1bc8">lamba</a></li>
+<li><a href="#org92429d5">闭包</a></li>
+<li><a href="#org3e77d92">Stream(jdk8)</a></li>
+<li><a href="#org7a8a219">JDK9</a></li>
+<li><a href="#orge462c14">模块系统</a></li>
+<li><a href="#orgb612631">REPL</a></li>
+<li><a href="#orgfd4c8d5">interface 私有方法</a></li>
+<li><a href="#org543ff41">JDK10</a></li>
+<li><a href="#org0901a47">类型推断 var (jdk10)</a></li>
+<li><a href="#orgae50052">JDK11</a></li>
+<li><a href="#orgbb22fb0">其他</a></li>
+<li><a href="#orgf88a6e3">JIT</a></li>
+<li><a href="#org84804d8">AOT</a></li>
+<li><a href="#org80a55a6">Graal</a></li>
 </ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5657c70" class="outline-2">
+<h2 id="org5657c70">JDK 新特性</h2>
+<div class="outline-text-2" id="text-org5657c70">
+</div><div id="outline-container-org704d17a" class="outline-3">
+<h3 id="org704d17a">JDK8</h3>
+</div>
+<div id="outline-container-orgafc1bc8" class="outline-3">
+<h3 id="orgafc1bc8">lamba</h3>
+</div>
+
+
+<div id="outline-container-org92429d5" class="outline-3">
+<h3 id="org92429d5">闭包</h3>
+<div class="outline-text-3" id="text-org92429d5">
+<p>
+`
+`
+</p>
+</div>
+</div>
+<div id="outline-container-org3e77d92" class="outline-3">
+<h3 id="org3e77d92">Stream(jdk8)</h3>
+<div class="outline-text-3" id="text-org3e77d92">
+<p>
+`
+List&lt;String&gt; sl = new ArrayList&lt;String&gt;();
+&#x2026;
+sl.stream().map(a -&gt; {&#x2026;}).reduce( (r0, i) -&gt; {&#x2026;})
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7a8a219" class="outline-3">
+<h3 id="org7a8a219">JDK9</h3>
+</div>
+<div id="outline-container-orge462c14" class="outline-3">
+<h3 id="orge462c14">模块系统</h3>
+<div class="outline-text-3" id="text-orge462c14">
+<p>
+module-info.java
+</p>
+</div>
+</div>
+<div id="outline-container-orgb612631" class="outline-3">
+<h3 id="orgb612631">REPL</h3>
+</div>
+<div id="outline-container-orgfd4c8d5" class="outline-3">
+<h3 id="orgfd4c8d5">interface 私有方法</h3>
+</div>
+
+<div id="outline-container-org543ff41" class="outline-3">
+<h3 id="org543ff41">JDK10</h3>
+</div>
+<div id="outline-container-org0901a47" class="outline-3">
+<h3 id="org0901a47">类型推断 var (jdk10)</h3>
+<div class="outline-text-3" id="text-org0901a47">
+<p>
+`var list = new ArrayList&lt;String&gt;();`
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgae50052" class="outline-3">
+<h3 id="orgae50052">JDK11</h3>
+<div class="outline-text-3" id="text-orgae50052">
+<ol class="org-ol">
+<li>JEP 330: 支持单文件程序，整个程序只有一个源码文件，HelloWorld：</li>
+<li>ZGC： 新的垃圾收集器，降低了 STW 的时长，达到毫秒级</li>
+<li>Epsilon：只分配，不回收的垃圾收集器，用于性能测试</li>
+<li>新的 Http client，支持 http/2 和 websocket</li>
+<li>List 接口的 of 方法，用于快速创建 List，toArray()支持将 List 转换为数组</li>
+<li>Files 类增加 writeString 和 readString 方法，方便文件和 String 操作。</li>
+<li>String 增加了 strip，可以去掉 Unicode 空格，比如中文空格；isBlank 判定是否为空字符串；lines 将 string 分割为行的字符串数组；repeat 方法可以指定重复次数</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgbb22fb0" class="outline-3">
+<h3 id="orgbb22fb0">其他</h3>
+</div>
+<div id="outline-container-orgf88a6e3" class="outline-3">
+<h3 id="orgf88a6e3">JIT</h3>
+<div class="outline-text-3" id="text-orgf88a6e3">
+<p>
+just in time compile, 即时编译，在运行过程中对热点代码进行本地编译以提高性能
+</p>
+</div>
+</div>
+
+<div id="outline-container-org84804d8" class="outline-3">
+<h3 id="org84804d8">AOT</h3>
+<div class="outline-text-3" id="text-org84804d8">
+<p>
+ahead of time: 运行前编译，使用编译器将代码编译为目标机器的机器码。
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org80a55a6" class="outline-3">
+<h3 id="org80a55a6">Graal</h3>
+<div class="outline-text-3" id="text-org80a55a6">
+<ol class="org-ol">
+<li>硬件层：x86, arm &#x2026;</li>
+<li>操作系统: Linux, windows, android, ios</li>
+<li>软件虚拟层: JVM, 浏览器, .net/mono</li>
+<li>应用层： 各种软件</li>
+</ol>
+</div>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: renshuo</p>

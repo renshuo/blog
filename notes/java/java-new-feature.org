@@ -1,0 +1,46 @@
+* JDK 新特性
+** JDK8
+** lamba
+
+
+** 闭包
+`
+`
+** Stream(jdk8)
+`
+List<String> sl = new ArrayList<String>();
+...
+sl.stream().map(a -> {...}).reduce( (r0, i) -> {...})
+
+** JDK9
+** 模块系统
+module-info.java
+** REPL
+** interface 私有方法
+
+** JDK10
+** 类型推断 var (jdk10)
+`var list = new ArrayList<String>();`
+
+** JDK11
+1. JEP 330: 支持单文件程序，整个程序只有一个源码文件，HelloWorld：
+2. ZGC： 新的垃圾收集器，降低了 STW 的时长，达到毫秒级
+3. Epsilon：只分配，不回收的垃圾收集器，用于性能测试
+4. 新的 Http client，支持 http/2 和 websocket
+5. List 接口的 of 方法，用于快速创建 List，toArray()支持将 List 转换为数组
+6. Files 类增加 writeString 和 readString 方法，方便文件和 String 操作。
+7. String 增加了 strip，可以去掉 Unicode 空格，比如中文空格；isBlank 判定是否为空字符串；lines 将 string 分割为行的字符串数组；repeat 方法可以指定重复次数
+
+** 其他
+** JIT
+just in time compile, 即时编译，在运行过程中对热点代码进行本地编译以提高性能
+
+** AOT
+ahead of time: 运行前编译，使用编译器将代码编译为目标机器的机器码。
+
+
+** Graal
+1. 硬件层：x86, arm ...
+1. 操作系统: Linux, windows, android, ios
+1. 软件虚拟层: JVM, 浏览器, .net/mono 
+1. 应用层： 各种软件
