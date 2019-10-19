@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-09-18 三 15:00 -->
+<!-- 2019-10-19 六 08:39 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -235,22 +235,23 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org0a36d8f">在 spacemacs 中管理邮件</a>
+<li><a href="#org3492789">在 spacemacs 中管理邮件</a>
 <ul>
-<li><a href="#org10d327c">邮件同步：isync</a></li>
-<li><a href="#org9d730c8">配置 mu4e</a></li>
-<li><a href="#org3d9d480">使用 mu4e</a></li>
+<li><a href="#orgd210309">邮件同步：isync</a></li>
+<li><a href="#org634d16f">配置 mu4e</a></li>
+<li><a href="#orge5bd29e">使用 mu4e</a></li>
+<li><a href="#org71a89f9">配置使用 gpg 加密密码信息</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org0a36d8f" class="outline-2">
-<h2 id="org0a36d8f">在 spacemacs 中管理邮件</h2>
-<div class="outline-text-2" id="text-org0a36d8f">
-</div><div id="outline-container-org10d327c" class="outline-3">
-<h3 id="org10d327c">邮件同步：isync</h3>
-<div class="outline-text-3" id="text-org10d327c">
+<div id="outline-container-org3492789" class="outline-2">
+<h2 id="org3492789">在 spacemacs 中管理邮件</h2>
+<div class="outline-text-2" id="text-org3492789">
+</div><div id="outline-container-orgd210309" class="outline-3">
+<h3 id="orgd210309">邮件同步：isync</h3>
+<div class="outline-text-3" id="text-orgd210309">
 <ol class="org-ol">
 <li>安装 isync</li>
 <li>配置 ~/.mbsyncrc</li>
@@ -337,9 +338,9 @@ SyncState *
 </div>
 </div>
 
-<div id="outline-container-org9d730c8" class="outline-3">
-<h3 id="org9d730c8">配置 mu4e</h3>
-<div class="outline-text-3" id="text-org9d730c8">
+<div id="outline-container-org634d16f" class="outline-3">
+<h3 id="org634d16f">配置 mu4e</h3>
+<div class="outline-text-3" id="text-org634d16f">
 <ol class="org-ol">
 <li>在 layer 配置中添加 mu4e</li>
 <li>在 init.el 的 user 配置段中配置 mu4e</li>
@@ -374,20 +375,68 @@ SyncState *
 </div>
 </div>
 
-
-<div id="outline-container-org3d9d480" class="outline-3">
-<h3 id="org3d9d480">使用 mu4e</h3>
-<div class="outline-text-3" id="text-org3d9d480">
+<div id="outline-container-orge5bd29e" class="outline-3">
+<h3 id="orge5bd29e">使用 mu4e</h3>
+<div class="outline-text-3" id="text-orge5bd29e">
 <ol class="org-ol">
 <li>打开 mu4e 界面：M-m a M</li>
 </ol>
+</div>
+</div>
+
+<div id="outline-container-org71a89f9" class="outline-3">
+<h3 id="org71a89f9">配置使用 gpg 加密密码信息</h3>
+<div class="outline-text-3" id="text-org71a89f9">
+<ol class="org-ol">
+<li>创建一个密码文件，txt 格式，将密码明文写在文件里</li>
+<li>用 gpg 加密文件
+<ol class="org-ol">
+<li>创建私钥：</li>
+</ol></li>
+</ol>
+<div class="org-src-container">
+<pre class="src src-shell">gpg2 --full-generate-key
+</pre>
+</div>
+<p>
+系统会问一些问题，并要求设置私钥密码等
+</p>
+<ol class="org-ol">
+<li>加密文件</li>
+</ol>
+<div class="org-src-container">
+<pre class="src src-shell">gpg2 -recipient renshuo -e qqmail.pwd
+</pre>
+</div>
+<p>
+将 qqmail.pwd 加密，加密后的文件是 qqmail.pwd.gpg
+</p>
+<ol class="org-ol">
+<li>配置 mbsync， 用 PassCmd 替换原来的 pass</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-shell">PassCmd <span style="color: #2d9574;">"gpg --recipient renshuo -d ~/qqmail.pwd.gpg"</span>
+</pre>
+</div>
+
+<ol class="org-ol">
+<li>配置 smtp 使用密码文件</li>
+</ol>
+<p>
+使用 gpg 将原 .authinfo 文件加密，并在 mu4e 中配置：
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">smtpmail-auth-credentials <span style="color: #4f97d7;">(</span>expand-file-name <span style="color: #2d9574;">"~/.authinfo.gpg"</span><span style="color: #4f97d7;">)</span>
+</pre>
+</div>
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: renshuo</p>
-<p class="date">Created: 2019-09-18 三 15:00</p>
+<p class="date">Created: 2019-10-19 六 08:39</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

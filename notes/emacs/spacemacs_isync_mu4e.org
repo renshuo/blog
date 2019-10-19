@@ -104,7 +104,30 @@ WantedBy=timers.target
   (setq mu4e-enable-notifications t)
 #+END_SRC
 
-
 ** 使用 mu4e
 1. 打开 mu4e 界面：M-m a M
 
+** 配置使用 gpg 加密密码信息
+1. 创建一个密码文件，txt 格式，将密码明文写在文件里
+2. 用 gpg 加密文件
+   1. 创建私钥：
+#+BEGIN_SRC shell
+gpg2 --full-generate-key
+#+END_SRC
+系统会问一些问题，并要求设置私钥密码等
+   2. 加密文件
+#+BEGIN_SRC shell
+gpg2 -recipient renshuo -e qqmail.pwd
+#+END_SRC
+将 qqmail.pwd 加密，加密后的文件是 qqmail.pwd.gpg
+3. 配置 mbsync， 用 PassCmd 替换原来的 pass
+
+#+BEGIN_SRC shell
+PassCmd "gpg --recipient renshuo -d ~/qqmail.pwd.gpg"
+#+END_SRC
+
+2. 配置 smtp 使用密码文件
+使用 gpg 将原 .authinfo 文件加密，并在 mu4e 中配置：
+#+BEGIN_SRC lisp
+      smtpmail-auth-credentials (expand-file-name "~/.authinfo.gpg")
+#+END_SRC
