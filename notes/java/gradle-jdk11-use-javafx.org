@@ -1,0 +1,15 @@
+* 在 gradle+jdk11 的环境下使用 javafx
+1. 在 gralde 的 plugin 段增加：
+#+BEGIN_SRC groovy
+plugins {
+    id 'org.openjfx.javafxplugin' version '0.0.5'
+}
+#+END_SRC
+2. 在 build.gradle 的合适位置增加 javafx 配置：
+#+BEGIN_SRC groovy
+javafx {
+    version = "12"
+    modules = [ 'javafx.controls' ]
+}
+#+END_SRC
+指定版本和依赖的 javafx包
