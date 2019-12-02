@@ -1,8 +1,10 @@
 ** 工作相关
 *** [[file:work/influxdb-base.org][influxdb 基础操作]]
 *** [[file:work/postgreSql-base.org][postgreSql 基础操作]]
+*** [[file:work/dameng-database.org][达梦数据库安装和使用]]
 ** Java 技术
 *** [[file:java/java-new-feature.org][java 新特性]]
+*** [[file:java/gradle-jdk11-use-javafx.org][gradle+jdk11 中使用 javafx]]
 ** emacs
 *** [[file:emacs/orgmode.org][orgmode 笔记]]
 *** [[file:emacs/spacemacs_isync_mu4e.org][spacemacs 中配置 mu4e + isync]]
