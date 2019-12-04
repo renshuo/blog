@@ -10,6 +10,7 @@
 *** [[file:emacs/spacemacs_isync_mu4e.org][spacemacs 中配置 mu4e + isync]]
 ** Linux 相关
 *** [[file:linux/iptables.org][iptables 配置转发，将 Linux 变成路由器]]
+*** [[file:linux/software.org][常用软件]]
 * 日记
 ** 2019
 *** [2019-09-03 二] [[file:blog/2019/git-store-password.org][git 不须重复输入账号密码]]

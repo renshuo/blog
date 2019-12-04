@@ -6,7 +6,7 @@
      + [[file:work/postgreSql-base.org][2019-09-24 postgreSql-base]]
      + [[file:work/influxdb-base.org][2019-09-24 influxdb-base]]
    + linux
-     + [[file:linux/software.org][2019-10-20 software]]
+     + [[file:linux/software.org][2019-12-04 Linux 上的软件]]
      + [[file:linux/iptables.org][2019-09-10 iptables]]
    + kotlin
      + [[file:kotlin/kotlin-base.org][2019-09-25 kotlin-base]]
@@ -17,6 +17,13 @@
      + [[file:emacs/spacemacs_isync_mu4e.org][2019-10-19 spacemacs_isync_mu4e]]
      + [[file:emacs/orgmode.org][2019-09-03 orgmode]]
    + blog
+     + 2019
+       + [[file:blog/2019/git-store-password.org][2019-09-03 git-store-password]]
+       + [[file:blog/2019/slf4j-readme.org][2019-09-03 slf4j-readme]]
+       + [[file:blog/2019/gradle-scala.org][2019-09-03 gradle-scala]]
+       + [[file:blog/2019/org-mode-notes.org][2019-09-03 org-mode-notes]]
+       + [[file:blog/2019/gradle-module.org][2019-09-03 gradle-module]]
+       + [[file:blog/2019/Java-date.org][2019-09-03 Java-date]]
      + before 2019
        + [[file:blog/before 2019/2018-08-23-spacemacs 文档翻译-管理私有配置 layer.org][2019-09-03 2018-08-23-spacemacs 文档翻译-管理私有配置 layer]]
        + [[file:blog/before 2019/2018-07-23-mongodb 在 web 开发中的数据管理经验.org][2018-07-23 2018-07-23-mongodb 在 web 开发中的数据管理经验]]
@@ -29,11 +36,4 @@
        + [[file:blog/before 2019/2014-05-28-santi.org][2015-11-05 2014-05-28-santi]]
        + [[file:blog/before 2019/2014-05-20-pidgin-lwqq.org][2015-11-05 2014-05-20-pidgin-lwqq]]
        + [[file:blog/before 2019/2017-01-14-svn 服务端配置.org][2014-12-02 2017-01-14-svn 服务端配置]]
-     + 2019
-       + [[file:blog/2019/git-store-password.org][2019-09-03 git-store-password]]
-       + [[file:blog/2019/slf4j-readme.org][2019-09-03 slf4j-readme]]
-       + [[file:blog/2019/gradle-scala.org][2019-09-03 gradle-scala]]
-       + [[file:blog/2019/org-mode-notes.org][2019-09-03 org-mode-notes]]
-       + [[file:blog/2019/gradle-module.org][2019-09-03 gradle-module]]
-       + [[file:blog/2019/Java-date.org][2019-09-03 Java-date]]
-   + [[file:index.org][2019-12-02 index]]
+   + [[file:index.org][2019-12-04 index]]

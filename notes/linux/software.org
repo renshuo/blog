@@ -1,0 +1,41 @@
+#+TITLE: Linux 上的软件
+* 网络软件
+#+BEGIN_SRC shell
+firefox chromium filezilla krdc
+iptux nutstore
+#+END_SRC
+
+* 多媒体
+#+BEGIN_SRC shell
+deadbeef smplayer smplayer-skins smplayer-themes k3b
+#+END_SRC
+
+* 办公
+#+BEGIN_SRC shell
+wps libre-office-fresh libreoffice-fresh-zh-cn stardict sdcv okular
+#+END_SRC
+
+* 开发
+#+BEGIN_SRC shell
+jdk-openjdk jdk8-openjdk jdk11-openjdk intellij-idea-community-edition visual-studio-code-bin dbeaver
+jedit 
+#+END_SRC
+
+* 工具
+#+BEGIN_SRC shell
+emacs vim spectacle ark fcitx fcitx-lilydjwg-git kwrite
+kate 
+#+END_SRC
+
+* 图形
+#+BEGIN_SRC shell
+blender krita mcomix inkscape drawio-desktop-bin 
+gimp
+#+END_SRC
+
+* 系统
+#+BEGIN_SRC shell
+yakuake htop 
+iperf iperf3
+#+END_SRC
+
