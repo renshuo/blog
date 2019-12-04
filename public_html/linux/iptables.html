@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-09-10 二 13:30 -->
+<!-- 2019-12-04 三 15:22 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title></title>
+<title>配置 iptables，将 Linux 作为路由器</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="renshuo" />
 <style type="text/css">
@@ -231,38 +231,48 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
+<h1 class="title">配置 iptables，将 Linux 作为路由器</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org3fd59af">配置 iptables，将 Linux 作为路由器</a>
-<ul>
-<li><a href="#orgc67213b">方法 1，直接配置 nat 转发</a></li>
-</ul>
-</li>
+<li><a href="#orgecece2e">方法 1，直接配置 nat 转发</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org3fd59af" class="outline-2">
-<h2 id="org3fd59af">配置 iptables，将 Linux 作为路由器</h2>
-<div class="outline-text-2" id="text-org3fd59af">
-</div><div id="outline-container-orgc67213b" class="outline-3">
-<h3 id="orgc67213b">方法 1，直接配置 nat 转发</h3>
-<div class="outline-text-3" id="text-orgc67213b">
+<div id="outline-container-orgecece2e" class="outline-2">
+<h2 id="orgecece2e">方法 1，直接配置 nat 转发</h2>
+<div class="outline-text-2" id="text-orgecece2e">
+<p>
+在/etc/iptables/iptables.rules 文件末尾，增加以下内容：
+</p>
 <pre class="example">
 *nat
 -A POSTROUTING -s 192.168.1.2/24 -o enp0s20f0u7u2 -j MASQUERADE
+COMMIT
 </pre>
 <p>
-将 192.168.1.2 来源的请求，转发到 enp0s20f0u7u2 接口中，并做地址转换
+将 192.168.1.2 来源的请求，转发到 enp0s20f0u7u2 接口中，并做地址转换。然后重启 iptables 服务：
 </p>
+<div class="org-src-container">
+<pre class="src src-shell">systemctl restart iptables
+</pre>
 </div>
+
+<p>
+注意：需要确认文件内容为 1：
+</p>
+<blockquote>
+<p>
+/proc/sys/net/ipv4/ip<sub>forward</sub>
+</p>
+</blockquote>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: renshuo</p>
-<p class="date">Created: 2019-09-10 二 13:30</p>
+<p class="date">Created: 2019-12-04 三 15:22</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
