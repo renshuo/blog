@@ -1,40 +1,20 @@
 #+TITLE: Sitemap
 
-   + emacs
-     + [[file:emacs/space_chinese_font.org][2020-01-14 spacemacs 中文字体配置]]
-     + [[file:emacs/spacemacs_isync_mu4e.org][2019-10-19 spacemacs_isync_mu4e]]
-     + [[file:emacs/orgmode.org][2019-09-03 orgmode]]
-   + linux
-     + [[file:linux/software.org][2019-12-12 Linux 上的软件]]
-     + [[file:linux/iptables.org][2019-12-04 配置 iptables，将 Linux 作为路由器]]
-   + work
-     + [[file:work/dameng-database.org][2019-12-02 dameng-database]]
-     + [[file:work/sql-performance.org][2019-11-21 sql-performance]]
-     + [[file:work/postgreSql-base.org][2019-09-24 postgreSql-base]]
-     + [[file:work/influxdb-base.org][2019-09-24 influxdb-base]]
-   + kotlin
-     + [[file:kotlin/kotlin-base.org][2019-09-25 kotlin-base]]
-   + java
-     + [[file:java/gradle-jdk11-use-javafx.org][2019-09-26 gradle-jdk11-use-javafx]]
-     + [[file:java/java-new-feature.org][2019-09-24 java-new-feature]]
-   + blog
-     + before 2019
-       + [[file:blog/before 2019/2018-08-23-spacemacs 文档翻译-管理私有配置 layer.org][2019-09-03 2018-08-23-spacemacs 文档翻译-管理私有配置 layer]]
-       + [[file:blog/before 2019/2018-07-23-mongodb 在 web 开发中的数据管理经验.org][2018-07-23 2018-07-23-mongodb 在 web 开发中的数据管理经验]]
-       + [[file:blog/before 2019/2015-11-11-netcat 使用说明.org][2015-11-11 2015-11-11-netcat 使用说明]]
-       + [[file:blog/before 2019/2015-11-09-gentoo 编译 libgpod 失败.org][2015-11-09 2015-11-09-gentoo 编译 libgpod 失败]]
-       + [[file:blog/before 2019/2014-08-10-how-to-select-language.org][2015-11-05 2014-08-10-how-to-select-language]]
-       + [[file:blog/before 2019/2014-06-26-elisp 开发笔记.org][2015-11-05 2014-06-26-elisp 开发笔记]]
-       + [[file:blog/before 2019/2014-06-16-eclipse 插件.org][2015-11-05 2014-06-16-eclipse 插件]]
-       + [[file:blog/before 2019/2014-05-29-java 范型继承.org][2015-11-05 2014-05-29-java 范型继承]]
-       + [[file:blog/before 2019/2014-05-28-santi.org][2015-11-05 2014-05-28-santi]]
-       + [[file:blog/before 2019/2014-05-20-pidgin-lwqq.org][2015-11-05 2014-05-20-pidgin-lwqq]]
-       + [[file:blog/before 2019/2017-01-14-svn 服务端配置.org][2014-12-02 2017-01-14-svn 服务端配置]]
-     + 2019
-       + [[file:blog/2019/git-store-password.org][2019-09-03 git-store-password]]
-       + [[file:blog/2019/slf4j-readme.org][2019-09-03 slf4j-readme]]
-       + [[file:blog/2019/gradle-scala.org][2019-09-03 gradle-scala]]
-       + [[file:blog/2019/org-mode-notes.org][2019-09-03 org-mode-notes]]
-       + [[file:blog/2019/gradle-module.org][2019-09-03 gradle-module]]
-       + [[file:blog/2019/Java-date.org][2019-09-03 Java-date]]
-   + [[file:index.org][2020-01-14 index]]
+- [[file:index.org][index]]
+- work
+  - [[file:work/dameng-database.org][dameng-database]]
+  - [[file:work/sql-performance.org][sql-performance]]
+  - [[file:work/postgreSql-base.org][postgreSql-base]]
+  - [[file:work/influxdb-base.org][influxdb-base]]
+- kotlin
+  - [[file:kotlin/kotlin-base.org][kotlin-base]]
+- java
+  - [[file:java/gradle-jdk11-use-javafx.org][gradle-jdk11-use-javafx]]
+  - [[file:java/java-new-feature.org][java-new-feature]]
+- emacs
+  - [[file:emacs/space_chinese_font.org][spacemacs 中文字体配置]]
+  - [[file:emacs/spacemacs_isync_mu4e.org][spacemacs_isync_mu4e]]
+  - [[file:emacs/orgmode.org][orgmode]]
+- linux
+  - [[file:linux/software.org][Linux 上的软件]]
+  - [[file:linux/iptables.org][配置 iptables，将 Linux 作为路由器]]
