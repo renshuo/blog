@@ -1,0 +1,15 @@
+#+title: 在firefox中，如何设置 采用相同动作处理保存
+
+* 打开 firefox 的工作目录
+  1. 在地址栏输入 about:support
+  2. 打开配置文件夹所在目录
+
+* 设置特定文件的保存动作
+  1. 打开配置文件夹下 handlers.json 文件，这里保存了 firefox 对所有下载文件的操作方式配置。
+  2. 在 mimeTypes 下，即所保存的配置，这个其实就是 firefox 的 首选项 应用程序 的配置内容。
+  3. 如果这里没有配置你所需要更改的 内容类型， 就按照格式添加一个，比如：
+#+BEGIN_SRC 
+"image/jpeg":{"action":0,"extensions":["jpg","jpeg"]}  
+#+END_SRC
+  4. 重启 firefox 即可
+

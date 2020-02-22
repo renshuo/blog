@@ -1,4 +1,5 @@
 ** 工作相关
+*** [[file:work/springboot-websocket.org][springboot下的websocket服务]]
 *** [[file:work/influxdb-base.org][influxdb 基础操作]]
 *** [[file:work/postgreSql-base.org][postgreSql 基础操作]]
 *** [[file:work/dameng-database.org][达梦数据库安装和使用]]
@@ -12,6 +13,7 @@
 ** Linux 相关
 *** [[file:linux/iptables.org][iptables 配置转发，将 Linux 变成路由器]]
 *** [[file:linux/software.org][常用软件]]
+*** [[file:linux/firefox_autoSaveFile.org][firefox设置自动采用相同动作处理保存文件]]
 * 日记
 ** 2020
 *** [2020-01-17 五] [[file:blog/2020/for_final_fantasy_six.org][最终幻想6的回忆]]
