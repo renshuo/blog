@@ -6,7 +6,7 @@
 <!-- 2020-03-26 四 16:01 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Sitemap</title>
+<title>在firefox中，如何设置 采用相同动作处理保存</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="renshuo" />
 <style type="text/css">
@@ -245,40 +245,43 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">Sitemap</h1>
-<ul class="org-ul">
-<li><a href="index.html">index</a></li>
-<li>kotlin
-<ul class="org-ul">
-<li><a href="kotlin/kotlin-commonScopeFun.html">kotlin的scope function</a></li>
-<li><a href="kotlin/kotlin-base.html">kotlin-base</a></li>
-</ul></li>
-<li>java
-<ul class="org-ul">
-<li><a href="java/jackson_annotation.html">jackson的注解说明</a></li>
-<li><a href="java/gradle-jdk11-use-javafx.html">gradle-jdk11-use-javafx</a></li>
-<li><a href="java/java-new-feature.html">java-new-feature</a></li>
-</ul></li>
-<li>work
-<ul class="org-ul">
-<li><a href="work/dameng-database.html">dameng-database</a></li>
-<li><a href="work/sql-performance.html">sql-performance</a></li>
-<li><a href="work/postgreSql-base.html">postgreSql-base</a></li>
-<li><a href="work/influxdb-base.html">influxdb-base</a></li>
-</ul></li>
-<li>linux
-<ul class="org-ul">
-<li><a href="linux/firefox_autoSaveFile.html">在firefox中，如何设置 采用相同动作处理保存</a></li>
-<li><a href="linux/software.html">Linux 上的软件</a></li>
-<li><a href="linux/iptables.html">配置 iptables，将 Linux 作为路由器</a></li>
-</ul></li>
-<li>emacs
-<ul class="org-ul">
-<li><a href="emacs/space_chinese_font.html">spacemacs 中文字体配置</a></li>
-<li><a href="emacs/spacemacs_isync_mu4e.html">spacemacs<sub>isync</sub><sub>mu4e</sub></a></li>
-<li><a href="emacs/orgmode.html">orgmode</a></li>
-</ul></li>
+<h1 class="title">在firefox中，如何设置 采用相同动作处理保存</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org669b9eb">打开 firefox 的工作目录</a></li>
+<li><a href="#org6f27eef">设置特定文件的保存动作</a></li>
 </ul>
+</div>
+</div>
+
+<div id="outline-container-org669b9eb" class="outline-2">
+<h2 id="org669b9eb">打开 firefox 的工作目录</h2>
+<div class="outline-text-2" id="text-org669b9eb">
+<ol class="org-ol">
+<li>在地址栏输入 about:support</li>
+<li>打开配置文件夹所在目录</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org6f27eef" class="outline-2">
+<h2 id="org6f27eef">设置特定文件的保存动作</h2>
+<div class="outline-text-2" id="text-org6f27eef">
+<ol class="org-ol">
+<li>打开配置文件夹下 handlers.json 文件，这里保存了 firefox 对所有下载文件的操作方式配置。</li>
+<li>在 mimeTypes 下，即所保存的配置，这个其实就是 firefox 的 首选项 应用程序 的配置内容。</li>
+<li>如果这里没有配置你所需要更改的 内容类型， 就按照格式添加一个，比如：</li>
+</ol>
+<pre class="example">
+"image/jpeg":{"action":0,"extensions":["jpg","jpeg"]}  
+</pre>
+<ol class="org-ol">
+<li>重启 firefox 即可</li>
+</ol>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: renshuo</p>
