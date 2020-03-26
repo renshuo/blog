@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-12-04 三 11:09 -->
+<!-- 2020-03-26 四 15:51 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Linux 上的软件</title>
@@ -68,6 +68,7 @@
   pre.src-fortran:before { content: 'Fortran'; }
   pre.src-gnuplot:before { content: 'gnuplot'; }
   pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
   pre.src-java:before { content: 'Java'; }
   pre.src-js:before { content: 'Javascript'; }
   pre.src-latex:before { content: 'LaTeX'; }
@@ -160,6 +161,19 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -187,7 +201,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2013 Free Software Foundation, Inc.
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -236,19 +250,19 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgb915559">网络软件</a></li>
-<li><a href="#org52d19b9">多媒体</a></li>
-<li><a href="#orgb743e17">办公</a></li>
-<li><a href="#orge97214b">开发</a></li>
-<li><a href="#org8a6059c">工具</a></li>
-<li><a href="#org8503ecd">图形</a></li>
-<li><a href="#org9c1ac62">系统</a></li>
+<li><a href="#org85190e6">网络软件</a></li>
+<li><a href="#orgddda2c7">多媒体</a></li>
+<li><a href="#org040a108">办公</a></li>
+<li><a href="#org60259aa">开发</a></li>
+<li><a href="#org3287ec2">工具</a></li>
+<li><a href="#orgbcbd4c0">图形</a></li>
+<li><a href="#orgae17601">系统</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb915559" class="outline-2">
-<h2 id="orgb915559">网络软件</h2>
-<div class="outline-text-2" id="text-orgb915559">
+<div id="outline-container-org85190e6" class="outline-2">
+<h2 id="org85190e6">网络软件</h2>
+<div class="outline-text-2" id="text-org85190e6">
 <div class="org-src-container">
 <pre class="src src-shell">firefox chromium filezilla krdc
 iptux nutstore
@@ -257,9 +271,9 @@ iptux nutstore
 </div>
 </div>
 
-<div id="outline-container-org52d19b9" class="outline-2">
-<h2 id="org52d19b9">多媒体</h2>
-<div class="outline-text-2" id="text-org52d19b9">
+<div id="outline-container-orgddda2c7" class="outline-2">
+<h2 id="orgddda2c7">多媒体</h2>
+<div class="outline-text-2" id="text-orgddda2c7">
 <div class="org-src-container">
 <pre class="src src-shell">deadbeef smplayer smplayer-skins smplayer-themes k3b
 </pre>
@@ -267,9 +281,9 @@ iptux nutstore
 </div>
 </div>
 
-<div id="outline-container-orgb743e17" class="outline-2">
-<h2 id="orgb743e17">办公</h2>
-<div class="outline-text-2" id="text-orgb743e17">
+<div id="outline-container-org040a108" class="outline-2">
+<h2 id="org040a108">办公</h2>
+<div class="outline-text-2" id="text-org040a108">
 <div class="org-src-container">
 <pre class="src src-shell">wps libre-office-fresh libreoffice-fresh-zh-cn stardict sdcv okular
 </pre>
@@ -277,31 +291,31 @@ iptux nutstore
 </div>
 </div>
 
-<div id="outline-container-orge97214b" class="outline-2">
-<h2 id="orge97214b">开发</h2>
-<div class="outline-text-2" id="text-orge97214b">
+<div id="outline-container-org60259aa" class="outline-2">
+<h2 id="org60259aa">开发</h2>
+<div class="outline-text-2" id="text-org60259aa">
 <div class="org-src-container">
 <pre class="src src-shell">jdk-openjdk jdk8-openjdk jdk11-openjdk intellij-idea-community-edition visual-studio-code-bin dbeaver
-jedit
+jedit 
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org8a6059c" class="outline-2">
-<h2 id="org8a6059c">工具</h2>
-<div class="outline-text-2" id="text-org8a6059c">
+<div id="outline-container-org3287ec2" class="outline-2">
+<h2 id="org3287ec2">工具</h2>
+<div class="outline-text-2" id="text-org3287ec2">
 <div class="org-src-container">
 <pre class="src src-shell">emacs vim spectacle ark fcitx fcitx-lilydjwg-git kwrite
-kate
+kate 
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org8503ecd" class="outline-2">
-<h2 id="org8503ecd">图形</h2>
-<div class="outline-text-2" id="text-org8503ecd">
+<div id="outline-container-orgbcbd4c0" class="outline-2">
+<h2 id="orgbcbd4c0">图形</h2>
+<div class="outline-text-2" id="text-orgbcbd4c0">
 <div class="org-src-container">
 <pre class="src src-shell">blender krita mcomix inkscape drawio-desktop-bin 
 gimp
@@ -310,9 +324,9 @@ gimp
 </div>
 </div>
 
-<div id="outline-container-org9c1ac62" class="outline-2">
-<h2 id="org9c1ac62">系统</h2>
-<div class="outline-text-2" id="text-org9c1ac62">
+<div id="outline-container-orgae17601" class="outline-2">
+<h2 id="orgae17601">系统</h2>
+<div class="outline-text-2" id="text-orgae17601">
 <div class="org-src-container">
 <pre class="src src-shell">yakuake htop 
 iperf iperf3
@@ -323,7 +337,7 @@ iperf iperf3
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: renshuo</p>
-<p class="date">Created: 2019-12-04 三 11:09</p>
+<p class="date">Created: 2020-03-26 四 15:51</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

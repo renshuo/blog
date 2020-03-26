@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-12-04 三 11:11 -->
+<!-- 2020-03-26 四 15:52 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title></title>
+<title>&lrm;</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="renshuo" />
 <style type="text/css">
@@ -68,6 +68,7 @@
   pre.src-fortran:before { content: 'Fortran'; }
   pre.src-gnuplot:before { content: 'gnuplot'; }
   pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
   pre.src-java:before { content: 'Java'; }
   pre.src-js:before { content: 'Javascript'; }
   pre.src-latex:before { content: 'LaTeX'; }
@@ -160,6 +161,19 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -187,7 +201,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2013 Free Software Foundation, Inc.
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -235,173 +249,210 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org5438637">工作相关</a>
+<li><a href="#org501e25e">工作相关</a>
 <ul>
-<li><a href="#org54ce854">influxdb 基础操作</a></li>
-<li><a href="#orgc8af437">postgreSql 基础操作</a></li>
-<li><a href="#org6aa4f29">达梦数据库安装和使用</a></li>
+<li><a href="#org811cd75">influxdb 基础操作</a></li>
+<li><a href="#org301a1ea">postgreSql 基础操作</a></li>
+<li><a href="#org9b41d03">达梦数据库安装和使用</a></li>
 </ul>
 </li>
-<li><a href="#orgcf05e7c">Java 技术</a>
+<li><a href="#org4bb6906">Java 技术</a>
 <ul>
-<li><a href="#org6dbd42c">java 新特性</a></li>
-<li><a href="#orgc75fd9a">gradle+jdk11 中使用 javafx</a></li>
+<li><a href="#org2405fc6">java 新特性</a></li>
+<li><a href="#org91c7ec8">gradle+jdk11 中使用 javafx</a></li>
 </ul>
 </li>
-<li><a href="#org0892e27">emacs</a>
+<li><a href="#orgedfef15">kotlin</a>
 <ul>
-<li><a href="#orga22686e">orgmode 笔记</a></li>
-<li><a href="#orgbfd7027">spacemacs 中配置 mu4e + isync</a></li>
+<li><a href="#org5ea8968">kotlin的scope function</a></li>
 </ul>
 </li>
-<li><a href="#org0853587">Linux 相关</a>
+<li><a href="#org95cceb3">emacs</a>
 <ul>
-<li><a href="#org6307ede">iptables 配置转发，将 Linux 变成路由器</a></li>
-<li><a href="#org5246e71">常用软件</a></li>
+<li><a href="#org906a05c">orgmode 笔记</a></li>
+<li><a href="#orgd417c8e">spacemacs 中配置 mu4e + isync</a></li>
+<li><a href="#orgf61109a">spacemacs 中文字体配置</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li><a href="#orga3d9ba8">日记</a>
+<li><a href="#org9a005ff">Linux 相关</a>
 <ul>
-<li><a href="#org8301f83">2019</a>
-<ul>
-<li><a href="#org47ad99c"><span class="timestamp-wrapper"><span class="timestamp">[2019-09-03 二] </span></span> git 不须重复输入账号密码</a></li>
-<li><a href="#org02324d2"><span class="timestamp-wrapper"><span class="timestamp">[2019-08-30 五] </span></span> slf4j 完整使用说明</a></li>
-<li><a href="#org13d039f"><span class="timestamp-wrapper"><span class="timestamp">[2019-08-08 四] </span></span> gradle 的多模块配置</a></li>
-<li><a href="#orgceac4d7"><span class="timestamp-wrapper"><span class="timestamp">[2019-08-29 四] </span></span> gradle 中配置 scala</a></li>
-<li><a href="#orgc710e11"><span class="timestamp-wrapper"><span class="timestamp">[2019-08-27 二] </span></span> org-mode 笔记</a></li>
-<li><a href="#orgecf44aa"><span class="timestamp-wrapper"><span class="timestamp">[2019-08-07 三] </span></span> Java8 之后的日期问题</a></li>
-</ul>
-</li>
-<li><a href="#org2968014">before2019</a>
-<ul>
-<li><a href="#orgd57dc8c"><span class="timestamp-wrapper"><span class="timestamp">[2018-08-23 四] </span></span> spacemacs 文档翻译-管理私有配置</a></li>
-<li><a href="#org1e0e4bb"><span class="timestamp-wrapper"><span class="timestamp">[2018-07-23 一] </span></span> mongodb 在 web 开发中的数据管理经验</a></li>
-<li><a href="#orgafb93e1"><span class="timestamp-wrapper"><span class="timestamp">[2017-01-14 六] </span></span> svn 服务端配置</a></li>
-<li><a href="#org56b0771"><span class="timestamp-wrapper"><span class="timestamp">[2015-11-11 三] </span></span> netcat 使用说明</a></li>
-<li><a href="#orga1fc3da"><span class="timestamp-wrapper"><span class="timestamp">[2015-11-09 一] </span></span> gentoo 编译 libgpod 失败</a></li>
-<li><a href="#org4c6eb1b"><span class="timestamp-wrapper"><span class="timestamp">[2014-08-10 日] </span></span> how to select language</a></li>
-<li><a href="#orgd6bceb3"><span class="timestamp-wrapper"><span class="timestamp">[2014-06-26 四] </span></span> elisp 笔记</a></li>
-<li><a href="#org3575ec2"><span class="timestamp-wrapper"><span class="timestamp">[2014-06-16 一] </span></span> eclipse 插件</a></li>
-<li><a href="#org435688c"><span class="timestamp-wrapper"><span class="timestamp">[2014-05-29 四] </span></span> Java 范型继承</a></li>
-<li><a href="#org3ae41a8"><span class="timestamp-wrapper"><span class="timestamp">[2014-05-28 三] </span></span> santi</a></li>
-<li><a href="#org61d7389"><span class="timestamp-wrapper"><span class="timestamp">[2014-05-20 二] </span></span> pidgin-lwqq</a></li>
+<li><a href="#org0af3599">iptables 配置转发，将 Linux 变成路由器</a></li>
+<li><a href="#orgd186995">常用软件</a></li>
 </ul>
 </li>
 </ul>
+</li>
+<li><a href="#org2c42185">日记</a>
+<ul>
+<li><a href="#org026932b">2020</a>
+<ul>
+<li><a href="#org8841bb5"><span class="timestamp-wrapper"><span class="timestamp">[2020-01-17 五] </span></span> 最终幻想6的回忆</a></li>
+</ul>
+</li>
+<li><a href="#orga1647df">2019</a>
+<ul>
+<li><a href="#org45f6cf2"><span class="timestamp-wrapper"><span class="timestamp">[2019-09-03 二] </span></span> git 不须重复输入账号密码</a></li>
+<li><a href="#orgf8fb98a"><span class="timestamp-wrapper"><span class="timestamp">[2019-08-30 五] </span></span> slf4j 完整使用说明</a></li>
+<li><a href="#org0dcb4a3"><span class="timestamp-wrapper"><span class="timestamp">[2019-08-08 四] </span></span> gradle 的多模块配置</a></li>
+<li><a href="#org51a7b08"><span class="timestamp-wrapper"><span class="timestamp">[2019-08-29 四] </span></span> gradle 中配置 scala</a></li>
+<li><a href="#org4e25015"><span class="timestamp-wrapper"><span class="timestamp">[2019-08-27 二] </span></span> org-mode 笔记</a></li>
+<li><a href="#org1d0ca9b"><span class="timestamp-wrapper"><span class="timestamp">[2019-08-07 三] </span></span> Java8 之后的日期问题</a></li>
+</ul>
+</li>
+<li><a href="#orgb892034">before2019</a>
+<ul>
+<li><a href="#org273ccd6"><span class="timestamp-wrapper"><span class="timestamp">[2018-08-23 四] </span></span> spacemacs 文档翻译-管理私有配置</a></li>
+<li><a href="#org5bd7dbb"><span class="timestamp-wrapper"><span class="timestamp">[2018-07-23 一] </span></span> mongodb 在 web 开发中的数据管理经验</a></li>
+<li><a href="#org89ef38b"><span class="timestamp-wrapper"><span class="timestamp">[2017-01-14 六] </span></span> svn 服务端配置</a></li>
+<li><a href="#orgf2f7148"><span class="timestamp-wrapper"><span class="timestamp">[2015-11-11 三] </span></span> netcat 使用说明</a></li>
+<li><a href="#orgfaa861e"><span class="timestamp-wrapper"><span class="timestamp">[2015-11-09 一] </span></span> gentoo 编译 libgpod 失败</a></li>
+<li><a href="#org2743ad2"><span class="timestamp-wrapper"><span class="timestamp">[2014-08-10 日] </span></span> how to select language</a></li>
+<li><a href="#org1fb3f3e"><span class="timestamp-wrapper"><span class="timestamp">[2014-06-26 四] </span></span> elisp 笔记</a></li>
+<li><a href="#org868e6b5"><span class="timestamp-wrapper"><span class="timestamp">[2014-06-16 一] </span></span> eclipse 插件</a></li>
+<li><a href="#org9b815bb"><span class="timestamp-wrapper"><span class="timestamp">[2014-05-29 四] </span></span> Java 范型继承</a></li>
+<li><a href="#orgcace545"><span class="timestamp-wrapper"><span class="timestamp">[2014-05-28 三] </span></span> santi</a></li>
+<li><a href="#org26b4ecd"><span class="timestamp-wrapper"><span class="timestamp">[2014-05-20 二] </span></span> pidgin-lwqq</a></li>
+</ul>
+</li>
+</ul>
 </div>
 </div>
-<div id="outline-container-org5438637" class="outline-3">
-<h3 id="org5438637">工作相关</h3>
-<div class="outline-text-3" id="text-org5438637">
-</div><div id="outline-container-org54ce854" class="outline-4">
-<h4 id="org54ce854"><a href="work/influxdb-base.html">influxdb 基础操作</a></h4>
+<div id="outline-container-org501e25e" class="outline-3">
+<h3 id="org501e25e">工作相关</h3>
+<div class="outline-text-3" id="text-org501e25e">
 </div>
-<div id="outline-container-orgc8af437" class="outline-4">
-<h4 id="orgc8af437"><a href="work/postgreSql-base.html">postgreSql 基础操作</a></h4>
+<div id="outline-container-org811cd75" class="outline-4">
+<h4 id="org811cd75"><a href="work/influxdb-base.html">influxdb 基础操作</a></h4>
 </div>
-<div id="outline-container-org6aa4f29" class="outline-4">
-<h4 id="org6aa4f29"><a href="work/dameng-database.html">达梦数据库安装和使用</a></h4>
+<div id="outline-container-org301a1ea" class="outline-4">
+<h4 id="org301a1ea"><a href="work/postgreSql-base.html">postgreSql 基础操作</a></h4>
 </div>
-</div>
-<div id="outline-container-orgcf05e7c" class="outline-3">
-<h3 id="orgcf05e7c">Java 技术</h3>
-<div class="outline-text-3" id="text-orgcf05e7c">
-</div><div id="outline-container-org6dbd42c" class="outline-4">
-<h4 id="org6dbd42c"><a href="java/java-new-feature.html">java 新特性</a></h4>
-</div>
-<div id="outline-container-orgc75fd9a" class="outline-4">
-<h4 id="orgc75fd9a"><a href="java/gradle-jdk11-use-javafx.html">gradle+jdk11 中使用 javafx</a></h4>
+<div id="outline-container-org9b41d03" class="outline-4">
+<h4 id="org9b41d03"><a href="work/dameng-database.html">达梦数据库安装和使用</a></h4>
 </div>
 </div>
-<div id="outline-container-org0892e27" class="outline-3">
-<h3 id="org0892e27">emacs</h3>
-<div class="outline-text-3" id="text-org0892e27">
-</div><div id="outline-container-orga22686e" class="outline-4">
-<h4 id="orga22686e"><a href="emacs/orgmode.html">orgmode 笔记</a></h4>
+<div id="outline-container-org4bb6906" class="outline-3">
+<h3 id="org4bb6906">Java 技术</h3>
+<div class="outline-text-3" id="text-org4bb6906">
 </div>
-<div id="outline-container-orgbfd7027" class="outline-4">
-<h4 id="orgbfd7027"><a href="emacs/spacemacs_isync_mu4e.html">spacemacs 中配置 mu4e + isync</a></h4>
+<div id="outline-container-org2405fc6" class="outline-4">
+<h4 id="org2405fc6"><a href="java/java-new-feature.html">java 新特性</a></h4>
 </div>
-</div>
-<div id="outline-container-org0853587" class="outline-3">
-<h3 id="org0853587">Linux 相关</h3>
-<div class="outline-text-3" id="text-org0853587">
-</div><div id="outline-container-org6307ede" class="outline-4">
-<h4 id="org6307ede"><a href="linux/iptables.html">iptables 配置转发，将 Linux 变成路由器</a></h4>
-</div>
-<div id="outline-container-org5246e71" class="outline-4">
-<h4 id="org5246e71"><a href="linux/software.html">常用软件</a></h4>
+<div id="outline-container-org91c7ec8" class="outline-4">
+<h4 id="org91c7ec8"><a href="java/gradle-jdk11-use-javafx.html">gradle+jdk11 中使用 javafx</a></h4>
 </div>
 </div>
-<div id="outline-container-orga3d9ba8" class="outline-2">
-<h2 id="orga3d9ba8">日记</h2>
-<div class="outline-text-2" id="text-orga3d9ba8">
-</div><div id="outline-container-org8301f83" class="outline-3">
-<h3 id="org8301f83">2019</h3>
-<div class="outline-text-3" id="text-org8301f83">
-</div><div id="outline-container-org47ad99c" class="outline-4">
-<h4 id="org47ad99c"><span class="timestamp-wrapper"><span class="timestamp">[2019-09-03 二] </span></span> <a href="blog/2019/git-store-password.html">git 不须重复输入账号密码</a></h4>
+<div id="outline-container-orgedfef15" class="outline-3">
+<h3 id="orgedfef15">kotlin</h3>
+<div class="outline-text-3" id="text-orgedfef15">
 </div>
-<div id="outline-container-org02324d2" class="outline-4">
-<h4 id="org02324d2"><span class="timestamp-wrapper"><span class="timestamp">[2019-08-30 五] </span></span> <a href="blog/2019/slf4j-readme.html">slf4j 完整使用说明</a></h4>
-</div>
-<div id="outline-container-org13d039f" class="outline-4">
-<h4 id="org13d039f"><span class="timestamp-wrapper"><span class="timestamp">[2019-08-08 四] </span></span> <a href="blog/2019/gradle-module.html">gradle 的多模块配置</a></h4>
-</div>
-<div id="outline-container-orgceac4d7" class="outline-4">
-<h4 id="orgceac4d7"><span class="timestamp-wrapper"><span class="timestamp">[2019-08-29 四] </span></span> <a href="blog/2019/gradle-scala.html">gradle 中配置 scala</a></h4>
-</div>
-<div id="outline-container-orgc710e11" class="outline-4">
-<h4 id="orgc710e11"><span class="timestamp-wrapper"><span class="timestamp">[2019-08-27 二] </span></span> <a href="blog/2019/org-mode-notes.html">org-mode 笔记</a></h4>
-</div>
-<div id="outline-container-orgecf44aa" class="outline-4">
-<h4 id="orgecf44aa"><span class="timestamp-wrapper"><span class="timestamp">[2019-08-07 三] </span></span> <a href="blog/2019/Java-date.html">Java8 之后的日期问题</a></h4>
+<div id="outline-container-org5ea8968" class="outline-4">
+<h4 id="org5ea8968"><a href="kotlin/kotlin-commonScopeFun.html">kotlin的scope function</a></h4>
 </div>
 </div>
-<div id="outline-container-org2968014" class="outline-3">
-<h3 id="org2968014">before2019</h3>
-<div class="outline-text-3" id="text-org2968014">
-</div><div id="outline-container-orgd57dc8c" class="outline-4">
-<h4 id="orgd57dc8c"><span class="timestamp-wrapper"><span class="timestamp">[2018-08-23 四] </span></span> <a href="blog/before%202019/2018-08-23-spacemacs%E6%96%87%E6%A1%A3%E7%BF%BB%E8%AF%91-%E7%AE%A1%E7%90%86%E7%A7%81%E6%9C%89%E9%85%8D%E7%BD%AElayer.html">spacemacs 文档翻译-管理私有配置</a></h4>
+<div id="outline-container-org95cceb3" class="outline-3">
+<h3 id="org95cceb3">emacs</h3>
+<div class="outline-text-3" id="text-org95cceb3">
 </div>
-<div id="outline-container-org1e0e4bb" class="outline-4">
-<h4 id="org1e0e4bb"><span class="timestamp-wrapper"><span class="timestamp">[2018-07-23 一] </span></span> <a href="blog/before%202019/2018-07-23-mongodb%E5%9C%A8web%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E7%BB%8F%E9%AA%8C.html">mongodb 在 web 开发中的数据管理经验</a></h4>
+<div id="outline-container-org906a05c" class="outline-4">
+<h4 id="org906a05c"><a href="emacs/orgmode.html">orgmode 笔记</a></h4>
 </div>
-<div id="outline-container-orgafb93e1" class="outline-4">
-<h4 id="orgafb93e1"><span class="timestamp-wrapper"><span class="timestamp">[2017-01-14 六] </span></span> <a href="blog/before%202019/2017-01-14-svn%E6%9C%8D%E5%8A%A1%E7%AB%AF%E9%85%8D%E7%BD%AE.html">svn 服务端配置</a></h4>
+<div id="outline-container-orgd417c8e" class="outline-4">
+<h4 id="orgd417c8e"><a href="emacs/spacemacs_isync_mu4e.html">spacemacs 中配置 mu4e + isync</a></h4>
 </div>
-<div id="outline-container-org56b0771" class="outline-4">
-<h4 id="org56b0771"><span class="timestamp-wrapper"><span class="timestamp">[2015-11-11 三] </span></span> <a href="blog/before%202019/2015-11-11-netcat%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E.html">netcat 使用说明</a></h4>
+<div id="outline-container-orgf61109a" class="outline-4">
+<h4 id="orgf61109a"><a href="emacs/space_chinese_font.html">spacemacs 中文字体</a>配置</h4>
 </div>
-<div id="outline-container-orga1fc3da" class="outline-4">
-<h4 id="orga1fc3da"><span class="timestamp-wrapper"><span class="timestamp">[2015-11-09 一] </span></span> <a href="blog/before%202019/2015-11-09-gentoo%E7%BC%96%E8%AF%91libgpod%E5%A4%B1%E8%B4%A5.html">gentoo 编译 libgpod 失败</a></h4>
 </div>
-<div id="outline-container-org4c6eb1b" class="outline-4">
-<h4 id="org4c6eb1b"><span class="timestamp-wrapper"><span class="timestamp">[2014-08-10 日] </span></span> <a href="blog/before%202019/2014-08-10-how-to-select-language.html">how to select language</a></h4>
+<div id="outline-container-org9a005ff" class="outline-3">
+<h3 id="org9a005ff">Linux 相关</h3>
+<div class="outline-text-3" id="text-org9a005ff">
 </div>
-<div id="outline-container-orgd6bceb3" class="outline-4">
-<h4 id="orgd6bceb3"><span class="timestamp-wrapper"><span class="timestamp">[2014-06-26 四] </span></span> <a href="blog/before%202019/2014-06-26-elisp%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0.html">elisp 笔记</a></h4>
+<div id="outline-container-org0af3599" class="outline-4">
+<h4 id="org0af3599"><a href="linux/iptables.html">iptables 配置转发，将 Linux 变成路由器</a></h4>
 </div>
-<div id="outline-container-org3575ec2" class="outline-4">
-<h4 id="org3575ec2"><span class="timestamp-wrapper"><span class="timestamp">[2014-06-16 一] </span></span> <a href="blog/before%202019/2014-06-16-eclipse%E6%8F%92%E4%BB%B6.html">eclipse 插件</a></h4>
+<div id="outline-container-orgd186995" class="outline-4">
+<h4 id="orgd186995"><a href="linux/software.html">常用软件</a></h4>
 </div>
-<div id="outline-container-org435688c" class="outline-4">
-<h4 id="org435688c"><span class="timestamp-wrapper"><span class="timestamp">[2014-05-29 四] </span></span> <a href="blog/before%202019/2014-05-29-java%E8%8C%83%E5%9E%8B%E7%BB%A7%E6%89%BF.html">Java 范型继承</a></h4>
 </div>
-<div id="outline-container-org3ae41a8" class="outline-4">
-<h4 id="org3ae41a8"><span class="timestamp-wrapper"><span class="timestamp">[2014-05-28 三] </span></span> <a href="blog/before%202019/2014-05-28-santi.html">santi</a></h4>
+<div id="outline-container-org2c42185" class="outline-2">
+<h2 id="org2c42185">日记</h2>
+<div class="outline-text-2" id="text-org2c42185">
 </div>
-<div id="outline-container-org61d7389" class="outline-4">
-<h4 id="org61d7389"><span class="timestamp-wrapper"><span class="timestamp">[2014-05-20 二] </span></span> <a href="blog/before%202019/2014-05-20-pidgin-lwqq.html">pidgin-lwqq</a></h4>
+<div id="outline-container-org026932b" class="outline-3">
+<h3 id="org026932b">2020</h3>
+<div class="outline-text-3" id="text-org026932b">
+</div>
+<div id="outline-container-org8841bb5" class="outline-4">
+<h4 id="org8841bb5"><span class="timestamp-wrapper"><span class="timestamp">[2020-01-17 五] </span></span> <a href="blog/2020/for_final_fantasy_six.html">最终幻想6的回忆</a></h4>
+</div>
+</div>
+<div id="outline-container-orga1647df" class="outline-3">
+<h3 id="orga1647df">2019</h3>
+<div class="outline-text-3" id="text-orga1647df">
+</div>
+<div id="outline-container-org45f6cf2" class="outline-4">
+<h4 id="org45f6cf2"><span class="timestamp-wrapper"><span class="timestamp">[2019-09-03 二] </span></span> <a href="blog/2019/git-store-password.html">git 不须重复输入账号密码</a></h4>
+</div>
+<div id="outline-container-orgf8fb98a" class="outline-4">
+<h4 id="orgf8fb98a"><span class="timestamp-wrapper"><span class="timestamp">[2019-08-30 五] </span></span> <a href="blog/2019/slf4j-readme.html">slf4j 完整使用说明</a></h4>
+</div>
+<div id="outline-container-org0dcb4a3" class="outline-4">
+<h4 id="org0dcb4a3"><span class="timestamp-wrapper"><span class="timestamp">[2019-08-08 四] </span></span> <a href="blog/2019/gradle-module.html">gradle 的多模块配置</a></h4>
+</div>
+<div id="outline-container-org51a7b08" class="outline-4">
+<h4 id="org51a7b08"><span class="timestamp-wrapper"><span class="timestamp">[2019-08-29 四] </span></span> <a href="blog/2019/gradle-scala.html">gradle 中配置 scala</a></h4>
+</div>
+<div id="outline-container-org4e25015" class="outline-4">
+<h4 id="org4e25015"><span class="timestamp-wrapper"><span class="timestamp">[2019-08-27 二] </span></span> <a href="blog/2019/org-mode-notes.html">org-mode 笔记</a></h4>
+</div>
+<div id="outline-container-org1d0ca9b" class="outline-4">
+<h4 id="org1d0ca9b"><span class="timestamp-wrapper"><span class="timestamp">[2019-08-07 三] </span></span> <a href="blog/2019/Java-date.html">Java8 之后的日期问题</a></h4>
+</div>
+</div>
+<div id="outline-container-orgb892034" class="outline-3">
+<h3 id="orgb892034">before2019</h3>
+<div class="outline-text-3" id="text-orgb892034">
+</div>
+<div id="outline-container-org273ccd6" class="outline-4">
+<h4 id="org273ccd6"><span class="timestamp-wrapper"><span class="timestamp">[2018-08-23 四] </span></span> <a href="blog/before%202019/2018-08-23-spacemacs%E6%96%87%E6%A1%A3%E7%BF%BB%E8%AF%91-%E7%AE%A1%E7%90%86%E7%A7%81%E6%9C%89%E9%85%8D%E7%BD%AElayer.html">spacemacs 文档翻译-管理私有配置</a></h4>
+</div>
+<div id="outline-container-org5bd7dbb" class="outline-4">
+<h4 id="org5bd7dbb"><span class="timestamp-wrapper"><span class="timestamp">[2018-07-23 一] </span></span> <a href="blog/before%202019/2018-07-23-mongodb%E5%9C%A8web%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E7%BB%8F%E9%AA%8C.html">mongodb 在 web 开发中的数据管理经验</a></h4>
+</div>
+<div id="outline-container-org89ef38b" class="outline-4">
+<h4 id="org89ef38b"><span class="timestamp-wrapper"><span class="timestamp">[2017-01-14 六] </span></span> <a href="blog/before%202019/2017-01-14-svn%E6%9C%8D%E5%8A%A1%E7%AB%AF%E9%85%8D%E7%BD%AE.html">svn 服务端配置</a></h4>
+</div>
+<div id="outline-container-orgf2f7148" class="outline-4">
+<h4 id="orgf2f7148"><span class="timestamp-wrapper"><span class="timestamp">[2015-11-11 三] </span></span> <a href="blog/before%202019/2015-11-11-netcat%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E.html">netcat 使用说明</a></h4>
+</div>
+<div id="outline-container-orgfaa861e" class="outline-4">
+<h4 id="orgfaa861e"><span class="timestamp-wrapper"><span class="timestamp">[2015-11-09 一] </span></span> <a href="blog/before%202019/2015-11-09-gentoo%E7%BC%96%E8%AF%91libgpod%E5%A4%B1%E8%B4%A5.html">gentoo 编译 libgpod 失败</a></h4>
+</div>
+<div id="outline-container-org2743ad2" class="outline-4">
+<h4 id="org2743ad2"><span class="timestamp-wrapper"><span class="timestamp">[2014-08-10 日] </span></span> <a href="blog/before%202019/2014-08-10-how-to-select-language.html">how to select language</a></h4>
+</div>
+<div id="outline-container-org1fb3f3e" class="outline-4">
+<h4 id="org1fb3f3e"><span class="timestamp-wrapper"><span class="timestamp">[2014-06-26 四] </span></span> <a href="blog/before%202019/2014-06-26-elisp%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0.html">elisp 笔记</a></h4>
+</div>
+<div id="outline-container-org868e6b5" class="outline-4">
+<h4 id="org868e6b5"><span class="timestamp-wrapper"><span class="timestamp">[2014-06-16 一] </span></span> <a href="blog/before%202019/2014-06-16-eclipse%E6%8F%92%E4%BB%B6.html">eclipse 插件</a></h4>
+</div>
+<div id="outline-container-org9b815bb" class="outline-4">
+<h4 id="org9b815bb"><span class="timestamp-wrapper"><span class="timestamp">[2014-05-29 四] </span></span> <a href="blog/before%202019/2014-05-29-java%E8%8C%83%E5%9E%8B%E7%BB%A7%E6%89%BF.html">Java 范型继承</a></h4>
+</div>
+<div id="outline-container-orgcace545" class="outline-4">
+<h4 id="orgcace545"><span class="timestamp-wrapper"><span class="timestamp">[2014-05-28 三] </span></span> <a href="blog/before%202019/2014-05-28-santi.html">santi</a></h4>
+</div>
+<div id="outline-container-org26b4ecd" class="outline-4">
+<h4 id="org26b4ecd"><span class="timestamp-wrapper"><span class="timestamp">[2014-05-20 二] </span></span> <a href="blog/before%202019/2014-05-20-pidgin-lwqq.html">pidgin-lwqq</a></h4>
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: renshuo</p>
-<p class="date">Created: 2019-12-04 三 11:11</p>
+<p class="date">Created: 2020-03-26 四 15:52</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

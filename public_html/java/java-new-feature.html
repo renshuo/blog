@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-09-24 二 11:20 -->
+<!-- 2020-03-26 四 15:51 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title></title>
+<title>&lrm;</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="renshuo" />
 <style type="text/css">
@@ -68,6 +68,7 @@
   pre.src-fortran:before { content: 'Fortran'; }
   pre.src-gnuplot:before { content: 'gnuplot'; }
   pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
   pre.src-java:before { content: 'Java'; }
   pre.src-js:before { content: 'Javascript'; }
   pre.src-latex:before { content: 'LaTeX'; }
@@ -160,6 +161,19 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -187,7 +201,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2013 Free Software Foundation, Inc.
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -235,51 +249,52 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org5657c70">JDK 新特性</a>
+<li><a href="#org93f5e10">JDK 新特性</a>
 <ul>
-<li><a href="#org704d17a">JDK8</a></li>
-<li><a href="#orgafc1bc8">lamba</a></li>
-<li><a href="#org92429d5">闭包</a></li>
-<li><a href="#org3e77d92">Stream(jdk8)</a></li>
-<li><a href="#org7a8a219">JDK9</a></li>
-<li><a href="#orge462c14">模块系统</a></li>
-<li><a href="#orgb612631">REPL</a></li>
-<li><a href="#orgfd4c8d5">interface 私有方法</a></li>
-<li><a href="#org543ff41">JDK10</a></li>
-<li><a href="#org0901a47">类型推断 var (jdk10)</a></li>
-<li><a href="#orgae50052">JDK11</a></li>
-<li><a href="#orgbb22fb0">其他</a></li>
-<li><a href="#orgf88a6e3">JIT</a></li>
-<li><a href="#org84804d8">AOT</a></li>
-<li><a href="#org80a55a6">Graal</a></li>
+<li><a href="#org30b1119">JDK8</a></li>
+<li><a href="#org9b40796">lamba</a></li>
+<li><a href="#org23e7760">闭包</a></li>
+<li><a href="#org6b92d69">Stream(jdk8)</a></li>
+<li><a href="#org0a86251">JDK9</a></li>
+<li><a href="#org6a0bcb3">模块系统</a></li>
+<li><a href="#org81dd81f">REPL</a></li>
+<li><a href="#orgdd9a354">interface 私有方法</a></li>
+<li><a href="#orga42f924">JDK10</a></li>
+<li><a href="#org3565d5f">类型推断 var (jdk10)</a></li>
+<li><a href="#org9e071b1">JDK11</a></li>
+<li><a href="#org714b19e">其他</a></li>
+<li><a href="#org19b2f45">JIT</a></li>
+<li><a href="#org8783282">AOT</a></li>
+<li><a href="#org8877532">Graal</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org5657c70" class="outline-2">
-<h2 id="org5657c70">JDK 新特性</h2>
-<div class="outline-text-2" id="text-org5657c70">
-</div><div id="outline-container-org704d17a" class="outline-3">
-<h3 id="org704d17a">JDK8</h3>
+<div id="outline-container-org93f5e10" class="outline-2">
+<h2 id="org93f5e10">JDK 新特性</h2>
+<div class="outline-text-2" id="text-org93f5e10">
 </div>
-<div id="outline-container-orgafc1bc8" class="outline-3">
-<h3 id="orgafc1bc8">lamba</h3>
+<div id="outline-container-org30b1119" class="outline-3">
+<h3 id="org30b1119">JDK8</h3>
+</div>
+<div id="outline-container-org9b40796" class="outline-3">
+<h3 id="org9b40796">lamba</h3>
 </div>
 
 
-<div id="outline-container-org92429d5" class="outline-3">
-<h3 id="org92429d5">闭包</h3>
-<div class="outline-text-3" id="text-org92429d5">
+<div id="outline-container-org23e7760" class="outline-3">
+<h3 id="org23e7760">闭包</h3>
+<div class="outline-text-3" id="text-org23e7760">
 <p>
 `
 `
 </p>
 </div>
 </div>
-<div id="outline-container-org3e77d92" class="outline-3">
-<h3 id="org3e77d92">Stream(jdk8)</h3>
-<div class="outline-text-3" id="text-org3e77d92">
+<div id="outline-container-org6b92d69" class="outline-3">
+<h3 id="org6b92d69">Stream(jdk8)</h3>
+<div class="outline-text-3" id="text-org6b92d69">
 <p>
 `
 List&lt;String&gt; sl = new ArrayList&lt;String&gt;();
@@ -289,39 +304,39 @@ sl.stream().map(a -&gt; {&#x2026;}).reduce( (r0, i) -&gt; {&#x2026;})
 </div>
 </div>
 
-<div id="outline-container-org7a8a219" class="outline-3">
-<h3 id="org7a8a219">JDK9</h3>
+<div id="outline-container-org0a86251" class="outline-3">
+<h3 id="org0a86251">JDK9</h3>
 </div>
-<div id="outline-container-orge462c14" class="outline-3">
-<h3 id="orge462c14">模块系统</h3>
-<div class="outline-text-3" id="text-orge462c14">
+<div id="outline-container-org6a0bcb3" class="outline-3">
+<h3 id="org6a0bcb3">模块系统</h3>
+<div class="outline-text-3" id="text-org6a0bcb3">
 <p>
 module-info.java
 </p>
 </div>
 </div>
-<div id="outline-container-orgb612631" class="outline-3">
-<h3 id="orgb612631">REPL</h3>
+<div id="outline-container-org81dd81f" class="outline-3">
+<h3 id="org81dd81f">REPL</h3>
 </div>
-<div id="outline-container-orgfd4c8d5" class="outline-3">
-<h3 id="orgfd4c8d5">interface 私有方法</h3>
+<div id="outline-container-orgdd9a354" class="outline-3">
+<h3 id="orgdd9a354">interface 私有方法</h3>
 </div>
 
-<div id="outline-container-org543ff41" class="outline-3">
-<h3 id="org543ff41">JDK10</h3>
+<div id="outline-container-orga42f924" class="outline-3">
+<h3 id="orga42f924">JDK10</h3>
 </div>
-<div id="outline-container-org0901a47" class="outline-3">
-<h3 id="org0901a47">类型推断 var (jdk10)</h3>
-<div class="outline-text-3" id="text-org0901a47">
+<div id="outline-container-org3565d5f" class="outline-3">
+<h3 id="org3565d5f">类型推断 var (jdk10)</h3>
+<div class="outline-text-3" id="text-org3565d5f">
 <p>
 `var list = new ArrayList&lt;String&gt;();`
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgae50052" class="outline-3">
-<h3 id="orgae50052">JDK11</h3>
-<div class="outline-text-3" id="text-orgae50052">
+<div id="outline-container-org9e071b1" class="outline-3">
+<h3 id="org9e071b1">JDK11</h3>
+<div class="outline-text-3" id="text-org9e071b1">
 <ol class="org-ol">
 <li>JEP 330: 支持单文件程序，整个程序只有一个源码文件，HelloWorld：</li>
 <li>ZGC： 新的垃圾收集器，降低了 STW 的时长，达到毫秒级</li>
@@ -334,21 +349,21 @@ module-info.java
 </div>
 </div>
 
-<div id="outline-container-orgbb22fb0" class="outline-3">
-<h3 id="orgbb22fb0">其他</h3>
+<div id="outline-container-org714b19e" class="outline-3">
+<h3 id="org714b19e">其他</h3>
 </div>
-<div id="outline-container-orgf88a6e3" class="outline-3">
-<h3 id="orgf88a6e3">JIT</h3>
-<div class="outline-text-3" id="text-orgf88a6e3">
+<div id="outline-container-org19b2f45" class="outline-3">
+<h3 id="org19b2f45">JIT</h3>
+<div class="outline-text-3" id="text-org19b2f45">
 <p>
 just in time compile, 即时编译，在运行过程中对热点代码进行本地编译以提高性能
 </p>
 </div>
 </div>
 
-<div id="outline-container-org84804d8" class="outline-3">
-<h3 id="org84804d8">AOT</h3>
-<div class="outline-text-3" id="text-org84804d8">
+<div id="outline-container-org8783282" class="outline-3">
+<h3 id="org8783282">AOT</h3>
+<div class="outline-text-3" id="text-org8783282">
 <p>
 ahead of time: 运行前编译，使用编译器将代码编译为目标机器的机器码。
 </p>
@@ -356,9 +371,9 @@ ahead of time: 运行前编译，使用编译器将代码编译为目标机器�
 </div>
 
 
-<div id="outline-container-org80a55a6" class="outline-3">
-<h3 id="org80a55a6">Graal</h3>
-<div class="outline-text-3" id="text-org80a55a6">
+<div id="outline-container-org8877532" class="outline-3">
+<h3 id="org8877532">Graal</h3>
+<div class="outline-text-3" id="text-org8877532">
 <ol class="org-ol">
 <li>硬件层：x86, arm &#x2026;</li>
 <li>操作系统: Linux, windows, android, ios</li>
@@ -371,7 +386,7 @@ ahead of time: 运行前编译，使用编译器将代码编译为目标机器�
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: renshuo</p>
-<p class="date">Created: 2019-09-24 二 11:20</p>
+<p class="date">Created: 2020-03-26 四 15:51</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

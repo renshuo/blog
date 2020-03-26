@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-12-02 一 15:27 -->
+<!-- 2020-03-26 四 15:51 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title></title>
+<title>&lrm;</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="renshuo" />
 <style type="text/css">
@@ -68,6 +68,7 @@
   pre.src-fortran:before { content: 'Fortran'; }
   pre.src-gnuplot:before { content: 'gnuplot'; }
   pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
   pre.src-java:before { content: 'Java'; }
   pre.src-js:before { content: 'Javascript'; }
   pre.src-latex:before { content: 'LaTeX'; }
@@ -160,6 +161,19 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -187,7 +201,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2013 Free Software Foundation, Inc.
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -235,15 +249,15 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org16259b2">达梦数据库</a>
+<li><a href="#org4723f7f">达梦数据库</a>
 <ul>
-<li><a href="#org7186dcf">安装</a></li>
-<li><a href="#orgd859716">创建数据库实例</a></li>
-<li><a href="#orga2a3ba3">达梦 DM 管理工具配置</a></li>
-<li><a href="#orgb85c315">dbeaver 中连接达梦数据库</a>
+<li><a href="#orgdf4c854">安装</a></li>
+<li><a href="#orge00ab4e">创建数据库实例</a></li>
+<li><a href="#org79bfd7d">达梦 DM 管理工具配置</a></li>
+<li><a href="#org6565895">dbeaver 中连接达梦数据库</a>
 <ul>
-<li><a href="#org91bfa9f">新建达梦驱动</a></li>
-<li><a href="#orgcc7f3fa">新建数据库连接</a></li>
+<li><a href="#org5cadb07">新建达梦驱动</a></li>
+<li><a href="#org6376967">新建数据库连接</a></li>
 </ul>
 </li>
 </ul>
@@ -251,12 +265,13 @@ for the JavaScript code in this tag.
 </ul>
 </div>
 </div>
-<div id="outline-container-org16259b2" class="outline-2">
-<h2 id="org16259b2">达梦数据库</h2>
-<div class="outline-text-2" id="text-org16259b2">
-</div><div id="outline-container-org7186dcf" class="outline-3">
-<h3 id="org7186dcf">安装</h3>
-<div class="outline-text-3" id="text-org7186dcf">
+<div id="outline-container-org4723f7f" class="outline-2">
+<h2 id="org4723f7f">达梦数据库</h2>
+<div class="outline-text-2" id="text-org4723f7f">
+</div>
+<div id="outline-container-orgdf4c854" class="outline-3">
+<h3 id="orgdf4c854">安装</h3>
+<div class="outline-text-3" id="text-orgdf4c854">
 <p>
 在 linux 下使用图形界面安装可能会报异常，可以使用字符界面安装：
 </p>
@@ -266,28 +281,29 @@ for the JavaScript code in this tag.
 </div>
 </div>
 </div>
-<div id="outline-container-orgd859716" class="outline-3">
-<h3 id="orgd859716">创建数据库实例</h3>
-<div class="outline-text-3" id="text-orgd859716">
+<div id="outline-container-orge00ab4e" class="outline-3">
+<h3 id="orge00ab4e">创建数据库实例</h3>
+<div class="outline-text-3" id="text-orge00ab4e">
 <p>
 运行安装目录下的 desktop/client/dbca.desktop，按照提示一步步进行即可最后按照提示，创建系统服务并启动
 </p>
 </div>
 </div>
-<div id="outline-container-orga2a3ba3" class="outline-3">
-<h3 id="orga2a3ba3">达梦 DM 管理工具配置</h3>
-<div class="outline-text-3" id="text-orga2a3ba3">
+<div id="outline-container-org79bfd7d" class="outline-3">
+<h3 id="org79bfd7d">达梦 DM 管理工具配置</h3>
+<div class="outline-text-3" id="text-org79bfd7d">
 <p>
 打开 DM 管理工具，点击 新建连接 按钮，输入主机名，端口号，用户名，口令即可
 </p>
 </div>
 </div>
-<div id="outline-container-orgb85c315" class="outline-3">
-<h3 id="orgb85c315">dbeaver 中连接达梦数据库</h3>
-<div class="outline-text-3" id="text-orgb85c315">
-</div><div id="outline-container-org91bfa9f" class="outline-4">
-<h4 id="org91bfa9f">新建达梦驱动</h4>
-<div class="outline-text-4" id="text-org91bfa9f">
+<div id="outline-container-org6565895" class="outline-3">
+<h3 id="org6565895">dbeaver 中连接达梦数据库</h3>
+<div class="outline-text-3" id="text-org6565895">
+</div>
+<div id="outline-container-org5cadb07" class="outline-4">
+<h4 id="org5cadb07">新建达梦驱动</h4>
+<div class="outline-text-4" id="text-org5cadb07">
 <ol class="org-ol">
 <li>点击菜单 数据库-&gt;驱动管理器</li>
 <li>点击 新建</li>
@@ -299,9 +315,9 @@ for the JavaScript code in this tag.
 </ol>
 </div>
 </div>
-<div id="outline-container-orgcc7f3fa" class="outline-4">
-<h4 id="orgcc7f3fa">新建数据库连接</h4>
-<div class="outline-text-4" id="text-orgcc7f3fa">
+<div id="outline-container-org6376967" class="outline-4">
+<h4 id="org6376967">新建数据库连接</h4>
+<div class="outline-text-4" id="text-org6376967">
 <ol class="org-ol">
 <li>点击新建连接按钮</li>
 <li>选中之前创建的达梦数据库驱动，然后点击下一步</li>
@@ -314,7 +330,7 @@ for the JavaScript code in this tag.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: renshuo</p>
-<p class="date">Created: 2019-12-02 一 15:27</p>
+<p class="date">Created: 2020-03-26 四 15:51</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

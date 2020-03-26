@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-09-24 二 11:29 -->
+<!-- 2020-03-26 四 15:51 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title></title>
+<title>&lrm;</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="renshuo" />
 <style type="text/css">
@@ -68,6 +68,7 @@
   pre.src-fortran:before { content: 'Fortran'; }
   pre.src-gnuplot:before { content: 'gnuplot'; }
   pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
   pre.src-java:before { content: 'Java'; }
   pre.src-js:before { content: 'Javascript'; }
   pre.src-latex:before { content: 'LaTeX'; }
@@ -160,6 +161,19 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -187,7 +201,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2013 Free Software Foundation, Inc.
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -235,27 +249,27 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgdda469c">安装</a></li>
-<li><a href="#org1853a71">启动</a></li>
-<li><a href="#org9ebfe40">创建数据库</a></li>
-<li><a href="#org031dc03">访问数据库</a>
+<li><a href="#orgf202fe6">安装</a></li>
+<li><a href="#org80ce50b">启动</a></li>
+<li><a href="#orgaa77d9d">创建数据库</a></li>
+<li><a href="#org2dfdc0a">访问数据库</a>
 <ul>
-<li><a href="#org6b35947">psql 命令</a></li>
+<li><a href="#org84ec088">psql 命令</a></li>
 </ul>
 </li>
-<li><a href="#org8fdc4b2">json 格式的使用方法</a>
+<li><a href="#org021bc99">json 格式的使用方法</a>
 <ul>
-<li><a href="#org154e90a">创建 json 字段表：</a></li>
-<li><a href="#org30da33f">存储 json 数据</a></li>
-<li><a href="#org5aed894">查询 json 数据</a></li>
+<li><a href="#org48c6721">创建 json 字段表：</a></li>
+<li><a href="#orga80df74">存储 json 数据</a></li>
+<li><a href="#org09cbc1c">查询 json 数据</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgdda469c" class="outline-2">
-<h2 id="orgdda469c">安装</h2>
-<div class="outline-text-2" id="text-orgdda469c">
+<div id="outline-container-orgf202fe6" class="outline-2">
+<h2 id="orgf202fe6">安装</h2>
+<div class="outline-text-2" id="text-orgf202fe6">
 <ol class="org-ol">
 <li>linux 系统本地安装</li>
 <li>docker</li>
@@ -263,18 +277,18 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org1853a71" class="outline-2">
-<h2 id="org1853a71">启动</h2>
-<div class="outline-text-2" id="text-org1853a71">
+<div id="outline-container-org80ce50b" class="outline-2">
+<h2 id="org80ce50b">启动</h2>
+<div class="outline-text-2" id="text-org80ce50b">
 <p>
 根据不同的安装方式，使用对应的启动过程。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org9ebfe40" class="outline-2">
-<h2 id="org9ebfe40">创建数据库</h2>
-<div class="outline-text-2" id="text-org9ebfe40">
+<div id="outline-container-orgaa77d9d" class="outline-2">
+<h2 id="orgaa77d9d">创建数据库</h2>
+<div class="outline-text-2" id="text-orgaa77d9d">
 <p>
 创建 mydb1 数据库，postgre 的默认用户是 postgres, 没有密码
 `createdb -U postgres mydb1`
@@ -282,12 +296,13 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org031dc03" class="outline-2">
-<h2 id="org031dc03">访问数据库</h2>
-<div class="outline-text-2" id="text-org031dc03">
-</div><div id="outline-container-org6b35947" class="outline-3">
-<h3 id="org6b35947">psql 命令</h3>
-<div class="outline-text-3" id="text-org6b35947">
+<div id="outline-container-org2dfdc0a" class="outline-2">
+<h2 id="org2dfdc0a">访问数据库</h2>
+<div class="outline-text-2" id="text-org2dfdc0a">
+</div>
+<div id="outline-container-org84ec088" class="outline-3">
+<h3 id="org84ec088">psql 命令</h3>
+<div class="outline-text-3" id="text-org84ec088">
 <p>
 类似 mysql 的 mysql 命令，或者 oracle 的 plsql 命令。
 </p>
@@ -308,35 +323,36 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org8fdc4b2" class="outline-2">
-<h2 id="org8fdc4b2">json 格式的使用方法</h2>
-<div class="outline-text-2" id="text-org8fdc4b2">
-</div><div id="outline-container-org154e90a" class="outline-3">
-<h3 id="org154e90a">创建 json 字段表：</h3>
-<div class="outline-text-3" id="text-org154e90a">
+<div id="outline-container-org021bc99" class="outline-2">
+<h2 id="org021bc99">json 格式的使用方法</h2>
+<div class="outline-text-2" id="text-org021bc99">
+</div>
+<div id="outline-container-org48c6721" class="outline-3">
+<h3 id="org48c6721">创建 json 字段表：</h3>
+<div class="outline-text-3" id="text-org48c6721">
 <p>
 `create table test1(jdoc jsonb);`
 </p>
 </div>
 </div>
 
-<div id="outline-container-org30da33f" class="outline-3">
-<h3 id="org30da33f">存储 json 数据</h3>
-<div class="outline-text-3" id="text-org30da33f">
+<div id="outline-container-orga80df74" class="outline-3">
+<h3 id="orga80df74">存储 json 数据</h3>
+<div class="outline-text-3" id="text-orga80df74">
 <p>
 `insert into test1  values('{"a" : 1, "b": 2}');`
 </p>
 </div>
 </div>
 
-<div id="outline-container-org5aed894" class="outline-3">
-<h3 id="org5aed894">查询 json 数据</h3>
+<div id="outline-container-org09cbc1c" class="outline-3">
+<h3 id="org09cbc1c">查询 json 数据</h3>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: renshuo</p>
-<p class="date">Created: 2019-09-24 二 11:29</p>
+<p class="date">Created: 2020-03-26 四 15:51</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

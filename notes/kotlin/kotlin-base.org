@@ -1,0 +1,15 @@
+# title：kotlin 编程入门
+
+* kotlin 简介
+** 为什么会有 kotlin
+   jetBrain IDEA
+** kotlin 的特点
+*** 与 Java 互通
+*** 强类型，类型推断
+*** 空值安全问题
+*** 数据类
+*** 扩展方法/功能
+*** IDE 支持
+*** 多平台支持
+    Android, IOS, native, JS, WebAssembly 
+** 

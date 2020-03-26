@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-10-19 六 08:39 -->
+<!-- 2020-03-26 四 15:51 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title></title>
+<title>&lrm;</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="renshuo" />
 <style type="text/css">
@@ -68,6 +68,7 @@
   pre.src-fortran:before { content: 'Fortran'; }
   pre.src-gnuplot:before { content: 'gnuplot'; }
   pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
   pre.src-java:before { content: 'Java'; }
   pre.src-js:before { content: 'Javascript'; }
   pre.src-latex:before { content: 'LaTeX'; }
@@ -160,6 +161,19 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -187,7 +201,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2013 Free Software Foundation, Inc.
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -235,23 +249,24 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org3492789">在 spacemacs 中管理邮件</a>
+<li><a href="#org44bb07b">在 spacemacs 中管理邮件</a>
 <ul>
-<li><a href="#orgd210309">邮件同步：isync</a></li>
-<li><a href="#org634d16f">配置 mu4e</a></li>
-<li><a href="#orge5bd29e">使用 mu4e</a></li>
-<li><a href="#org71a89f9">配置使用 gpg 加密密码信息</a></li>
+<li><a href="#org2de9c61">邮件同步：isync</a></li>
+<li><a href="#orgb7bdf09">配置 mu4e</a></li>
+<li><a href="#org263233a">使用 mu4e</a></li>
+<li><a href="#org657cce1">配置使用 gpg 加密密码信息</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org3492789" class="outline-2">
-<h2 id="org3492789">在 spacemacs 中管理邮件</h2>
-<div class="outline-text-2" id="text-org3492789">
-</div><div id="outline-container-orgd210309" class="outline-3">
-<h3 id="orgd210309">邮件同步：isync</h3>
-<div class="outline-text-3" id="text-orgd210309">
+<div id="outline-container-org44bb07b" class="outline-2">
+<h2 id="org44bb07b">在 spacemacs 中管理邮件</h2>
+<div class="outline-text-2" id="text-org44bb07b">
+</div>
+<div id="outline-container-org2de9c61" class="outline-3">
+<h3 id="org2de9c61">邮件同步：isync</h3>
+<div class="outline-text-3" id="text-org2de9c61">
 <ol class="org-ol">
 <li>安装 isync</li>
 <li>配置 ~/.mbsyncrc</li>
@@ -338,9 +353,9 @@ SyncState *
 </div>
 </div>
 
-<div id="outline-container-org634d16f" class="outline-3">
-<h3 id="org634d16f">配置 mu4e</h3>
-<div class="outline-text-3" id="text-org634d16f">
+<div id="outline-container-orgb7bdf09" class="outline-3">
+<h3 id="orgb7bdf09">配置 mu4e</h3>
+<div class="outline-text-3" id="text-orgb7bdf09">
 <ol class="org-ol">
 <li>在 layer 配置中添加 mu4e</li>
 <li>在 init.el 的 user 配置段中配置 mu4e</li>
@@ -375,18 +390,18 @@ SyncState *
 </div>
 </div>
 
-<div id="outline-container-orge5bd29e" class="outline-3">
-<h3 id="orge5bd29e">使用 mu4e</h3>
-<div class="outline-text-3" id="text-orge5bd29e">
+<div id="outline-container-org263233a" class="outline-3">
+<h3 id="org263233a">使用 mu4e</h3>
+<div class="outline-text-3" id="text-org263233a">
 <ol class="org-ol">
 <li>打开 mu4e 界面：M-m a M</li>
 </ol>
 </div>
 </div>
 
-<div id="outline-container-org71a89f9" class="outline-3">
-<h3 id="org71a89f9">配置使用 gpg 加密密码信息</h3>
-<div class="outline-text-3" id="text-org71a89f9">
+<div id="outline-container-org657cce1" class="outline-3">
+<h3 id="org657cce1">配置使用 gpg 加密密码信息</h3>
+<div class="outline-text-3" id="text-org657cce1">
 <ol class="org-ol">
 <li>创建一个密码文件，txt 格式，将密码明文写在文件里</li>
 <li>用 gpg 加密文件
@@ -436,7 +451,7 @@ SyncState *
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: renshuo</p>
-<p class="date">Created: 2019-10-19 六 08:39</p>
+<p class="date">Created: 2020-03-26 四 15:51</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

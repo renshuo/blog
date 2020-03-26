@@ -1,0 +1,55 @@
+#+TITLE: kotlin的scope function
+
+* kotlin 的 scope function
+  1. apply:
+  2. also:
+  3. let:
+  4. run:
+  5. with:
+
+** apply
+apply 是
+
+** let
+let 用于对当前数据的作用域内执行一段代码，例如：
+#+BEGIN_SRC kotlin
+  alist.map { it.length }
+  .let { println(it) }
+#+END_SRC
+let 也常用于检测空值：
+#+BEGIN_SRC kotlin
+  avalue?.let {
+    println(it)
+}
+#+END_SRC
+
+** with
+类似 let，创建一个针对指定变量的子作用域， 作用域内变量为 this：
+#+BEGIN_SRC kotlin
+  val data = "a"
+  val data2 = "x".with(data){
+    println("$this, $data")
+})
+#+END_SRC
+
+** run
+相当于 let 和 with 的合体，返回闭包内最后值
+
+** apply
+类似 run，但是返回值是 apply 对象本身。
+
+** also
+类似 let，但是返回值是 apply 对象本身。
+
+
+* 5 种函数的比较
+
+| 函数  | 内对象 | 返回值 | 适用场景                |                               |
+|-------+--------+--------+-------------------------+-------------------------------|
+| let   | it     | 闭包   | a?.let{ a!= null}       | 判断 a 空值                   |
+| with  | this   | 闭包   | with(A){ fun1, fun2...} | 调用 A 的多个方法，可以不写 A |
+| run   | this   | 闭包   | 同 let,with             |                               |
+| apply | this   | this   | 1. a 2. b dc            | 链式调用                      |
+| also  | it     | this   |                         | 同 let，链式调用              |
+|       |        |        |                         |                               |
+

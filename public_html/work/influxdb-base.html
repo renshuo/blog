@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-09-24 二 11:29 -->
+<!-- 2020-03-26 四 15:51 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title></title>
+<title>&lrm;</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="renshuo" />
 <style type="text/css">
@@ -68,6 +68,7 @@
   pre.src-fortran:before { content: 'Fortran'; }
   pre.src-gnuplot:before { content: 'gnuplot'; }
   pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
   pre.src-java:before { content: 'Java'; }
   pre.src-js:before { content: 'Javascript'; }
   pre.src-latex:before { content: 'LaTeX'; }
@@ -160,6 +161,19 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -187,7 +201,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2013 Free Software Foundation, Inc.
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -235,17 +249,17 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org1305747">安装</a></li>
-<li><a href="#org411f0d8">启动</a></li>
-<li><a href="#orgae83cc0">创建数据库</a></li>
-<li><a href="#orgc2365c7">数据操作</a></li>
-<li><a href="#orgecb1573">series</a></li>
+<li><a href="#org81336f0">安装</a></li>
+<li><a href="#org204f083">启动</a></li>
+<li><a href="#org61f64bd">创建数据库</a></li>
+<li><a href="#org8e73f70">数据操作</a></li>
+<li><a href="#orgd374c3f">series</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org1305747" class="outline-2">
-<h2 id="org1305747">安装</h2>
-<div class="outline-text-2" id="text-org1305747">
+<div id="outline-container-org81336f0" class="outline-2">
+<h2 id="org81336f0">安装</h2>
+<div class="outline-text-2" id="text-org81336f0">
 <ol class="org-ol">
 <li>linux 系统本地安装</li>
 <li>docker</li>
@@ -253,18 +267,18 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org411f0d8" class="outline-2">
-<h2 id="org411f0d8">启动</h2>
-<div class="outline-text-2" id="text-org411f0d8">
+<div id="outline-container-org204f083" class="outline-2">
+<h2 id="org204f083">启动</h2>
+<div class="outline-text-2" id="text-org204f083">
 <p>
 根据不同的安装方式，使用对应的启动过程。
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgae83cc0" class="outline-2">
-<h2 id="orgae83cc0">创建数据库</h2>
-<div class="outline-text-2" id="text-orgae83cc0">
+<div id="outline-container-org61f64bd" class="outline-2">
+<h2 id="org61f64bd">创建数据库</h2>
+<div class="outline-text-2" id="text-org61f64bd">
 <p>
 `create database test1`
 </p>
@@ -272,9 +286,9 @@ for the JavaScript code in this tag.
 </div>
 
 
-<div id="outline-container-orgc2365c7" class="outline-2">
-<h2 id="orgc2365c7">数据操作</h2>
-<div class="outline-text-2" id="text-orgc2365c7">
+<div id="outline-container-org8e73f70" class="outline-2">
+<h2 id="org8e73f70">数据操作</h2>
+<div class="outline-text-2" id="text-org8e73f70">
 <ol class="org-ol">
 <li>插入数据： `insert test1,server=170,node=dv1,channel=c1 cpu=1,mem=2`</li>
 <li>查询数据： `select * from test1 where channel='c1'`</li>
@@ -282,9 +296,9 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgecb1573" class="outline-2">
-<h2 id="orgecb1573">series</h2>
-<div class="outline-text-2" id="text-orgecb1573">
+<div id="outline-container-orgd374c3f" class="outline-2">
+<h2 id="orgd374c3f">series</h2>
+<div class="outline-text-2" id="text-orgd374c3f">
 <p>
 insert语句后，test1是数据库名，server=170,node=dv1,channel=c1是series信息，是用来区分数据类的信息，类似传统的表名。 cpu=1,mem=2是具体数据。
 </p>
@@ -297,7 +311,7 @@ insert语句后，test1是数据库名，server=170,node=dv1,channel=c1是series
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: renshuo</p>
-<p class="date">Created: 2019-09-24 二 11:29</p>
+<p class="date">Created: 2020-03-26 四 15:51</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

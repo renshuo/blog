@@ -1,0 +1,41 @@
+* sql 优化
+** 环境：
+ 1. mysql：mysql  Ver 14.14 Distrib 5.7.22, for Linux (x86_64) using  EditLine wrapper
+ 2. 数据量：6273383
+ 3. 原始 sql, 4.8s
+ #+BEGIN_SRC sql
+ select * from TB_SPUPARAM as t 
+ where t.`time`/1000000>1573437364  
+ and t.`time`/1000000<1573437374 
+ and central-bandwidth/2 < 59905356 
+ and central+bandwidth/2>59905356
+ #+END_SRC
+** 第一步，把 time 的运算放到参数部分：3.2s
+#+BEGIN_SRC sql
+ select * from TB_SPUPARAM as t 
+ where t.`time`>1573437364000000  
+ and t.`time`<1573437374000000 
+ and central-bandwidth/2 < 59905356 
+ and central+bandwidth/2>59905356
+#+END_SRC
+** 增加 limit 1：1.7s
+#+BEGIN_SRC sql
+ select * from TB_SPUPARAM as t 
+ where 
+ central-bandwidth/2 < 59905356 and central+bandwidth/2>59905356
+ and t.`time`>1573437364000000  
+ and t.`time`<1573437374000000 limit 1
+#+END_SRC
+** 使用特定字段替代 select *: 1.1s
+#+BEGIN_SRC sql
+ select t.central, t.bandwidth, t.power, t.cnr from TB_SPUPARAM as t 
+ where 
+ central-bandwidth/2 < 59905356 and central+bandwidth/2>59905356
+ and t.`time`>1573437364000000  
+ and t.`time`<1573437374000000 limit 1
+#+END_SRC
+** 增加 time 索引：3ms
+#+BEGIN_SRC sql
+alter table TB_SPUPARAM add index I_SPUPARAM_TIME(time);
+#+END_SRC
+

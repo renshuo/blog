@@ -6,7 +6,7 @@
 <!-- 2020-03-26 四 15:51 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>spacemacs 中文字体配置</title>
+<title>jackson的注解说明</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="renshuo" />
 <style type="text/css">
@@ -245,77 +245,62 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">spacemacs 中文字体配置</h1>
+<h1 class="title">jackson的注解说明</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org0a68226">spacemacs 默认英文字体配置</a></li>
-<li><a href="#org1ef0d8e">中文字体配置</a></li>
-<li><a href="#org642a8ae">中英文字体对齐问题</a></li>
+<li><a href="#orgfb24ca9">属性注解</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org0a68226" class="outline-2">
-<h2 id="org0a68226">spacemacs 默认英文字体配置</h2>
-<div class="outline-text-2" id="text-org0a68226">
-<p>
-在 init.el 中大约 170 行左右的位置，有配置代码:
-</p>
-<div class="org-src-container">
-<pre class="src src-lisp">dotspacemacs-default-font '<span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"Source Code Pro"</span>
-                            <span style="color: #4f97d7;">:size</span> <span style="color: #a45bad;">12</span>
-                            <span style="color: #4f97d7;">:weight</span> normal
-                            <span style="color: #4f97d7;">:Height</span> normal
-                            <span style="color: #4f97d7;">:powerline-scale</span> <span style="color: #a45bad;">1.1</span><span style="color: #4f97d7;">)</span>
-</pre>
-</div>
-<p>
-这里配置了 spacemacs 的基本字体。这个配置信息似乎会在 spacemacs 启动完成后再次被执行，导致在 user-config 中的配置无效，所以在这里需要配置 spacemacs 的基本英文字体。
-</p>
-</div>
-</div>
+<div id="outline-container-orgfb24ca9" class="outline-2">
+<h2 id="orgfb24ca9">属性注解</h2>
+<div class="outline-text-2" id="text-orgfb24ca9">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
-<div id="outline-container-org1ef0d8e" class="outline-2">
-<h2 id="org1ef0d8e">中文字体配置</h2>
-<div class="outline-text-2" id="text-org1ef0d8e">
-<p>
-chinese layer 中，定义了 spacemacs//set-monospaced-font 方法，这个方法可以用来配置英文和中文字体，其使用了 emacs 的基本字体配置语法。但是我没有使用这个方法，因为我这里只配置字体，不配置字体的 size，配置方法： 在 init.el 的 dotspacemacs/user-config 方法内，添加中文字体代码：
-</p>
-<div class="org-src-container">
-<pre class="src src-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">dolist</span> <span style="color: #bc6ec5;">(</span>charset '<span style="color: #2d9574;">(</span>kana han cjk-misc bopomofo<span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span>
-  <span style="color: #bc6ec5;">(</span>set-fontset-font <span style="color: #2d9574;">(</span>frame-parameter nil 'font<span style="color: #2d9574;">)</span> charset
-                    <span style="color: #2d9574;">(</span>font-spec <span style="color: #4f97d7;">:family</span> <span style="color: #2d9574;">"&#24605;&#28304;&#40657;&#20307; CN"</span><span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
-</pre>
-</div>
-</div>
-</div>
 
-<div id="outline-container-org642a8ae" class="outline-2">
-<h2 id="org642a8ae">中英文字体对齐问题</h2>
-<div class="outline-text-2" id="text-org642a8ae">
-<p>
-上边的配置由于没有配置中文字体的 size，中文字体使用了英文字体一样的 size，导致中文字体和英文字体对不齐的问题，在 org table，mu4e 等模式下尤其明显。所以，还需要在 init.el 的 dotspacemacs/user-config 中配置中文字体缩放：
-</p>
-<div class="org-src-container">
-<pre class="src src-lisp">
-<span style="color: #4f97d7;">(</span>setq face-font-rescale-alist '<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">(</span><span style="color: #2d9574;">"&#23435;&#20307;"</span> . <span style="color: #a45bad;">1.2</span><span style="color: #2d9574;">)</span>
-                                <span style="color: #2d9574;">(</span><span style="color: #2d9574;">"&#24494;&#36719;&#38597;&#40657;"</span> . <span style="color: #a45bad;">1.2</span><span style="color: #2d9574;">)</span>
-                                <span style="color: #2d9574;">(</span><span style="color: #2d9574;">"&#24605;&#28304;&#40657;&#20307; CN"</span> . <span style="color: #a45bad;">1.2</span><span style="color: #2d9574;">)</span>
-                                <span style="color: #2d9574;">(</span><span style="color: #2d9574;">"WenQuanYi Zen Hei"</span> . <span style="color: #a45bad;">1.2</span><span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
-</pre>
-</div>
+<colgroup>
+<col  class="org-left" />
 
-<p>
-这样就可以保持 2 个英文字母等于一个汉字大小。
-</p>
+<col  class="org-left" />
 
-<p>
-参考资料：
-<a href="https://archive.casouri.cat/note/2019/emacs-%25E5%25AD%2597%25E4%25BD%2593%25E4%25B8%258E%25E5%25AD%2597%25E4%25BD%2593%25E9%259B%2586/">Emacs，字体与字符集</a>
-<a href="http://baohaojun.github.io/perfect-emacs-chinese-font.html">狠狠地折腾了一把 Emacs 中文字体</a>
-</p>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">名</th>
+<th scope="col" class="org-left">参数</th>
+<th scope="col" class="org-left">说明</th>
+<th scope="col" class="org-left">&#xa0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">JsonProperty</td>
+<td class="org-left">value</td>
+<td class="org-left">指定参数的转换后节点名</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
