@@ -6,7 +6,7 @@
 <!-- 2020-04-09 四 11:46 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Sitemap</title>
+<title>css预处理选型</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="renshuo" />
 <style type="text/css">
@@ -245,44 +245,107 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">Sitemap</h1>
-<ul class="org-ul">
-<li><a href="index.html">index</a></li>
-<li>web
-<ul class="org-ul">
-<li><a href="web/css_pre_processor.html">css预处理选型</a></li>
-</ul></li>
-<li>kotlin
-<ul class="org-ul">
-<li><a href="kotlin/kotlin-commonScopeFun.html">kotlin的scope function</a></li>
-<li><a href="kotlin/kotlin-base.html">kotlin-base</a></li>
-</ul></li>
-<li>java
-<ul class="org-ul">
-<li><a href="java/jackson_annotation.html">jackson的注解说明</a></li>
-<li><a href="java/gradle-jdk11-use-javafx.html">gradle-jdk11-use-javafx</a></li>
-<li><a href="java/java-new-feature.html">java-new-feature</a></li>
-</ul></li>
-<li>work
-<ul class="org-ul">
-<li><a href="work/dameng-database.html">dameng-database</a></li>
-<li><a href="work/sql-performance.html">sql-performance</a></li>
-<li><a href="work/postgreSql-base.html">postgreSql-base</a></li>
-<li><a href="work/influxdb-base.html">influxdb-base</a></li>
-</ul></li>
-<li>linux
-<ul class="org-ul">
-<li><a href="linux/firefox_autoSaveFile.html">在firefox中，如何设置 采用相同动作处理保存</a></li>
-<li><a href="linux/software.html">Linux 上的软件</a></li>
-<li><a href="linux/iptables.html">配置 iptables，将 Linux 作为路由器</a></li>
-</ul></li>
-<li>emacs
-<ul class="org-ul">
-<li><a href="emacs/space_chinese_font.html">spacemacs 中文字体配置</a></li>
-<li><a href="emacs/spacemacs_isync_mu4e.html">spacemacs<sub>isync</sub><sub>mu4e</sub></a></li>
-<li><a href="emacs/orgmode.html">orgmode</a></li>
-</ul></li>
+<h1 class="title">css预处理选型</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgb4e4c8a">css 的缺陷</a></li>
+<li><a href="#org5703fd5">待选项：</a>
+<ul>
+<li><a href="#orgb6a6580">Sass：</a>
+<ul>
+<li><a href="#org4ea3029">缺点：</a></li>
 </ul>
+</li>
+<li><a href="#org582d7bb">Less：</a>
+<ul>
+<li><a href="#org3d8368b">缺点：</a></li>
+</ul>
+</li>
+<li><a href="#org3e57c19">Stylus：</a></li>
+</ul>
+</li>
+<li><a href="#orgc2105a3">结论</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgb4e4c8a" class="outline-2">
+<h2 id="orgb4e4c8a">css 的缺陷</h2>
+<div class="outline-text-2" id="text-orgb4e4c8a">
+<ol class="org-ol">
+<li>css 没有继承功能</li>
+<li>大量重复的选择器</li>
+<li>缺少编程语言要素，导致 css 缺少逻辑性</li>
+<li>css 的正交问题</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org5703fd5" class="outline-2">
+<h2 id="org5703fd5">待选项：</h2>
+<div class="outline-text-2" id="text-org5703fd5">
+</div>
+<div id="outline-container-orgb6a6580" class="outline-3">
+<h3 id="orgb6a6580">Sass：</h3>
+<div class="outline-text-3" id="text-orgb6a6580">
+<p>
+2007 年诞生，最早也是最成熟的 CSS 预处理器，拥有 ruby 社区的支持和 compass 这一最强大的 css 框架，目前受 LESS 影响，已经进化到了全面兼容 CSS 的 SCSS。
+</p>
+</div>
+
+<div id="outline-container-org4ea3029" class="outline-4">
+<h4 id="org4ea3029">缺点：</h4>
+<div class="outline-text-4" id="text-org4ea3029">
+<ol class="org-ol">
+<li>没有全局变量的概念</li>
+<li>需要 ruby 或 python2</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org582d7bb" class="outline-3">
+<h3 id="org582d7bb">Less：</h3>
+<div class="outline-text-3" id="text-org582d7bb">
+<p>
+2009 年出现，受 SASS 的影响较大，在 ruby 社区之外支持者远超过 SASS，其缺点是比起 SASS 来，可编程功能不够，不过优点是简单和兼容 CSS。著名的 Twitter Bootstrap 就是采用 LESS 做底层语言的。
+</p>
+</div>
+
+<div id="outline-container-org3d8368b" class="outline-4">
+<h4 id="org3d8368b">缺点：</h4>
+<div class="outline-text-4" id="text-org3d8368b">
+<ol class="org-ol">
+<li>需要通过 when 等关键词模拟语言要素</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3e57c19" class="outline-3">
+<h3 id="org3e57c19">Stylus：</h3>
+<div class="outline-text-3" id="text-org3e57c19">
+<p>
+2010 年产生，来自 Node.js 社区，主要用来给 Node 项目进行 CSS 预处理支持，在此社区之内有一定支持者，在广泛的意义上人气还完全不如 SASS 和 LESS。
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc2105a3" class="outline-2">
+<h2 id="orgc2105a3">结论</h2>
+<div class="outline-text-2" id="text-orgc2105a3">
+<ol class="org-ol">
+<li>在 vue 环境中，vue 的 style 的 scope 特性实现了 component-style 功能。所以，在 vue 中，对于“修改某个元素的 style”这样的需求，可以直接实现。</li>
+<li>对于“更新整个 app 的风格，更换页面主题”这个需求，则需要 css 预处理器的支持。</li>
+<li>vuetify 有自己的主题支持以及 class 设计。简单需求用 css 支持即可，复杂的需求则需要 css 预处理器。</li>
+<li>less 对编程语言特性的支持缺乏，pass</li>
+<li>在 sass 和 stylus 中，sass 更接近 css 风格，当需求较简单时，可以采用 sass，当需要设计更复杂的 style 时，则采用stylus</li>
+</ol>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: renshuo</p>
