@@ -16,6 +16,7 @@
   - [[file:work/postgreSql-base.org][postgreSql-base]]
   - [[file:work/influxdb-base.org][influxdb-base]]
 - linux
+  - [[file:linux/polybar_font_config.org][polybar字体配置]]
   - [[file:linux/firefox_autoSaveFile.org][在firefox中，如何设置 采用相同动作处理保存]]
   - [[file:linux/software.org][Linux 上的软件]]
   - [[file:linux/iptables.org][配置 iptables，将 Linux 作为路由器]]

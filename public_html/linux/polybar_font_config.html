@@ -6,7 +6,7 @@
 <!-- 2020-04-21 二 10:12 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Sitemap</title>
+<title>polybar字体配置</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="renshuo" />
 <style type="text/css">
@@ -245,45 +245,102 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">Sitemap</h1>
-<ul class="org-ul">
-<li><a href="index.html">index</a></li>
-<li>web
-<ul class="org-ul">
-<li><a href="web/css_pre_processor.html">css预处理选型</a></li>
-</ul></li>
-<li>kotlin
-<ul class="org-ul">
-<li><a href="kotlin/kotlin-commonScopeFun.html">kotlin的scope function</a></li>
-<li><a href="kotlin/kotlin-base.html">kotlin-base</a></li>
-</ul></li>
-<li>java
-<ul class="org-ul">
-<li><a href="java/jackson_annotation.html">jackson的注解说明</a></li>
-<li><a href="java/gradle-jdk11-use-javafx.html">gradle-jdk11-use-javafx</a></li>
-<li><a href="java/java-new-feature.html">java-new-feature</a></li>
-</ul></li>
-<li>work
-<ul class="org-ul">
-<li><a href="work/dameng-database.html">dameng-database</a></li>
-<li><a href="work/sql-performance.html">sql-performance</a></li>
-<li><a href="work/postgreSql-base.html">postgreSql-base</a></li>
-<li><a href="work/influxdb-base.html">influxdb-base</a></li>
-</ul></li>
-<li>linux
-<ul class="org-ul">
-<li><a href="linux/polybar_font_config.html">polybar字体配置</a></li>
-<li><a href="linux/firefox_autoSaveFile.html">在firefox中，如何设置 采用相同动作处理保存</a></li>
-<li><a href="linux/software.html">Linux 上的软件</a></li>
-<li><a href="linux/iptables.html">配置 iptables，将 Linux 作为路由器</a></li>
-</ul></li>
-<li>emacs
-<ul class="org-ul">
-<li><a href="emacs/space_chinese_font.html">spacemacs 中文字体配置</a></li>
-<li><a href="emacs/spacemacs_isync_mu4e.html">spacemacs<sub>isync</sub><sub>mu4e</sub></a></li>
-<li><a href="emacs/orgmode.html">orgmode</a></li>
-</ul></li>
+<h1 class="title">polybar字体配置</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgb0580c1">看那些字体可以用：</a></li>
+<li><a href="#org500e93c">在 polybar 中配置字体</a></li>
+<li><a href="#orgb7ee1b2">都有哪些符号可用</a></li>
+<li><a href="#org3d75560">在 polybar 中使用字体中的图标</a></li>
+<li><a href="#org0a76ed5">emacs 中输入字符的方法</a></li>
 </ul>
+</div>
+</div>
+
+<div id="outline-container-orgb0580c1" class="outline-2">
+<h2 id="orgb0580c1">看那些字体可以用：</h2>
+<div class="outline-text-2" id="text-orgb0580c1">
+<p>
+polybar 使用 fontconfig 来匹配字体，所以需要用 fc-list 获取字体名称，在命令行运行:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">fc-list
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-shell">/usr/share/fonts/TTF/polybar-icons.ttf: icomoon:<span style="color: #7590db;">style</span>=Regular
+/usr/share/fonts/TTF/icons.ttf: Icons:<span style="color: #7590db;">style</span>=Regular
+</pre>
+</div>
+<p>
+其中 icomoon, Icons 即要用到的字体名称
+</p>
+</div>
+</div>
+
+<div id="outline-container-org500e93c" class="outline-2">
+<h2 id="org500e93c">在 polybar 中配置字体</h2>
+<div class="outline-text-2" id="text-org500e93c">
+<p>
+配置如下：
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">font-0 = Icons:<span style="color: #7590db;">size</span>=<span style="color: #a45bad;">12</span>;<span style="color: #a45bad;">0</span>
+font-1 = icomoon:<span style="color: #7590db;">size</span>=<span style="color: #a45bad;">12</span>;<span style="color: #a45bad;">0</span>
+font-2 = MaterialIcons:<span style="color: #7590db;">size</span>=<span style="color: #a45bad;">12</span>;<span style="color: #a45bad;">0</span>
+font-3 = &#24605;&#28304;&#40657;&#20307; CN Regular:<span style="color: #7590db;">size</span>=<span style="color: #a45bad;">10</span>;-1
+</pre>
+</div>
+<p>
+font-0 表示 font 列表的第 0 项，font-1 即列表第二项&#x2026;&#x2026;
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb7ee1b2" class="outline-2">
+<h2 id="orgb7ee1b2">都有哪些符号可用</h2>
+<div class="outline-text-2" id="text-orgb7ee1b2">
+<p>
+polybar 官方使用 gucharmap 工具查看可用符号，需要注意：gucharmap 中选择字体后，打开菜单中：查看 -&gt; 只显示来自此字形的字体
+</p>
+
+<p>
+选择要用的字符，在左下角会显示字符的编码
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3d75560" class="outline-2">
+<h2 id="org3d75560">在 polybar 中使用字体中的图标</h2>
+<div class="outline-text-2" id="text-org3d75560">
+<p>
+在 polybar 的配置文件中把图标符号直接输入到配置中即可，比如：
+</p>
+<pre class="example">
+[module/androidMenu]
+  type=custom/text
+  content = "||"
+</pre>
+<p>
+上述配置中的 content 的字符串会原样显示在 polybar 中。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0a76ed5" class="outline-2">
+<h2 id="org0a76ed5">emacs 中输入字符的方法</h2>
+<div class="outline-text-2" id="text-org0a76ed5">
+<pre class="example">
+C-x 8 Enter
+</pre>
+<p>
+然后输入字符的编码值即可
+</p>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: renshuo</p>
