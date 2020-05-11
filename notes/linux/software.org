@@ -8,6 +8,11 @@ iptux nutstore
 * 多媒体
 #+BEGIN_SRC shell
 deadbeef smplayer smplayer-skins smplayer-themes k3b
+pulsemixer
+#+END_SRC
+#+BEGIN_SRC shell
+# AUR
+gcue2tracks
 #+END_SRC
 
 * 办公
@@ -25,6 +30,7 @@ jedit
 #+BEGIN_SRC shell
 emacs vim spectacle ark fcitx fcitx-lilydjwg-git kwrite
 kate 
+gucharmap 
 #+END_SRC
 
 * 图形
@@ -37,5 +43,13 @@ gimp
 #+BEGIN_SRC shell
 yakuake htop 
 iperf iperf3
+i3-wm i3locks tdrop-git
+polybar ttf-polybar-icons
+tmux
 #+END_SRC
+sys menu
+#+BEGIN_SRC shell
+  menutray manjaro-xdg-menu jgmenu
+#+END_SRC
+
 

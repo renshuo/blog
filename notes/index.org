@@ -17,6 +17,7 @@
 *** [[file:linux/iptables.org][iptables 配置转发，将 Linux 变成路由器]]
 *** [[file:linux/software.org][常用软件]]
 *** [[file:linux/firefox_autoSaveFile.org][firefox设置自动采用相同动作处理保存文件]]
+*** [[file:linux/my_i3wm.org][我的i3wm]]
 ** web 前端技术
 *** [[file:web/css_pre_processor.org][css预处理选型]]
 * 日记
