@@ -6,7 +6,7 @@
 <!-- 2020-06-12 五 14:55 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Sitemap</title>
+<title>scala基础</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="renshuo" />
 <style type="text/css">
@@ -245,50 +245,158 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">Sitemap</h1>
-<ul class="org-ul">
-<li><a href="index.html">index</a></li>
-<li>scala
-<ul class="org-ul">
-<li><a href="scala/scala-base.html">scala基础</a></li>
-</ul></li>
-<li>web
-<ul class="org-ul">
-<li><a href="web/css_pre_processor.html">css预处理选型</a></li>
-</ul></li>
-<li>kotlin
-<ul class="org-ul">
-<li><a href="kotlin/kotlin-commonScopeFun.html">kotlin的scope function</a></li>
-<li><a href="kotlin/kotlin-base.html">kotlin-base</a></li>
-</ul></li>
-<li>java
-<ul class="org-ul">
-<li><a href="java/jackson_annotation.html">jackson的注解说明</a></li>
-<li><a href="java/gradle-jdk11-use-javafx.html">gradle-jdk11-use-javafx</a></li>
-<li><a href="java/java-new-feature.html">java-new-feature</a></li>
-</ul></li>
-<li>work
-<ul class="org-ul">
-<li><a href="work/dameng-database.html">dameng-database</a></li>
-<li><a href="work/sql-performance.html">sql-performance</a></li>
-<li><a href="work/postgreSql-base.html">postgreSql-base</a></li>
-<li><a href="work/influxdb-base.html">influxdb-base</a></li>
-</ul></li>
-<li>linux
-<ul class="org-ul">
-<li><a href="linux/my_i3wm.html">我的i3wm</a></li>
-<li><a href="linux/polybar_font_config.html">polybar字体配置</a></li>
-<li><a href="linux/firefox_autoSaveFile.html">在firefox中，如何设置 采用相同动作处理保存</a></li>
-<li><a href="linux/software.html">Linux 上的软件</a></li>
-<li><a href="linux/iptables.html">配置 iptables，将 Linux 作为路由器</a></li>
-</ul></li>
-<li>emacs
-<ul class="org-ul">
-<li><a href="emacs/space_chinese_font.html">spacemacs 中文字体配置</a></li>
-<li><a href="emacs/spacemacs_isync_mu4e.html">spacemacs<sub>isync</sub><sub>mu4e</sub></a></li>
-<li><a href="emacs/orgmode.html">orgmode</a></li>
-</ul></li>
+<h1 class="title">scala基础</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org5444b6d">模式匹配</a></li>
+<li><a href="#orgcca0fc2">并行编程</a>
+<ul>
+<li><a href="#org183da5a">利用并行集合</a></li>
+<li><a href="#org8431fa1">用 actor 模型</a></li>
+<li><a href="#org555df39">异步</a></li>
 </ul>
+</li>
+<li><a href="#orge9c1ef1">为什么选 scala 作为图像处理的语言</a></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org5444b6d" class="outline-2">
+<h2 id="org5444b6d">模式匹配</h2>
+<div class="outline-text-2" id="text-org5444b6d">
+<div class="org-src-container">
+<pre class="src src-scala">a match {
+  case "a" =&gt; println("a")
+  case _ =&gt; println("not a")
+}
+</pre>
+</div>
+<p>
+其中，case 后可以跟很多种东西，包括：
+</p>
+
+<p>
+具体值：相当于 java 中的 switch；
+</p>
+
+<p>
+类型：相当与 java 中的 if (a instanceof xxx)&#x2026;；
+</p>
+
+<p>
+匹配并提取集合，元组中的值：
+</p>
+<pre class="example">
+val data = (1, 2, 3)
+data match {
+  case (1, x, _) =&gt; println(x)
+  case _ =&gt; println("get none")
+}
+</pre>
+
+<pre class="example">
+case class User1(name: String, age: Int)  
+  val u =new User1("", 1)
+  u match {
+    case User1(name, age) =&gt; println(s"get user name: $name")
+  }
+</pre>
+</div>
+</div>
+
+
+<div id="outline-container-orgcca0fc2" class="outline-2">
+<h2 id="orgcca0fc2">并行编程</h2>
+<div class="outline-text-2" id="text-orgcca0fc2">
+</div>
+<div id="outline-container-org183da5a" class="outline-3">
+<h3 id="org183da5a">利用并行集合</h3>
+<div class="outline-text-3" id="text-org183da5a">
+<p>
+在 2.13 版本的 scala，parallel 包被拆分到 org.scala-lang.modules:scala-parallel-collections<sub>2.13</sub> 了，所以需要在 gradle 脚本中增加：
+</p>
+<pre class="example">
+implementation "org.scala-lang.modules:scala-parallel-collections_2.13:0.2.0"  
+</pre>
+<p>
+在代码中引用：
+</p>
+<div class="org-src-container">
+<pre class="src src-scala">import scala.collection.parallel.CollectionConverters._ 
+</pre>
+</div>
+<p>
+然后就可以在代码中使用 par 方法了：
+</p>
+<div class="org-src-container">
+<pre class="src src-scala">(0 to times).par.map { i =&gt;
+  Future {
+    val x = linspace(0, 1, size*2)
+    val data = fourierTr(x)
+    res.success(data)
+  }
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8431fa1" class="outline-3">
+<h3 id="org8431fa1">用 actor 模型</h3>
+</div>
+
+
+<div id="outline-container-org555df39" class="outline-3">
+<h3 id="org555df39">异步</h3>
+<div class="outline-text-3" id="text-org555df39">
+<div class="org-src-container">
+<pre class="src src-scala">val res = Promise[DenseVector[Complex]] 
+(0 to times).map { i =&gt;
+  Future {
+    val x = linspace(0, 1, size*2)
+    val data = fourierTr(x)
+    res.success(data)
+  }
+}
+res.future.onComplete {
+  case Success(value) =&gt; println(s"succese: $value")
+  case Failure(exception) =&gt; println("error")
+}
+</pre>
+</div>
+<p>
+创建 times 个 Future，在 res.future.onComplete 中获取结果
+</p>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-orge9c1ef1" class="outline-2">
+<h2 id="orge9c1ef1">为什么选 scala 作为图像处理的语言</h2>
+<div class="outline-text-2" id="text-orge9c1ef1">
+<p>
+最终结论是，当性能优先时，只有唯一选择：c++
+但是，为什么我这里要选择 scala 呢，基于以下几点：
+</p>
+<ol class="org-ol">
+<li>职业生涯：c++ 虽然在业内输入流行，但是将来的后续发展，有算法，基于 QT 的 client 端 app 这 2 个，不是我喜欢的方向，何况，我的基本面在 java 方向，后续也应该是 kotlin，scala</li>
+<li>职业生涯 2：scala 是大数据处理行业的通用语言，当硬件不限于便携单板机时，有多台服务器时，就可以利用 spark 的优势了，而这必然是行业数据处理的大方向。另外，学习 scala 后续有进入互联网大数据处理行业的可能，</li>
+<li>业务能力：业务能力是指，一个编程语言有多大能力靠近伪代码。越近则业务描述能力越强，则意味着越容易从代码中看到业务逻辑，越容易帮助理解业务。也更容易的实现正确的模块化。</li>
+<li>性能问题：对于性能，所谓 c++性能优于 scala，是说 c++的性能上限大于 scala，而不是说，我随便写一个 cpp 和 scala 比较，cpp 一定优于 scala。我们写代码对性能的优化达不到语言的上限，所以，c++性能优于 scala 并不是问题。</li>
+<li>参考清华 bbs 的关于 cpp，scala，rust 等的比较帖：<a href="http://www.newsmth.net/nForum/#!article/Programming/166256">http://www.newsmth.net/nForum/#!article/Programming/166256</a></li>
+<li>c++的问题：c++相比 scala，其难度更大，这里说的难度是出现 bug，解决 bug 的难度。以及解决别人写的代码的 bug 的难度。</li>
+<li>性能优化：软件行业的范围太大了，早已经隔行如隔山，我所在的行业和头部的互联网行业的技术水平差距非常大，所以，在行业内很难找到 c++高手，平时所见到的 c++代码都很一般。所以，你是愿意去优化一个 c++代码？还是 scala 代码？不要求你优化到顶级水平，只要一般水平，不出错就行。而且 c++的性能优化要比 scala 困难。</li>
+<li>未来：从历史来看，c++在多年的特性添加上，都存在问题，还导致 c++越来越复杂，而 scala 在这方面比 c++做的更好一些。</li>
+<li>未来 2：编程语言的终极目标就是 lisp。相比 c++，scala 更接近 lisp。lisp 的特点就是数据即代码（算法），代码即数据。如果带入传统公式： 数据+算法=软件 ，即可得出 lisp=软件</li>
+<li>未来 3：软件行业内，新发展的方向几乎没有用 c++的了，就是说，c++的职位会越来越少吧</li>
+</ol>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: renshuo</p>

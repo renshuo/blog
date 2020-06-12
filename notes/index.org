@@ -8,6 +8,8 @@
 *** [[file:java/gradle-jdk11-use-javafx.org][gradle+jdk11 中使用 javafx]]
 ** kotlin
 *** [[file:kotlin/kotlin-commonScopeFun.org][kotlin的scope function]]
+** scala
+*** [[file:scala/scala-base.org][scala基础语法]]
 ** emacs
 *** [[file:emacs/orgmode.org][orgmode 笔记]]
 *** [[file:emacs/spacemacs_isync_mu4e.org][spacemacs 中配置 mu4e + isync]]

@@ -1,6 +1,8 @@
 #+TITLE: Sitemap
 
 - [[file:index.org][index]]
+- scala
+  - [[file:scala/scala-base.org][scala基础]]
 - web
   - [[file:web/css_pre_processor.org][css预处理选型]]
 - kotlin
