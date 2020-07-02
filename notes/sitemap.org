@@ -1,27 +1,28 @@
 #+TITLE: Sitemap
 
 - [[file:index.org][index]]
+- linux
+  - [[file:linux/software.org][Linux 上的软件]]
+  - [[file:linux/my_i3wm.org][我的i3wm]]
+  - [[file:linux/polybar_font_config.org][polybar字体配置]]
+  - [[file:linux/firefox_autoSaveFile.org][在firefox中，如何设置 采用相同动作处理保存]]
+  - [[file:linux/iptables.org][配置 iptables，将 Linux 作为路由器]]
 - web
   - [[file:web/css_pre_processor.org][css预处理选型]]
+- work
+  - [[file:work/sql-performance.org][sql-performance]]
+  - [[file:work/springboot-websocket.org][在springboot下使用websocket]]
+  - [[file:work/influxdb-base.org][influxdb-base]]
+  - [[file:work/postgreSql-base.org][postgreSql-base]]
+  - [[file:work/dameng-database.org][dameng-database]]
 - kotlin
   - [[file:kotlin/kotlin-commonScopeFun.org][kotlin的scope function]]
   - [[file:kotlin/kotlin-base.org][kotlin-base]]
 - java
   - [[file:java/jackson_annotation.org][jackson的注解说明]]
-  - [[file:java/gradle-jdk11-use-javafx.org][gradle-jdk11-use-javafx]]
   - [[file:java/java-new-feature.org][java-new-feature]]
-- work
-  - [[file:work/dameng-database.org][dameng-database]]
-  - [[file:work/sql-performance.org][sql-performance]]
-  - [[file:work/postgreSql-base.org][postgreSql-base]]
-  - [[file:work/influxdb-base.org][influxdb-base]]
-- linux
-  - [[file:linux/my_i3wm.org][我的i3wm]]
-  - [[file:linux/polybar_font_config.org][polybar字体配置]]
-  - [[file:linux/firefox_autoSaveFile.org][在firefox中，如何设置 采用相同动作处理保存]]
-  - [[file:linux/software.org][Linux 上的软件]]
-  - [[file:linux/iptables.org][配置 iptables，将 Linux 作为路由器]]
+  - [[file:java/gradle-jdk11-use-javafx.org][gradle-jdk11-use-javafx]]
 - emacs
-  - [[file:emacs/space_chinese_font.org][spacemacs 中文字体配置]]
   - [[file:emacs/spacemacs_isync_mu4e.org][spacemacs_isync_mu4e]]
+  - [[file:emacs/space_chinese_font.org][spacemacs 中文字体配置]]
   - [[file:emacs/orgmode.org][orgmode]]

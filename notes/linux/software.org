@@ -1,13 +1,14 @@
 #+TITLE: Linux 上的软件
 * 网络软件
-#+BEGIN_SRC shell
-firefox chromium filezilla krdc
-iptux nutstore
-#+END_SRC
-
+  firefox chromium 
+  filezilla iptux nutstore
+  remmina krdc
+  
 * 多媒体
 #+BEGIN_SRC shell
-deadbeef smplayer smplayer-skins smplayer-themes k3b
+deadbeef 
+smplayer smplayer-skins smplayer-themes
+k3b
 pulsemixer
 #+END_SRC
 #+BEGIN_SRC shell
@@ -17,39 +18,40 @@ gcue2tracks
 
 * 办公
 #+BEGIN_SRC shell
-wps libre-office-fresh libreoffice-fresh-zh-cn stardict sdcv okular
+wps libre-office-fresh libreoffice-fresh-zh-cn
+stardict sdcv
+kchmviewer okular evince
 #+END_SRC
 
 * 开发
 #+BEGIN_SRC shell
-jdk-openjdk jdk8-openjdk jdk11-openjdk intellij-idea-community-edition visual-studio-code-bin dbeaver
-jedit 
+jdk-openjdk jdk8-openjdk jdk11-openjdk intellij-idea-community-edition visual-studio-code-bin
+jedit dbeaver
 #+END_SRC
 
 * 工具
 #+BEGIN_SRC shell
-emacs vim spectacle ark fcitx fcitx-lilydjwg-git kwrite
-kate 
+emacs vim kwrite kate 
+spectacle ark fcitx fcitx-lilydjwg-git 
 gucharmap 
+deepin-calendar
 #+END_SRC
 
 * 图形
 #+BEGIN_SRC shell
-blender krita mcomix inkscape drawio-desktop-bin 
-gimp
+blender
+krita inkscape gimp drawio-desktop-bin scribus
+mcomix gpicview qcomicbook gwenview digikam
 #+END_SRC
 
 * 系统
 #+BEGIN_SRC shell
 yakuake htop 
 iperf iperf3
-i3-wm i3locks tdrop-git
+i3-wm i3locks tdrop-git i3exit blueman pasystray
 polybar ttf-polybar-icons
 tmux
-#+END_SRC
-sys menu
-#+BEGIN_SRC shell
-  menutray manjaro-xdg-menu jgmenu
+jgmenu
 #+END_SRC
 
 
