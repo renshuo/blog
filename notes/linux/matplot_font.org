@@ -1,0 +1,11 @@
+#+title:  matplot的图标题中文变方框问题
+
+* 问题： 根源在于 matplot 默认不包含中文自体导致中文无法显示
+
+* 解决方法：
+  1. 修改 matplotlibrc 配置文件
+     在/usr/lib/python3.9/site-packages/matplotlib/mpl-data 修改 matplotlibrc 配置文件:
+     去掉 font.family, font.sans-serif 前的 #
+     在 font.sans-serif 值中添加所需中文自体 WenQuanYi Zen Hei
+  2. 删除缓存： ~/.cache/matplotlib 目录
+  

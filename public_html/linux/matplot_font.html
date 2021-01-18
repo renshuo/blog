@@ -6,7 +6,7 @@
 <!-- 2021-01-18 一 17:35 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Sitemap</title>
+<title>matplot的图标题中文变方框问题</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="renshuo" />
 <style type="text/css">
@@ -245,52 +245,32 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">Sitemap</h1>
-<ul class="org-ul">
-<li><a href="index.html">index</a></li>
-<li>scala
-<ul class="org-ul">
-<li><a href="scala/scala-notes.html">在IDEA中开启type hints for scala</a></li>
-<li><a href="scala/scala-base.html">scala基础</a></li>
-</ul></li>
-<li>web
-<ul class="org-ul">
-<li><a href="web/css_pre_processor.html">css预处理选型</a></li>
-</ul></li>
-<li>kotlin
-<ul class="org-ul">
-<li><a href="kotlin/kotlin-commonScopeFun.html">kotlin的scope function</a></li>
-<li><a href="kotlin/kotlin-base.html">kotlin-base</a></li>
-</ul></li>
-<li>java
-<ul class="org-ul">
-<li><a href="java/jackson_annotation.html">jackson的注解说明</a></li>
-<li><a href="java/gradle-jdk11-use-javafx.html">gradle-jdk11-use-javafx</a></li>
-<li><a href="java/java-new-feature.html">java-new-feature</a></li>
-</ul></li>
-<li>work
-<ul class="org-ul">
-<li><a href="work/dameng-database.html">dameng-database</a></li>
-<li><a href="work/sql-performance.html">sql-performance</a></li>
-<li><a href="work/postgreSql-base.html">postgreSql-base</a></li>
-<li><a href="work/influxdb-base.html">influxdb-base</a></li>
-</ul></li>
-<li>linux
-<ul class="org-ul">
-<li><a href="linux/matplot_font.html">matplot的图标题中文变方框问题</a></li>
-<li><a href="linux/my_i3wm.html">我的i3wm</a></li>
-<li><a href="linux/polybar_font_config.html">polybar字体配置</a></li>
-<li><a href="linux/firefox_autoSaveFile.html">在firefox中，如何设置 采用相同动作处理保存</a></li>
-<li><a href="linux/software.html">Linux 上的软件</a></li>
-<li><a href="linux/iptables.html">配置 iptables，将 Linux 作为路由器</a></li>
-</ul></li>
-<li>emacs
-<ul class="org-ul">
-<li><a href="emacs/space_chinese_font.html">spacemacs 中文字体配置</a></li>
-<li><a href="emacs/spacemacs_isync_mu4e.html">spacemacs<sub>isync</sub><sub>mu4e</sub></a></li>
-<li><a href="emacs/orgmode.html">orgmode</a></li>
-</ul></li>
+<h1 class="title">matplot的图标题中文变方框问题</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgce2be24">问题： 根源在于 matplot 默认不包含中文自体导致中文无法显示</a></li>
+<li><a href="#orgebed8a1">解决方法：</a></li>
 </ul>
+</div>
+</div>
+
+<div id="outline-container-orgce2be24" class="outline-2">
+<h2 id="orgce2be24">问题： 根源在于 matplot 默认不包含中文自体导致中文无法显示</h2>
+</div>
+
+<div id="outline-container-orgebed8a1" class="outline-2">
+<h2 id="orgebed8a1">解决方法：</h2>
+<div class="outline-text-2" id="text-orgebed8a1">
+<ol class="org-ol">
+<li>修改 matplotlibrc 配置文件在/usr/lib/python3.9/site-packages/matplotlib/mpl-data 修改 matplotlibrc 配置文件:
+去掉 font.family, font.sans-serif 前的 #
+在 font.sans-serif 值中添加所需中文自体 WenQuanYi Zen Hei</li>
+<li>删除缓存： ~/.cache/matplotlib 目录</li>
+</ol>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: renshuo</p>
