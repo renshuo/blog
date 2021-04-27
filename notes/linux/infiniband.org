@@ -1,0 +1,28 @@
+#+title:  Infiniband的相关记录
+
+* 安装
+  1. 需要安装 rdma(或 rdma-no-pandoc)驱动
+  2. 需要安装 opensm 子网管理器
+  3. iperf3 或者 qperf 用来做性能测试工具
+  4. ibutils, 额外的 ib 工具集
+  5. mstflint，用于查看和更新 firmware
+
+* 配置
+  1. 在系统内任何一台主机上打开 opensm
+  2. 配置 ip 地址：
+#+BEGIN_SRC shell
+ip addr add 10.0.2.4/24 dev ibs8
+# ip addr del 10.0.2.4/24 dev ibs8 # 删除ip
+#+END_SRC
+
+* 性能参考
+** connected 模式比默认的 datagram 模式可以设置更高的 mtu 值
+   1. 安装 ipoibmodemtu
+   2. 修改配置文件： etc/ipoibmodemtu.conf
+   3. sytemd 服务 ipoibmodemtu 运行需要 rdma 服务，但是 rdma 服务没有，所以这里直接运行 ipoibmodemtu 命令即可
+   4. 用 ip addr 可以查看更新后的 mtu 值
+   5. 65520 的 mtu 目前 iperf3 测试性能在 22Gb 左右
+      
+
+    
+

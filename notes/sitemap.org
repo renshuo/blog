@@ -1,6 +1,8 @@
 #+TITLE: Sitemap
 
 - [[file:index.org][index]]
+- julia
+  - [[file:julia/julia优化记录.org][julia优化记录]]
 - scala
   - [[file:scala/scala-notes.org][在IDEA中开启type hints for scala]]
   - [[file:scala/scala-base.org][scala基础]]
@@ -19,6 +21,7 @@
   - [[file:work/postgreSql-base.org][postgreSql-base]]
   - [[file:work/influxdb-base.org][influxdb-base]]
 - linux
+  - [[file:linux/infiniband.org][Infiniband的相关记录]]
   - [[file:linux/matplot_font.org][matplot的图标题中文变方框问题]]
   - [[file:linux/my_i3wm.org][我的i3wm]]
   - [[file:linux/polybar_font_config.org][polybar字体配置]]

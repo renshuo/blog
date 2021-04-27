@@ -6,7 +6,7 @@
 <!-- 2021-04-27 二 16:20 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Linux 上的软件</title>
+<title>Infiniband的相关记录</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="renshuo" />
 <style type="text/css">
@@ -221,135 +221,64 @@
 </head>
 <body>
 <div id="content">
-<h1 class="title">Linux 上的软件</h1>
+<h1 class="title">Infiniband的相关记录</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org85190e6">网络软件</a></li>
-<li><a href="#orgddda2c7">多媒体</a></li>
-<li><a href="#org040a108">办公</a></li>
-<li><a href="#org60259aa">开发</a></li>
-<li><a href="#org3287ec2">工具</a></li>
-<li><a href="#orgbcbd4c0">图形</a></li>
-<li><a href="#orgae17601">系统</a></li>
-<li><a href="#org5cb549c">其他</a></li>
+<li><a href="#org1f3043d">安装</a></li>
+<li><a href="#org1018f28">配置</a></li>
+<li><a href="#orgba8ffef">性能参考</a>
+<ul>
+<li><a href="#org94acf8f">connected 模式比默认的 datagram 模式可以设置更高的 mtu 值</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org85190e6" class="outline-2">
-<h2 id="org85190e6">网络软件</h2>
-<div class="outline-text-2" id="text-org85190e6">
-<pre class="example">
-firefox chromium 
-filezilla iptux nutstore
-remmina krdc
-baidunetdisk-bin
-teamviewer
-nextcloud-client
-</pre>
+<div id="outline-container-org1f3043d" class="outline-2">
+<h2 id="org1f3043d">安装</h2>
+<div class="outline-text-2" id="text-org1f3043d">
+<ol class="org-ol">
+<li>需要安装 rdma(或 rdma-no-pandoc)驱动</li>
+<li>需要安装 opensm 子网管理器</li>
+<li>iperf3 或者 qperf 用来做性能测试工具</li>
+<li>ibutils, 额外的 ib 工具集</li>
+<li>mstflint，用于查看和更新 firmware</li>
+</ol>
 </div>
 </div>
 
-<div id="outline-container-orgddda2c7" class="outline-2">
-<h2 id="orgddda2c7">多媒体</h2>
-<div class="outline-text-2" id="text-orgddda2c7">
+<div id="outline-container-org1018f28" class="outline-2">
+<h2 id="org1018f28">配置</h2>
+<div class="outline-text-2" id="text-org1018f28">
+<ol class="org-ol">
+<li>在系统内任何一台主机上打开 opensm</li>
+<li>配置 ip 地址：</li>
+</ol>
 <div class="org-src-container">
-<pre class="src src-shell">deadbeefef 
-smplayer smplayer-skins smplayer-themes
-k3b
-pulsemixer
-obs-studio 
-rawtherapee
-</pre>
-</div>
-<div class="org-src-container">
-<pre class="src src-shell"><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">AUR</span>
-gcue2tracks
-tencentvideo
+<pre class="src src-shell">ip addr add <span style="color: #a45bad;">10.0.2.4/24</span> dev ibs8
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">ip addr del 10.0.2.4/24 dev ibs8 # &#21024;&#38500;ip</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org040a108" class="outline-2">
-<h2 id="org040a108">办公</h2>
-<div class="outline-text-2" id="text-org040a108">
-<div class="org-src-container">
-<pre class="src src-shell">wps libre-office-fresh libreoffice-fresh-zh-cn
-stardict sdcv
-kchmviewer okular evince
-joplin
-</pre>
+<div id="outline-container-orgba8ffef" class="outline-2">
+<h2 id="orgba8ffef">性能参考</h2>
+<div class="outline-text-2" id="text-orgba8ffef">
 </div>
-</div>
-</div>
-
-<div id="outline-container-org60259aa" class="outline-2">
-<h2 id="org60259aa">开发</h2>
-<div class="outline-text-2" id="text-org60259aa">
-<div class="org-src-container">
-<pre class="src src-shell">jdk-openjdk jdk11-openjdk
-intellij-idea-community-edition visual-studio-code-bin
-jedit dbeaver
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org3287ec2" class="outline-2">
-<h2 id="org3287ec2">工具</h2>
-<div class="outline-text-2" id="text-org3287ec2">
-<div class="org-src-container">
-<pre class="src src-shell">emacs vim kwrite kate 
-spectacle ark
-gucharmap 
-scrcpy qtscrcpy
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgbcbd4c0" class="outline-2">
-<h2 id="orgbcbd4c0">图形</h2>
-<div class="outline-text-2" id="text-orgbcbd4c0">
-<div class="org-src-container">
-<pre class="src src-shell">blender
-krita inkscape gimp
-drawio-desktop-bin
-scribus
-mcomix gpicview qcomicbook gwenview
-digikam
-fiji-bin <span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">imageJ: ImageJ &#26159;&#19968;&#27454;&#22522;&#20110; java &#30340;&#65292;&#30001; National Institutes of Health&#65288;NIH&#65289;&#24320;&#21457;&#30340;&#19968;&#27454;&#21151;&#33021;&#24378;&#22823;&#30340;&#22270;&#20687;&#22788;&#29702;&#36719;&#20214;</span>
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgae17601" class="outline-2">
-<h2 id="orgae17601">系统</h2>
-<div class="outline-text-2" id="text-orgae17601">
-<div class="org-src-container">
-<pre class="src src-shell">htop guake
-iperf iperf3
-i3-wm i3locks tdrop-git i3exit blueman pasystray
-polybar ttf-polybar-icons
-tmux
-jgmenu
-hddtemp
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org5cb549c" class="outline-2">
-<h2 id="org5cb549c">其他</h2>
-<div class="outline-text-2" id="text-org5cb549c">
-<div class="org-src-container">
-<pre class="src src-shell">perl-tk <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">tlmgr --gui </span>
-graphviz <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">for plantuml with texlive</span>
-</pre>
+<div id="outline-container-org94acf8f" class="outline-3">
+<h3 id="org94acf8f">connected 模式比默认的 datagram 模式可以设置更高的 mtu 值</h3>
+<div class="outline-text-3" id="text-org94acf8f">
+<ol class="org-ol">
+<li>安装 ipoibmodemtu</li>
+<li>修改配置文件： etc/ipoibmodemtu.conf</li>
+<li>sytemd 服务 ipoibmodemtu 运行需要 rdma 服务，但是 rdma 服务没有，所以这里直接运行 ipoibmodemtu 命令即可</li>
+<li>用 ip addr 可以查看更新后的 mtu 值</li>
+<li>65520 的 mtu 目前 iperf3 测试性能在 22Gb 左右</li>
+</ol>
 </div>
 </div>
 </div>

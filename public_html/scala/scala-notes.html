@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-04-27 二 16:20 -->
+<!-- 2021-01-18 一 17:32 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Linux 上的软件</title>
+<title>在IDEA中开启type hints for scala</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="renshuo" />
 <style type="text/css">
@@ -40,7 +40,7 @@
   }
   pre.src {
     position: relative;
-    overflow: auto;
+    overflow: visible;
     padding-top: 1.2em;
   }
   pre.src:before {
@@ -52,7 +52,7 @@
     padding: 3px;
     border: 1px solid black;
   }
-  pre.src:hover:before { display: inline; margin-top: 14px;}
+  pre.src:hover:before { display: inline;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
@@ -197,167 +197,63 @@
                        <link rel="stylesheet" type="text/css" href="/gitPage/public_html/theme/css/worg.css"/>
                        <link rel="stylesheet" type="text/css" href="theme/css/worg.css"/>
 <script type="text/javascript">
-// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
 <!--/*--><![CDATA[/*><!--*/
-     function CodeHighlightOn(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.add("code-highlighted");
-         target.classList.add("code-highlighted");
-       }
-     }
-     function CodeHighlightOff(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.remove("code-highlighted");
-         target.classList.remove("code-highlighted");
-       }
-     }
-    /*]]>*///-->
-// @license-end
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
 </script>
 </head>
 <body>
 <div id="content">
-<h1 class="title">Linux 上的软件</h1>
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#org85190e6">网络软件</a></li>
-<li><a href="#orgddda2c7">多媒体</a></li>
-<li><a href="#org040a108">办公</a></li>
-<li><a href="#org60259aa">开发</a></li>
-<li><a href="#org3287ec2">工具</a></li>
-<li><a href="#orgbcbd4c0">图形</a></li>
-<li><a href="#orgae17601">系统</a></li>
-<li><a href="#org5cb549c">其他</a></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org85190e6" class="outline-2">
-<h2 id="org85190e6">网络软件</h2>
-<div class="outline-text-2" id="text-org85190e6">
-<pre class="example">
-firefox chromium 
-filezilla iptux nutstore
-remmina krdc
-baidunetdisk-bin
-teamviewer
-nextcloud-client
-</pre>
-</div>
-</div>
-
-<div id="outline-container-orgddda2c7" class="outline-2">
-<h2 id="orgddda2c7">多媒体</h2>
-<div class="outline-text-2" id="text-orgddda2c7">
-<div class="org-src-container">
-<pre class="src src-shell">deadbeefef 
-smplayer smplayer-skins smplayer-themes
-k3b
-pulsemixer
-obs-studio 
-rawtherapee
-</pre>
-</div>
-<div class="org-src-container">
-<pre class="src src-shell"><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">AUR</span>
-gcue2tracks
-tencentvideo
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org040a108" class="outline-2">
-<h2 id="org040a108">办公</h2>
-<div class="outline-text-2" id="text-org040a108">
-<div class="org-src-container">
-<pre class="src src-shell">wps libre-office-fresh libreoffice-fresh-zh-cn
-stardict sdcv
-kchmviewer okular evince
-joplin
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org60259aa" class="outline-2">
-<h2 id="org60259aa">开发</h2>
-<div class="outline-text-2" id="text-org60259aa">
-<div class="org-src-container">
-<pre class="src src-shell">jdk-openjdk jdk11-openjdk
-intellij-idea-community-edition visual-studio-code-bin
-jedit dbeaver
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org3287ec2" class="outline-2">
-<h2 id="org3287ec2">工具</h2>
-<div class="outline-text-2" id="text-org3287ec2">
-<div class="org-src-container">
-<pre class="src src-shell">emacs vim kwrite kate 
-spectacle ark
-gucharmap 
-scrcpy qtscrcpy
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgbcbd4c0" class="outline-2">
-<h2 id="orgbcbd4c0">图形</h2>
-<div class="outline-text-2" id="text-orgbcbd4c0">
-<div class="org-src-container">
-<pre class="src src-shell">blender
-krita inkscape gimp
-drawio-desktop-bin
-scribus
-mcomix gpicview qcomicbook gwenview
-digikam
-fiji-bin <span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">imageJ: ImageJ &#26159;&#19968;&#27454;&#22522;&#20110; java &#30340;&#65292;&#30001; National Institutes of Health&#65288;NIH&#65289;&#24320;&#21457;&#30340;&#19968;&#27454;&#21151;&#33021;&#24378;&#22823;&#30340;&#22270;&#20687;&#22788;&#29702;&#36719;&#20214;</span>
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgae17601" class="outline-2">
-<h2 id="orgae17601">系统</h2>
-<div class="outline-text-2" id="text-orgae17601">
-<div class="org-src-container">
-<pre class="src src-shell">htop guake
-iperf iperf3
-i3-wm i3locks tdrop-git i3exit blueman pasystray
-polybar ttf-polybar-icons
-tmux
-jgmenu
-hddtemp
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org5cb549c" class="outline-2">
-<h2 id="org5cb549c">其他</h2>
-<div class="outline-text-2" id="text-org5cb549c">
-<div class="org-src-container">
-<pre class="src src-shell">perl-tk <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">tlmgr --gui </span>
-graphviz <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">for plantuml with texlive</span>
-</pre>
-</div>
-</div>
-</div>
+<h1 class="title">在IDEA中开启type hints for scala</h1>
+<p>
+2020 版本的 type hints 与以前的版本配置位置不一样了：在 settings -&gt; Editor -&gt; inlay hints -&gt; scala 下，包括 parameter hints， type hints 等相关配置。
+</p>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: renshuo</p>
-<p class="date">Created: 2021-04-27 二 16:20</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2021-01-18 一 17:32</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
 </html>

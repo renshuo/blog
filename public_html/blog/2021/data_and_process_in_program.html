@@ -6,7 +6,7 @@
 <!-- 2021-04-27 二 16:20 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Linux 上的软件</title>
+<title>关于编程语言中的数据和流程的想法</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="renshuo" />
 <style type="text/css">
@@ -221,135 +221,76 @@
 </head>
 <body>
 <div id="content">
-<h1 class="title">Linux 上的软件</h1>
+<h1 class="title">关于编程语言中的数据和流程的想法</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org85190e6">网络软件</a></li>
-<li><a href="#orgddda2c7">多媒体</a></li>
-<li><a href="#org040a108">办公</a></li>
-<li><a href="#org60259aa">开发</a></li>
-<li><a href="#org3287ec2">工具</a></li>
-<li><a href="#orgbcbd4c0">图形</a></li>
-<li><a href="#orgae17601">系统</a></li>
-<li><a href="#org5cb549c">其他</a></li>
+<li><a href="#org366bd1d">起源</a></li>
+<li><a href="#org4ec26ef">本质</a>
+<ul>
+<li><a href="#org1454dd9">数据类型</a></li>
+<li><a href="#orge38e306">算法</a></li>
+<li><a href="#orga87268c">c 语言</a></li>
+<li><a href="#org30f6ef2">java</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org85190e6" class="outline-2">
-<h2 id="org85190e6">网络软件</h2>
-<div class="outline-text-2" id="text-org85190e6">
-<pre class="example">
-firefox chromium 
-filezilla iptux nutstore
-remmina krdc
-baidunetdisk-bin
-teamviewer
-nextcloud-client
-</pre>
+<div id="outline-container-org366bd1d" class="outline-2">
+<h2 id="org366bd1d">起源</h2>
+<div class="outline-text-2" id="text-org366bd1d">
+<p>
+这个想法起源于“julia 的多重派发与 java 等的多态有什么区别？”这个问题。在 java 中， function 的名称相同而参数不同，则可以区分多个不同的代码逻辑。这是 oo 中的多态。在 julia 中，function 的名称相同而参数不同，也可以区分多个不同的代码逻辑。这里称作多重派发。那么 java 的多态和 julia 的多重派发有一个重要的不同点：java 的 function 必须定义在某个 class 内，天然只有这个 class 的对象才能调用。而 julia 的 function 定义在顶层空间中，不会绑定到某个 class 或者 object 上。所以，在 java 中，当你要调用一个多态方法时，首先是要获取到这个方法所在的 class 的 object，当这个 object 不存在时，则无法使用多态方法（其实可以用 static 方法实现不依赖 object 的多态，但是还是要依赖 class）。julia 中没有这个问题。当用户给出一个方法名，以及方法的参数时，在 julia 中就可以定位到一个特定的 function。而 java 中必须要再给出 function 所在的 object, 这个 object 也可以看作是方法的第一个参数。所以，java 里的多态实际上是单派发。
+</p>
 </div>
 </div>
 
-<div id="outline-container-orgddda2c7" class="outline-2">
-<h2 id="orgddda2c7">多媒体</h2>
-<div class="outline-text-2" id="text-orgddda2c7">
-<div class="org-src-container">
-<pre class="src src-shell">deadbeefef 
-smplayer smplayer-skins smplayer-themes
-k3b
-pulsemixer
-obs-studio 
-rawtherapee
-</pre>
+<div id="outline-container-org4ec26ef" class="outline-2">
+<h2 id="org4ec26ef">本质</h2>
+<div class="outline-text-2" id="text-org4ec26ef">
+<p>
+计算机程序的本质实际上是：数据+算法数据就是存储在内存中的一段 bit,算法就是一段处理流程而我们做编程的，实际上就是对数据和算法的管理。
+</p>
 </div>
-<div class="org-src-container">
-<pre class="src src-shell"><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">AUR</span>
-gcue2tracks
-tencentvideo
-</pre>
-</div>
+
+<div id="outline-container-org1454dd9" class="outline-3">
+<h3 id="org1454dd9">数据类型</h3>
+<div class="outline-text-3" id="text-org1454dd9">
+<p>
+数据类型是编程语言对一段内存空间存储的内容的说明和注释。即，确定了一段内存空间存储的是什么。不同的编程语言会有不同的数据管理方式。
+</p>
 </div>
 </div>
 
-<div id="outline-container-org040a108" class="outline-2">
-<h2 id="org040a108">办公</h2>
-<div class="outline-text-2" id="text-org040a108">
-<div class="org-src-container">
-<pre class="src src-shell">wps libre-office-fresh libreoffice-fresh-zh-cn
-stardict sdcv
-kchmviewer okular evince
-joplin
-</pre>
-</div>
+<div id="outline-container-orge38e306" class="outline-3">
+<h3 id="orge38e306">算法</h3>
+<div class="outline-text-3" id="text-orge38e306">
+<p>
+算法就是一段处理流程、处理逻辑，是告诉 cpu 如何运行的流程。
+</p>
 </div>
 </div>
 
-<div id="outline-container-org60259aa" class="outline-2">
-<h2 id="org60259aa">开发</h2>
-<div class="outline-text-2" id="text-org60259aa">
-<div class="org-src-container">
-<pre class="src src-shell">jdk-openjdk jdk11-openjdk
-intellij-idea-community-edition visual-studio-code-bin
-jedit dbeaver
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org3287ec2" class="outline-2">
-<h2 id="org3287ec2">工具</h2>
-<div class="outline-text-2" id="text-org3287ec2">
-<div class="org-src-container">
-<pre class="src src-shell">emacs vim kwrite kate 
-spectacle ark
-gucharmap 
-scrcpy qtscrcpy
-</pre>
-</div>
+<div id="outline-container-orga87268c" class="outline-3">
+<h3 id="orga87268c">c 语言</h3>
+<div class="outline-text-3" id="text-orga87268c">
+<p>
+在 c 语言中，对于数据的管理很简单，就是一些基本类型（Int,Float,double 等）以及数组和结构体等复合类型。其他的没有了。这些基本类型都有固定长度的 bit,struct 也有其确定的 bit 数。c的指针就是用来管理数据的，每一个数据都是通过指针定位的。
+c 语言中的算法也很简单，就是定义的 function。function 只通过名称来定位。
+</p>
 </div>
 </div>
 
-<div id="outline-container-orgbcbd4c0" class="outline-2">
-<h2 id="orgbcbd4c0">图形</h2>
-<div class="outline-text-2" id="text-orgbcbd4c0">
-<div class="org-src-container">
-<pre class="src src-shell">blender
-krita inkscape gimp
-drawio-desktop-bin
-scribus
-mcomix gpicview qcomicbook gwenview
-digikam
-fiji-bin <span style="color: #2aa1ae; background-color: #292e34;">#</span><span style="color: #2aa1ae; background-color: #292e34;">imageJ: ImageJ &#26159;&#19968;&#27454;&#22522;&#20110; java &#30340;&#65292;&#30001; National Institutes of Health&#65288;NIH&#65289;&#24320;&#21457;&#30340;&#19968;&#27454;&#21151;&#33021;&#24378;&#22823;&#30340;&#22270;&#20687;&#22788;&#29702;&#36719;&#20214;</span>
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgae17601" class="outline-2">
-<h2 id="orgae17601">系统</h2>
-<div class="outline-text-2" id="text-orgae17601">
-<div class="org-src-container">
-<pre class="src src-shell">htop guake
-iperf iperf3
-i3-wm i3locks tdrop-git i3exit blueman pasystray
-polybar ttf-polybar-icons
-tmux
-jgmenu
-hddtemp
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org5cb549c" class="outline-2">
-<h2 id="org5cb549c">其他</h2>
-<div class="outline-text-2" id="text-org5cb549c">
-<div class="org-src-container">
-<pre class="src src-shell">perl-tk <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">tlmgr --gui </span>
-graphviz <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">for plantuml with texlive</span>
-</pre>
+<div id="outline-container-org30f6ef2" class="outline-3">
+<h3 id="org30f6ef2">java</h3>
+<div class="outline-text-3" id="text-org30f6ef2">
+<p>
+java 中对数据的管理就是 object,每个 object 内的 field 就是数据。object 是有类型的，即使你定义了 2 个属性完全相同的 class,这两个也是不同的类型，object 就是在把 c 语言中的数据添加了一个类型，2个类型不同的 bit 空间，即使内容相同，这 2 端数据也不相等。
+java 中对 function 的管理依赖于 class,即首先确定方法的第一个参数（方法的调用者）对象，然后在根据名称查询方法，最后根据给出的参数(即多态特性)确定具体的 function。所以 java 中定位一个 function 是根据第一参数，方法名，其他参数。
+</p>
 </div>
 </div>
 </div>

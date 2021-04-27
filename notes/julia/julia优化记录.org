@@ -1,0 +1,5 @@
+#+title: julia优化记录
+
+
+* @inbounds
+  @inbounds 加在循环之前，可以让循环不再检查数据边界。

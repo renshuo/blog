@@ -1,0 +1,4 @@
+#+title: 在IDEA中开启type hints for scala
+
+2020 版本的 type hints 与以前的版本配置位置不一样了：
+在 settings -> Editor -> inlay hints -> scala 下，包括 parameter hints， type hints 等相关配置。
