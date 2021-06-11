@@ -1,23 +1,20 @@
 #+TITLE: Linux 上的软件
 
+* base
+#+BEGIN_SRC
+yay
+#+END_SRC
+
 * 网络软件
 #+BEGIN_SRC
-  firefox chromium 
-  filezilla iptux nutstore
-  remmina krdc
-  baidunetdisk-bin
-  teamviewer
-  nextcloud-client
+  firefox chromium filezilla nutstore remmina teamviewer
+  baidunetdisk-bin nextcloud-client
 #+END_SRC
 
 * 多媒体
 #+BEGIN_SRC shell
-  deadbeefef 
-  smplayer smplayer-skins smplayer-themes
-  k3b
-  pulsemixer
-  obs-studio 
-  rawtherapee
+  deadbeef smplayer smplayer-skins smplayer-themes k3b obs-studio
+  pulsemixer rawtherapee
 #+END_SRC
 #+BEGIN_SRC shell
   # AUR
@@ -27,45 +24,38 @@
 
 * 办公
 #+BEGIN_SRC shell
-  wps libre-office-fresh libreoffice-fresh-zh-cn
-  stardict sdcv
-  kchmviewer okular evince
-  joplin
+   stardict sdcv kchmviewer okular evince
+   joplin
+#+END_SRC
+
+#+BEGIN_SRC shell
+  # AUR
+  wps-office-cn
 #+END_SRC
 
 * 开发
 #+BEGIN_SRC shell
-  jdk-openjdk jdk11-openjdk
-  intellij-idea-community-edition visual-studio-code-bin
-  jedit dbeaver
+    jdk-openjdk intellij-idea-community-edition visual-studio-code-bin dbeaver
+    jedit 
 #+END_SRC
 
 * 工具
 #+BEGIN_SRC shell
-  emacs vim kwrite kate 
-  spectacle ark
-  gucharmap 
-  scrcpy qtscrcpy
+   emacs vim kwrite spectacle ark gucharmap scrcpy
 #+END_SRC
 
 * 图形
 #+BEGIN_SRC shell
-  blender
-  krita inkscape gimp
-  drawio-desktop-bin
-  scribus
-  mcomix gpicview qcomicbook gwenview
-  digikam
+  blender krita inkscape gimp drawio-desktop-bin scribus mcomix gpicview gwenview
+  qcomicbook digikam
   fiji-bin #imageJ: ImageJ 是一款基于 java 的，由 National Institutes of Health（NIH）开发的一款功能强大的图像处理软件
 #+END_SRC
 
 * 系统
 #+BEGIN_SRC shell
-  htop guake
+  htop guake tmux
   iperf iperf3
-  i3-wm i3locks tdrop-git i3exit blueman pasystray
-  polybar ttf-polybar-icons
-  tmux
+  i3-wm i3locks tdrop-git i3exit blueman pasystray polybar ttf-polybar-icons
   jgmenu
   hddtemp
 #+END_SRC
