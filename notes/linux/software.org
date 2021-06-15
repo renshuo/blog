@@ -2,12 +2,13 @@
 
 * base
 #+BEGIN_SRC
-yay
+yay base-devel
+fcitx5-im fcitx5-pinyin-moegirl fcitx5-chinese-addons fcitx5-material-color
 #+END_SRC
 
 * 网络软件
 #+BEGIN_SRC
-  firefox chromium filezilla nutstore remmina teamviewer
+  firefox firefox-i18n-zh-cn chromium filezilla nutstore remmina teamviewer
   baidunetdisk-bin nextcloud-client
 #+END_SRC
 
@@ -30,13 +31,14 @@ yay
 
 #+BEGIN_SRC shell
   # AUR
-  wps-office-cn
+  wps-office-cn ttf-wps-fonts ttf-ms-fonts wps-office-fonts wps-office-mime-cn wps-office-mui-zh-cn
 #+END_SRC
 
 * 开发
 #+BEGIN_SRC shell
-    jdk-openjdk intellij-idea-community-edition visual-studio-code-bin dbeaver
-    jedit 
+  jdk-openjdk intellij-idea-community-edition visual-studio-code-bin dbeaver
+  jedit
+  cloc # 代码行数统计工具
 #+END_SRC
 
 * 工具
@@ -53,11 +55,12 @@ yay
 
 * 系统
 #+BEGIN_SRC shell
-  htop guake tmux
-  iperf iperf3
-  i3-wm i3locks tdrop-git i3exit blueman pasystray polybar ttf-polybar-icons
-  jgmenu
-  hddtemp
+    htop guake tmux breeze-gtk breeze-grub
+    virtualbox
+    iperf iperf3 
+    i3-wm i3locks tdrop-git i3exit blueman pasystray polybar ttf-polybar-icons
+    jgmenu
+    hddtemp
 #+END_SRC
 
 * 其他
