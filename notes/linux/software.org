@@ -8,7 +8,7 @@ fcitx5-im fcitx5-pinyin-moegirl fcitx5-chinese-addons fcitx5-material-color
 
 * 网络软件
 #+BEGIN_SRC
-  firefox firefox-i18n-zh-cn chromium filezilla nutstore remmina teamviewer
+  firefox firefox-i18n-zh-cn chromium filezilla nutstore remmina freerdp libvncserver teamviewer 
   baidunetdisk-bin nextcloud-client
 #+END_SRC
 
@@ -43,6 +43,11 @@ fcitx5-im fcitx5-pinyin-moegirl fcitx5-chinese-addons fcitx5-material-color
   cloc # 代码行数统计工具
 #+END_SRC
 
+#+BEGIN_SRC shell
+# yay
+  git-cola
+#+END_SRC
+
 * 工具
 #+BEGIN_SRC shell
    emacs vim kwrite spectacle ark gucharmap scrcpy
@@ -70,5 +75,11 @@ fcitx5-im fcitx5-pinyin-moegirl fcitx5-chinese-addons fcitx5-material-color
 #+BEGIN_SRC shell
   perl-tk # tlmgr --gui 
   graphviz # for plantuml with texlive
+#+END_SRC
+
+* aur
+
+#+BEGIN_SRC shell
+zwcad-bin
 #+END_SRC
 
